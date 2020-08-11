@@ -6,20 +6,23 @@
 
 OUTPUTDIR="result_`date "+%Y%m%d"`_`date "+%H%M"`"
 
-FILEBENCH_PATH="/home/oslab/filebench"
+FILEBENCH_PATH="benchmark/filebench"
 FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
 MKBIN="./mk"
 
-DEV=(/dev/nvme0n1 /dev/sdm)
+DEV=(/dev/nvme0n1)
 
 MNT=/mnt
 
 #FS=(xfs)
 FS=(ext4)
 
-PSP=(0 95)
+#PSP=(0 1 3 7 8 15 16 24 25 27 31 95)
+PSP=(95)
 
-NUM_THREADS=(10 20 30 40 50 60)
+NUM_THREADS=(40)
+
+#FTRACE_PATH=/sys/kernel/debug/tracing
 
 main()
 {
@@ -109,6 +112,9 @@ main()
 				"63") #debug
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/debug-count-loop-psp-efs
 					;;
+				"71") #psp-efs-pool
+					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs-pool
+					;;
 				"95") #count-loop-psp-efs-pool
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-efs-pool
 					;;
@@ -135,11 +141,22 @@ main()
 				echo "==== Fotmat complete ===="
 				echo 1 > /proc/sys/kernel/lock_stat
 
+				# initialize Ftrace
+				# echo $$ > ${FTRACE_PATH}/set_ftrace_pid
+				# echo "__do_page_fault" > ${FTRACE_PATH}/set_ftrace_notrace
+				# echo function_graph > ${FTRACE_PATH}/current_tracer
+
+
+
 				# Run
 				echo "==== Run workload ===="
 				${FILEBENCH_BIN} -f \
 					${FILEBENCH_PATH}/workloads/varmail_${num_threads}.f \
 					> ${OUTPUTDIR_DEV_PSP}/result_${num_threads}.dat;
+
+				# End Ftrace
+				# cp ${FTRACE_PATH}/trace ${OUTPUTDIR_DEV_PSP}/ftrace_result
+				# echo nop > ${FTRACE_PATH}/current_tracer
 
 				# Debug Page Conflict
 				# sort by block number
