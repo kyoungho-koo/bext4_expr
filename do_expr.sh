@@ -4,13 +4,13 @@
 # - /dev/sdb: SAMSUNG 860PRO 512GB
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
 
-OUTPUTDIR="result_`date "+%Y%m%d"`_`date "+%H%M"`"
+VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 FILEBENCH_PATH="benchmark/filebench"
 FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
 MKBIN="./mk"
 
-DEV=(/dev/nvme0n1)
+DEV=(/dev/nvme0n1 /dev/nvme1n1)
 
 MNT=/mnt
 
@@ -18,14 +18,28 @@ MNT=/mnt
 FS=(ext4)
 
 #PSP=(0 1 3 7 8 15 16 24 25 27 31 95)
-PSP=(95)
+PSP=(1 7)
 
-NUM_THREADS=(40)
+NUM_THREADS=(10 20)
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
+ITER=2
+
 main()
 {
+    if [ "$VERSION" = "barrier" ]
+    then
+		    VERSION_PATH="./bext4"
+	else
+	        VERSION_PATH="./ext4"
+	fi 
+	
+	# Create Kernel version directory
+	mkdir ${VERSION_PATH}
+
+	OUTPUTDIR=${VERSION_PATH}/"result_`date "+%Y%m%d"`_`date "+%H%M"`"
+
 	# Create result root directory
 	mkdir ${OUTPUTDIR}
 
@@ -42,7 +56,10 @@ main()
 			"/dev/sdc") #RAID-Single Storage
 				OUTPUTDIR_DEV=${OUTPUTDIR}/singleraid
 				;;
-			"/dev/nvme0n1") #Optane
+			"/dev/nvme0n1") #970pro
+				OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
+				;;	
+			"/dev/nvme1n1") #Optane
 				OUTPUTDIR_DEV=${OUTPUTDIR}/optane
 				;;
 			"/dev/md5") #Software RAID 5
@@ -82,9 +99,12 @@ main()
 				"7") #psp-full
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs
 					;;
-				"8") #count
+				"8") #loop
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop
 					;;
+				"11") #loop-psp-ifs 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-ifs
+					;;	
 				"15") #loop-psp-full
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-efs
 					;;
@@ -112,9 +132,27 @@ main()
 				"63") #debug
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/debug-count-loop-psp-efs
 					;;
-				"71") #psp-efs-pool
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs-pool
+				"65") #psp-pool 
+					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-pool
 					;;
+				"67") #psp-ifs-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-ifs-pool
+				    ;;
+				"71") #psp-efs-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs-pool
+					;;
+				"75") #loop-psp-ifs-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-ifs-pool
+					;;
+				"79") #loop-psp-efs-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-efs-pool
+					;;	
+				"89") #count-loop-psp-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-pool
+					;;
+				"91") #count-loop-psp-ifs-pool 
+                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-ifs-pool
+					;;	
 				"95") #count-loop-psp-efs-pool
 					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-efs-pool
 					;;
@@ -123,69 +161,83 @@ main()
 
 			# Craete directory for filesystem
 			mkdir ${OUTPUTDIR_DEV_PSP}
-			echo "# thr tx h/tx blk/tx" >> ${OUTPUTDIR_DEV_PSP}/summary;
 
-			for num_threads in ${NUM_THREADS[@]}
+			COUNT=1
+			while [ ${COUNT} -le ${ITER} ]
 			do
-				echo $'\n'
-				echo "==== Start experiment of ${num_threads} varmail ===="
+				OUTPUTDIR_DEV_PSP_ITER=${OUTPUTDIR_DEV_PSP}/"ex-${COUNT}"
 
-				# Format and Mount
-				echo "==== Format $dev on $MNT ===="
-				${MKBIN}ext4.sh $dev $MNT
-				# Initialize Page Conflict List
-				cat /proc/fs/jbd2/${dev:5}-8/pcl \
-					> ${OUTPUTDIR_DEV_PSP}/pcl_${num_threads}.dat;
-				cat /proc/fs/jbd2/${dev:5}-8/info \
-					> ${OUTPUTDIR_DEV_PSP}/info_${num_threads}.dat;
-				echo "==== Fotmat complete ===="
-				echo 1 > /proc/sys/kernel/lock_stat
+				# Create Directory for Iteration
+				mkdir ${OUTPUTDIR_DEV_PSP_ITER}
+				
+				echo "# thr tx h/tx blk/tx" >> ${OUTPUTDIR_DEV_PSP_ITER}/summary;
 
-				# initialize Ftrace
-				# echo $$ > ${FTRACE_PATH}/set_ftrace_pid
-				# echo "__do_page_fault" > ${FTRACE_PATH}/set_ftrace_notrace
-				# echo function_graph > ${FTRACE_PATH}/current_tracer
+				for num_threads in ${NUM_THREADS[@]}
+				do
+					echo $'\n'
+					echo "==== Start experiment of ${num_threads} varmail ===="
 
+					# Format and Mount
+					echo "==== Format $dev on $MNT ===="
+					${MKBIN}ext4.sh $dev $MNT
+					# Initialize Page Conflict List
+					cat /proc/fs/jbd2/${dev:5}-8/pcl \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+					cat /proc/fs/jbd2/${dev:5}-8/info \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
+					echo "==== Fotmat complete ===="
+					echo 1 > /proc/sys/kernel/lock_stat
 
+					# Run
+					echo "==== Run workload ===="
+					${FILEBENCH_BIN} -f \
+						${FILEBENCH_PATH}/workloads/varmail_${num_threads}.f \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
 
-				# Run
-				echo "==== Run workload ===="
-				${FILEBENCH_BIN} -f \
-					${FILEBENCH_PATH}/workloads/varmail_${num_threads}.f \
-					> ${OUTPUTDIR_DEV_PSP}/result_${num_threads}.dat;
+					# Debug Page Conflict
+					# sort by block number
+					cat /proc/fs/jbd2/${dev:5}-8/pcl \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+					cat /proc/fs/jbd2/${dev:5}-8/info \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
+					cat /proc/lock_stat \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
+					echo 0 > /proc/sys/kernel/lock_stat
+					# disk anatomy
+					fsstat -i raw -f ext ${dev} \
+						> ${OUTPUTDIR_DEV_PSP_ITER}/disk_${num_threads};
+					python3 block_identity.py \
+						--disk-info ${OUTPUTDIR_DEV_PSP_ITER}/disk_${num_threads} \
+						--pcl-info ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat \
+						--out-file ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+					sudo sh ./summary.sh ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat \
+						${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat \
+						${num_threads}>>${OUTPUTDIR_DEV_PSP_ITER}/summary;
+					cat ${OUTPUTDIR_DEV_PSP_ITER}/summary | tail -1 \
+						>> ${OUTPUTDIR_DEV_PSP}/summary_total
+					sudo bash ./avg.sh
 
-				# End Ftrace
-				# cp ${FTRACE_PATH}/trace ${OUTPUTDIR_DEV_PSP}/ftrace_result
-				# echo nop > ${FTRACE_PATH}/current_tracer
+					echo "==== Workload complete ===="
 
-				# Debug Page Conflict
-				# sort by block number
-				cat /proc/fs/jbd2/${dev:5}-8/pcl \
-					> ${OUTPUTDIR_DEV_PSP}/pcl_${num_threads}.dat;
-				cat /proc/fs/jbd2/${dev:5}-8/info \
-					> ${OUTPUTDIR_DEV_PSP}/info_${num_threads}.dat;
-
-				cat /proc/lock_stat \
-					> ${OUTPUTDIR_DEV_PSP}/lock_stat_${num_threads}.dat;
-				echo 0 > /proc/sys/kernel/lock_stat
-				# disk anatomy
-				fsstat -i raw -f ext ${dev} \
-					> ${OUTPUTDIR_DEV_PSP}/disk_${num_threads};
-
-				python3 block_identity.py \
-					--disk-info  ${OUTPUTDIR_DEV_PSP}/disk_${num_threads} \
-					--pcl-info ${OUTPUTDIR_DEV_PSP}/pcl_${num_threads}.dat \
-					--out-file ${OUTPUTDIR_DEV_PSP}/pcl_${num_threads}.dat;
-
-				sudo sh ./summary.sh ${OUTPUTDIR_DEV_PSP}/info_${num_threads}.dat ${OUTPUTDIR_DEV_PSP}/result_${num_threads}.dat ${num_threads}\
-					>>${OUTPUTDIR_DEV_PSP}/summary;
-				sudo bash ./avg.sh
-
-				echo "==== Workload complete ===="
-
-				echo "==== End the experiment ===="
-				echo $'\n'
+					echo "==== End the experiment ===="
+					echo $'\n'
+				done
+			COUNT=$(( ${COUNT}+1 ))
 			done
+		echo "# thr tx h/tx blk/tx" >> ${OUTPUTDIR_DEV_PSP}/summary_avg
+	    awk '
+			{
+			c[$1]++; 
+			for (i=2;i<=NF;i++) {
+				s[$1"."i]+=$i};
+			} 
+			END {
+				for (k in c) {
+					printf "%s ", k; 
+					for(i=2;i<NF;i++) printf "%.1f ", s[k"."i]/c[k]; 
+					printf "%.1f\n", s[k"."NF]/c[k];
+				}
+			}' ${OUTPUTDIR_DEV_PSP}/summary_total >> ${OUTPUTDIR_DEV_PSP}/summary_avg
 		done
 	done
 
