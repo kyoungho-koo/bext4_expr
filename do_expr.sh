@@ -10,21 +10,137 @@ FILEBENCH_PATH="benchmark/filebench"
 FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
 MKBIN="./mk"
 
-DEV=(/dev/nvme0n1 /dev/nvme1n1)
+#DEV=(/dev/sdm)
+DEV=(/dev/nvme0n1)
 
 MNT=/mnt
 
 #FS=(xfs)
 FS=(ext4)
 
-#PSP=(0 1 3 7 8 15 16 24 25 27 31 95)
-PSP=(1 7)
+#PSP=(0 1 3 7 8 15 16 24 25 27 31 65 67 71 75 79 91 95)
+#PSP=(67 71 75 79 91 95)
+PSP=(95)
 
-NUM_THREADS=(10 20)
+NUM_THREADS=(40)
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-ITER=2
+ITER=1
+
+
+storage_info()
+{
+	OUTPUTDIR_DEV=""
+	# Identify storage name and set a device result name
+	case $1 in
+		"/dev/sdk") #860PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
+			;;
+		"/dev/sdc") #RAID-Single Storage
+			OUTPUTDIR_DEV=${OUTPUTDIR}/singleraid
+			;;
+		"/dev/nvme0n1") #Optane
+			OUTPUTDIR_DEV=${OUTPUTDIR}/optane
+			;;
+		"/dev/md5") #Software RAID 5
+			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid5
+			;;
+		"/dev/md0") #Software RAID 0
+			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid0
+			;;
+		"/dev/sdj") #Single SSD
+			OUTPUTDIR_DEV=${OUTPUTDIR}/single-ssd
+			;;
+		"/dev/sdm") #Hardware RAID 5
+			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid5
+			;;
+		"/dev/sdn") #Hardware RAID 0
+			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid0
+			;;
+	esac
+
+	echo $OUTPUTDIR_DEV
+}
+
+set_schema() {
+	OUTPUTDIR_DEV_PSP=""
+
+	# Identify storage name and set a device result name
+	case $psp in
+		"0") #default
+			OUTPUTDIR_DEV_PSP=${1}/default
+			;;
+		"1") #psp
+			OUTPUTDIR_DEV_PSP=${1}/psp
+			;;
+		"3") #psp-ifs
+			OUTPUTDIR_DEV_PSP=${1}/psp-ifs
+			;;
+		"7") #psp-full
+			OUTPUTDIR_DEV_PSP=${1}/psp-efs
+			;;
+		"8") #loop
+			OUTPUTDIR_DEV_PSP=${1}/loop
+			;;
+		"11") #loop-psp-ifs 
+			OUTPUTDIR_DEV_PSP=${1}/loop-psp-ifs
+			;;	
+		"15") #loop-psp-full
+			OUTPUTDIR_DEV_PSP=${1}/loop-psp-efs
+			;;
+		"16") #count
+			OUTPUTDIR_DEV_PSP=${1}/count
+			;;
+		"24") #count-loop
+			OUTPUTDIR_DEV_PSP=${1}/count-loop
+			;;
+		"25") #count-loop-psp
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp
+			;;
+		"27") #count-loop-psp-ifs
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-ifs
+			;;
+		"31") #count-loop-psp-full
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-efs
+			;;
+		"47") #debug
+			OUTPUTDIR_DEV_PSP=${1}/debug-loop-psp-efs
+			;;
+		"48") #debug
+			OUTPUTDIR_DEV_PSP=${1}/debug-count
+			;;
+		"63") #debug
+			OUTPUTDIR_DEV_PSP=${1}/debug-count-loop-psp-efs
+			;;
+		"65") #psp-pool 
+			OUTPUTDIR_DEV_PSP=${1}/psp-pool
+			;;
+		"67") #psp-ifs-pool 
+			OUTPUTDIR_DEV_PSP=${1}/psp-ifs-pool
+			;;
+		"71") #psp-efs-pool 
+			OUTPUTDIR_DEV_PSP=${1}/psp-efs-pool
+			;;
+		"75") #loop-psp-ifs-pool 
+			OUTPUTDIR_DEV_PSP=${1}/loop-psp-ifs-pool
+			;;
+		"79") #loop-psp-efs-pool 
+			OUTPUTDIR_DEV_PSP=${1}/loop-psp-efs-pool
+			;;	
+		"89") #count-loop-psp-pool 
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-pool
+			;;
+		"91") #count-loop-psp-ifs-pool 
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-ifs-pool
+			;;	
+		"95") #count-loop-psp-efs-pool
+			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-efs-pool
+			;;
+	esac
+	./sys_psp $2
+}
+
 
 main()
 {
@@ -36,7 +152,7 @@ main()
 	fi 
 	
 	# Create Kernel version directory
-	mkdir ${VERSION_PATH}
+	mkdir -p ${VERSION_PATH}
 
 	OUTPUTDIR=${VERSION_PATH}/"result_`date "+%Y%m%d"`_`date "+%H%M"`"
 
@@ -48,119 +164,19 @@ main()
 
 	for dev in ${DEV[@]}
 	do
-		# Identify device name and set a device result name
-		case $dev in
-			"/dev/sdk") #860PRO
-				OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
-				;;
-			"/dev/sdc") #RAID-Single Storage
-				OUTPUTDIR_DEV=${OUTPUTDIR}/singleraid
-				;;
-			"/dev/nvme0n1") #970pro
-				OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
-				;;	
-			"/dev/nvme1n1") #Optane
-				OUTPUTDIR_DEV=${OUTPUTDIR}/optane
-				;;
-			"/dev/md5") #Software RAID 5
-				OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid5
-				;;
-			"/dev/md0") #Software RAID 0
-				OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid0
-				;;
-			"/dev/sdj") #Single SSD
-				OUTPUTDIR_DEV=${OUTPUTDIR}/single-ssd
-				;;
-			"/dev/sdm") #Hardware RAID 5
-				OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid5
-				;;
-			"/dev/sdn") #Hardware RAID 0
-				OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid0
-				;;
-		esac
+		OUTPUTDIR_DEV=$(storage_info $dev)
+		echo $OUTPUTDIR_DEV
 
-		# Create directory for device
-		mkdir ${OUTPUTDIR_DEV}
+		# Create directory for storage
+		mkdir -p ${OUTPUTDIR_DEV}
 
 		for psp in ${PSP[@]}
 		do
-
-			# Identify device name and set a device result name
-			case $psp in
-				"0") #default
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/default
-					;;
-				"1") #psp
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp
-					;;
-				"3") #psp-ifs
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-ifs
-					;;
-				"7") #psp-full
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs
-					;;
-				"8") #loop
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop
-					;;
-				"11") #loop-psp-ifs 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-ifs
-					;;	
-				"15") #loop-psp-full
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-efs
-					;;
-				"16") #count
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count
-					;;
-				"24") #count-loop
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop
-					;;
-				"25") #count-loop-psp
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp
-					;;
-				"27") #count-loop-psp-ifs
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-ifs
-					;;
-				"31") #count-loop-psp-full
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-efs
-					;;
-				"47") #debug
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/debug-loop-psp-efs
-					;;
-				"48") #debug
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/debug
-					;;
-				"63") #debug
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/debug-count-loop-psp-efs
-					;;
-				"65") #psp-pool 
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-pool
-					;;
-				"67") #psp-ifs-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-ifs-pool
-				    ;;
-				"71") #psp-efs-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/psp-efs-pool
-					;;
-				"75") #loop-psp-ifs-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-ifs-pool
-					;;
-				"79") #loop-psp-efs-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/loop-psp-efs-pool
-					;;	
-				"89") #count-loop-psp-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-pool
-					;;
-				"91") #count-loop-psp-ifs-pool 
-                    OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-ifs-pool
-					;;	
-				"95") #count-loop-psp-efs-pool
-					OUTPUTDIR_DEV_PSP=${OUTPUTDIR_DEV}/count-loop-psp-efs-pool
-					;;
-			esac
-			./sys_psp $psp
+			OUTPUTDIR_DEV_PSP=$(set_schema $OUTPUTDIR_DEV $psp)
+			echo $OUTPUTDIR_DEV_PSP
 
 			# Craete directory for filesystem
-			mkdir ${OUTPUTDIR_DEV_PSP}
+			mkdir -p ${OUTPUTDIR_DEV_PSP}
 
 			COUNT=1
 			while [ ${COUNT} -le ${ITER} ]
@@ -203,6 +219,7 @@ main()
 					cat /proc/lock_stat \
 						> ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
 					echo 0 > /proc/sys/kernel/lock_stat
+
 					# disk anatomy
 					fsstat -i raw -f ext ${dev} \
 						> ${OUTPUTDIR_DEV_PSP_ITER}/disk_${num_threads};

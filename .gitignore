@@ -2,4 +2,9 @@ result*/
 *.dat
 *.ret
 *.txt
+*.swp
+*.tar.gz
+*.tar
+
+*.plz
 benchmark/
