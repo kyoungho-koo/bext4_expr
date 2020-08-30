@@ -1,5 +1,5 @@
-ITER=3
-NUM_THREADS=(10 20 30 40 50 60 70 80)
+ITER=1
+NUM_THREADS=(40)
 
 
 BENCHMARK=$1
@@ -79,8 +79,8 @@ run_bench()
 
 			# Run
 			echo "==== Run workload ===="
-			${FILEBENCH_BIN} -f \
-				${FILEBENCH_PATH}/workloads/varmail_${num_threads}.f \
+			${BENCHMARK} -f \
+				benchmark/filebench/workloads/varmail_${num_threads}.f \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
 
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
