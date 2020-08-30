@@ -10,7 +10,7 @@ FILEBENCH_PATH="benchmark/filebench"
 FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
 MKBIN="./mk"
 
-#DEV=(/dev/sdm)
+#DEV=(/mnt/ramdisk /dev/nvme1n1 /dev/sdm)
 DEV=(/dev/nvme1n1)
 
 MNT=/mnt
@@ -60,6 +60,10 @@ storage_info()
 			;;
 		"/dev/sdn") #Hardware RAID 0
 			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid0
+			;;
+		"/mnt/ramdisk") #Hardware RAID 0
+			./ramdisk.sh
+			OUTPUTDIR_DEV=${OUTPUTDIR}/ramdisk
 			;;
 	esac
 
