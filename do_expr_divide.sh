@@ -11,8 +11,8 @@ FILEBENCH_PATH="/home/oslab/tools/filebench_divide_dir"
 FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
 MKBIN="./mk"
 
-#DEV=(/dev/nvme0n1 /dev/sdl /dev/sdm)
-DEV=(/dev/nvme0n1)
+#DEV=(/dev/nvme1n1 /dev/sdl /dev/sdm)
+DEV=(/dev/nvme1n1)
 MNT=/mnt
 
 #FS=(xfs)
@@ -42,7 +42,10 @@ main()
 			"/dev/sdc") #RAID-Single Storage
 				OUTPUTDIR_DEV=${OUTPUTDIR}/singleraid
 				;;
-			"/dev/nvme0n1") #Optane
+			"/dev/nvme0n1") #970pro
+				OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
+				;;
+			"/dev/nvme1n1") #Optane
 				OUTPUTDIR_DEV=${OUTPUTDIR}/optane
 				;;
 			"/dev/md5") #Software RAID 5
