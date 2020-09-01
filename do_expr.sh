@@ -6,17 +6,13 @@
 
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
-FILEBENCH_PATH="benchmark/filebench"
-FILEBENCH_BIN=${FILEBENCH_PATH}/filebench
-MKBIN="./mk"
+FILEBENCH_BIN=benchmark/filebench/filebench
 
 #DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(/dev/nvme1n1)
+DEV=(ramdisk)
 
 MNT=/mnt
 
-#FS=(xfs)
-FS=(ext4)
 
 #PSP=(0 1 3 7 8 15 16 24 25 27 31 65 67 71 75 79 91 95)
 #PSP=(67 71 75 79 91 95)
@@ -165,13 +161,7 @@ main()
 		VERSION_PATH="./ext4"
 	fi 
 	
-	# Create Kernel version directory
-	mkdir -p ${VERSION_PATH}
-
 	OUTPUTDIR=${VERSION_PATH}/"result_`date "+%Y%m%d"`_`date "+%H%M"`"
-
-	# Create result root directory
-	mkdir ${OUTPUTDIR}
 
 	# Disable ASLR
 	echo 0 > /proc/sys/kernel/randomize_va_space
@@ -180,16 +170,9 @@ main()
 	do
 		OUTPUTDIR_DEV=$(storage_info $dev)
 
-		# Create directory for storage
-		mkdir -p ${OUTPUTDIR_DEV}
-
 		for psp in ${PSP[@]}
 		do
 			OUTPUTDIR_DEV_PSP=$(set_schema $OUTPUTDIR_DEV $psp)
-			echo ----$OUTPUTDIR_DEV_PSP------
-
-			# Craete directory for filesystem
-			mkdir -p ${OUTPUTDIR_DEV_PSP}
 
 			sudo bash run_benchmark.sh ${FILEBENCH_BIN} ${OUTPUTDIR_DEV_PSP} ${dev}
 		done
