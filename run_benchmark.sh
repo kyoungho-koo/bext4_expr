@@ -1,5 +1,8 @@
+FILEBENCH=benchmark/filebench/filebench
+SYSBENCH=sysbench
+
 ITER=1
-NUM_THREADS=(40)
+NUM_THREADS=(10 20 30 40)
 
 MNT=/mnt
 
@@ -25,7 +28,11 @@ pre_run_workload()
 #	cat /proc/fs/jbd2/${dev:5}-8/info \
 #		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
 #	echo 1 > /proc/sys/kernel/lock_stat
+
+	sync && sh -c 'echo 3 > /proc/sys/vm/drop_caches'
 }
+
+
 
 debug()
 {
@@ -53,6 +60,70 @@ debug()
 
 	sudo bash ./avg.sh
 }
+
+save_summary()
+{
+	INFO=$1
+	DAT=$2
+	num_threads=$3
+	
+	RET1=`awk 'BEGIN{ RS = "" ; FS = "\n" }{print $1,$10,$11}' ${INFO} | awk '{print $1,$10,$14}'`
+	case ${BENCHMARK} in
+		"filebench-varmail"|"filebench-fileserver")
+		RET2=`grep -E " ops/s" $DAT | awk '{print $6}'`
+		;;
+		"sysbench")
+		RET2=`grep -E " Requests/sec" $DAT | awk '{print $1}'`
+		;;
+	esac
+	echo ${num_threads} $RET1 $RET2
+
+}
+
+select_workload() 
+{
+
+	OUTPUTDIR_DEV_PSP_ITER=$1
+	num_threads=$2
+
+	case $BENCHMARK in
+		"filebench-varmail")
+			${FILEBENCH} -f \
+				benchmark/filebench/workloads/varmail_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
+
+			#debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+
+			;;
+		"filebench-fileserver")
+			;;
+		"sysbench")
+			filesize=2G
+			CURDIR=$(pwd)
+			cd $MNT
+
+			${SYSBENCH} --test=fileio --file-total-size=${filesize} prepare
+			sync
+
+			RETFILE=${CURDIR}/${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat
+
+			${SYSBENCH} --test=fileio --file-total-size=${filesize} \
+						--file-test-mode=seqwr --file-fsync-all=on \
+						--num-threads=${num_threads} --max-time=60 \
+						--max-requests=0 run >> ${RETFILE}
+			cd $CURDIR
+
+			;;
+		"dbench")
+			;;
+		"rocksdb")
+			;;
+		"exim")
+			;;
+	esac
+
+}
+
 run_bench()
 {
 	COUNT=1
@@ -76,19 +147,16 @@ run_bench()
 
 			# Run
 			echo "==== Run workload ===="
-			${BENCHMARK} -f \
-				benchmark/filebench/workloads/varmail_${num_threads}.f \
-				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
+			select_workload ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads}
 
-			#debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+			echo "==== Workload complete ===="
 
-			sudo sh ./summary.sh ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat \
+			save_summary ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat \
 				${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat \
 				${num_threads}>>${OUTPUTDIR_DEV_PSP_ITER}/summary;
 			cat ${OUTPUTDIR_DEV_PSP_ITER}/summary | tail -1 \
 				>> ${OUTPUTDIR_DEV_PSP}/summary_total
 
-			echo "==== Workload complete ===="
 			echo "==== End the experiment ===="
 			echo $'\n'
 		done

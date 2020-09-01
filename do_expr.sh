@@ -4,12 +4,17 @@
 # - /dev/sdb: SAMSUNG 860PRO 512GB
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
 
+
+#BENCHMARK="filebench-varmail"
+BENCHMARK="sysbench"
+
+
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
-FILEBENCH_BIN=benchmark/filebench/filebench
+
 
 #DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(ramdisk)
+DEV=(ramdisk /dev/nvme1n1)
 
 MNT=/mnt
 
@@ -18,7 +23,7 @@ MNT=/mnt
 #PSP=(67 71 75 79 91 95)
 PSP=(0)
 
-EXT4_PSP=(0 1)
+EXT4_PSP=(0)
 BEXT4_PSP=(95)
 
 NUM_THREADS=(40)
@@ -74,7 +79,7 @@ set_schema() {
 	OUTPUTDIR_DEV_PSP=""
 
 	# Identify storage name and set a device result name
-	case $psp in
+	case $2 in
 		"0") #default
 			OUTPUTDIR_DEV_PSP=${1}/default
 			;;
@@ -161,7 +166,7 @@ main()
 		VERSION_PATH="./ext4"
 	fi 
 	
-	OUTPUTDIR=${VERSION_PATH}/"result_`date "+%Y%m%d"`_`date "+%H%M"`"
+	OUTPUTDIR=${VERSION_PATH}/"${BENCHMARK}_`date "+%Y%m%d"`_`date "+%H%M"`"
 
 	# Disable ASLR
 	echo 0 > /proc/sys/kernel/randomize_va_space
@@ -174,7 +179,7 @@ main()
 		do
 			OUTPUTDIR_DEV_PSP=$(set_schema $OUTPUTDIR_DEV $psp)
 
-			sudo bash run_benchmark.sh ${FILEBENCH_BIN} ${OUTPUTDIR_DEV_PSP} ${dev}
+			sudo bash run_benchmark.sh ${BENCHMARK} ${OUTPUTDIR_DEV_PSP} ${dev}
 		done
 	done
 
