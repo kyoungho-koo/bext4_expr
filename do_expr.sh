@@ -5,8 +5,8 @@
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
 
 
-#BENCHMARK="filebench-varmail"
-BENCHMARK="sysbench"
+BENCHMARK="filebench-varmail"
+#BENCHMARK="sysbench"
 
 
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
@@ -14,7 +14,7 @@ VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 
 #DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(ramdisk /dev/nvme1n1)
+DEV=(ramdisk)
 
 MNT=/mnt
 
