@@ -5,7 +5,9 @@
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
 
 
-BENCHMARK="filebench-varmail"
+#BENCHMARK="dd"
+#BENCHMARK="filebench-varmail"
+BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
 
 
@@ -14,8 +16,7 @@ VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 
 #DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(ramdisk)
-
+DEV=(/dev/nvme1n1)
 MNT=/mnt
 
 
@@ -24,9 +25,9 @@ MNT=/mnt
 PSP=(0)
 
 EXT4_PSP=(0)
-BEXT4_PSP=(95)
+BEXT4_PSP=(0)
 
-NUM_THREADS=(40)
+#NUM_THREADS=(40)
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
@@ -48,7 +49,10 @@ storage_info()
 			OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
 			;;
 		"/dev/nvme1n1") #Optane
-			OUTPUTDIR_DEV=${OUTPUTDIR}/optane
+			OUTPUTDIR_DEV=${OUTPUTDIR}/Intel-750P
+			;;
+		"/dev/nvme2n1") #Optane
+			OUTPUTDIR_DEV=${OUTPUTDIR}/Intel-900P
 			;;
 		"/dev/md5") #Software RAID 5
 			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid5

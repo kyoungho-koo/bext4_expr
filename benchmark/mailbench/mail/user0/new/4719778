@@ -1,0 +1,35 @@
+Received: from incoming.csail.mit.edu (incoming.csail.mit.edu [128.30.2.16])
+        by metroplex (Cyrus v2.2.13-Debian-2.2.13-14+lenny5) with LMTPA;
+        Tue, 19 Mar 2013 22:45:50 -0400
+X-Sieve: CMU Sieve 2.2
+Received: from mailhub-auth-3.mit.edu ([18.9.21.43])
+        by incoming.csail.mit.edu with esmtps
+        (TLS1.0:DHE_RSA_AES_256_CBC_SHA1:32)
+        (Exim 4.72)
+        (envelope-from <xxxxxxxx@MIT.EDU>)
+        id 1UI92E-0007D2-7N
+        for xxxxxxxxx@csail.mit.edu; Tue, 19 Mar 2013 22:45:50 -0400
+Received: from outgoing.mit.edu (OUTGOING-AUTH-1.MIT.EDU [18.9.28.11])
+        by mailhub-auth-3.mit.edu (8.13.8/8.9.2) with ESMTP id r2K2jnO5025684
+        for <xxxxxxxx@mit.edu>; Tue, 19 Mar 2013 22:45:49 -0400
+Received: from xxxxxxxxx.csail.mit.edu (xxxxxxxxx.csail.mit.edu [18.26.4.91])
+        (authenticated bits=0)
+        (User authenticated as xxxxxxxx@ATHENA.MIT.EDU)
+        by outgoing.mit.edu (8.13.8/8.12.4) with ESMTP id r2K2jmc7032022
+        (version=TLSv1/SSLv3 cipher=DHE-RSA-AES128-SHA bits=128 verify=NOT)
+        for <xxxxxxxx@mit.edu>; Tue, 19 Mar 2013 22:45:49 -0400
+Received: from xxxxxxx by xxxxxxxxx.csail.mit.edu with local (Exim 4.80)
+        (envelope-from <xxxxxxxx@mit.edu>)
+        id 1UI92C-0000il-4L
+        for xxxxxxxx@mit.edu; Tue, 19 Mar 2013 22:45:48 -0400
+From: Austin Clements <xxxxxxxx@MIT.EDU>
+To: xxxxxxxx@mit.edu
+Subject: Test message
+User-Agent: Notmuch/0.15+6~g7d4cb73 (http://notmuchmail.org) Emacs/23.4.1
+        (i486-pc-linux-gnu)
+Date: Tue, 19 Mar 2013 22:45:48 -0400
+Message-ID: <874ng6vler.fsf@xxxxxxxxx.csail.mit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+
+Hello.

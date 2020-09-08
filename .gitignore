@@ -11,6 +11,5 @@ result*/
 *.o
 ramdisk/
 
-ext4/
 ext4/*
 bext4/*

@@ -1,8 +1,9 @@
 FILEBENCH=benchmark/filebench/filebench
 SYSBENCH=sysbench
+DBENCH=dbench
 
 ITER=1
-NUM_THREADS=(10 20 30 40)
+NUM_THREADS=(40)
 
 MNT=/mnt
 
@@ -23,10 +24,10 @@ pre_run_workload()
 	echo "==== Fotmat complete ===="
 
 	# Initialize Page Conflict List
-#	cat /proc/fs/jbd2/${dev:5}-8/pcl \
-#		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
-#	cat /proc/fs/jbd2/${dev:5}-8/info \
-#		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
+	cat /proc/fs/jbd2/${dev:5}-8/pcl \
+		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+	cat /proc/fs/jbd2/${dev:5}-8/info \
+		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
 #	echo 1 > /proc/sys/kernel/lock_stat
 
 	sync && sh -c 'echo 3 > /proc/sys/vm/drop_caches'
@@ -46,9 +47,9 @@ debug()
 		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
 	cat /proc/fs/jbd2/${dev:5}-8/info \
 		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
-	cat /proc/lock_stat \
-		> ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
-	echo 0 > /proc/sys/kernel/lock_stat
+#	cat /proc/lock_stat \
+#		> ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
+	# echo 0 > /proc/sys/kernel/lock_stat
 
 	# disk anatomy
 	fsstat -i raw -f ext ${dev} \
@@ -67,7 +68,9 @@ save_summary()
 	DAT=$2
 	num_threads=$3
 	
-	RET1=`awk 'BEGIN{ RS = "" ; FS = "\n" }{print $1,$10,$11}' ${INFO} | awk '{print $1,$10,$14}'`
+	TX=`grep -E "transactions" ${INFO} | awk '{print $1}'`
+	HPT=`grep -E "handles per transaction" ${INFO} | awk '{print $1}'`
+	BPT=`grep -E "blocks per transaction" ${INFO} | awk '{print $1}'`
 	case ${BENCHMARK} in
 		"filebench-varmail"|"filebench-fileserver")
 		RET2=`grep -E " ops/s" $DAT | awk '{print $6}'`
@@ -75,8 +78,11 @@ save_summary()
 		"sysbench")
 		RET2=`grep -E " Requests/sec" $DAT | awk '{print $1}'`
 		;;
+		"dbench-client")
+		RET2=`grep -E "Throughput" $DAT | awk '{print $2}'`
+		;;
 	esac
-	echo ${num_threads} $RET1 $RET2
+	echo ${num_threads} ${TX} ${HPT} ${BPT} $RET2
 
 }
 
@@ -92,13 +98,13 @@ select_workload()
 				benchmark/filebench/workloads/varmail_${num_threads}.f \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
 
-			#debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 
 			;;
 		"filebench-fileserver")
 			;;
 		"sysbench")
-			filesize=2G
+			filesize=128G
 			CURDIR=$(pwd)
 			cd $MNT
 
@@ -114,11 +120,23 @@ select_workload()
 			cd $CURDIR
 
 			;;
-		"dbench")
+		"dbench-client")
+			num_process=${num_threads}
+			DURATION=60
+			WORKLOAD=benchmark/dbench/loadfiles/client.txt
+			${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat;
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 			;;
 		"rocksdb")
 			;;
 		"exim")
+			;;
+		"dd")
+			dd if=/dev/zero of=${MNT}/test bs=4K count=2621440 oflag=dsync
+			;;
+		"mailbench-p")
+
 			;;
 	esac
 
@@ -139,7 +157,7 @@ run_bench()
 		for num_threads in ${NUM_THREADS[@]}
 		do
 			echo $'\n'
-			echo "==== Start experiment of ${num_threads} varmail ===="
+			echo "==== Start experiment of ${num_threads} ${BENCHMARK} ===="
 
 
 			echo "==== Format $dev on $MNT ===="
