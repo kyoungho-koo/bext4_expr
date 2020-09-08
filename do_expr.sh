@@ -7,8 +7,9 @@
 
 #BENCHMARK="dd"
 #BENCHMARK="filebench-varmail"
-BENCHMARK="dbench-client"
+#BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
+BENCHMARK="mdtest"
 
 
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
@@ -16,7 +17,8 @@ VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 
 #DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(/dev/nvme1n1)
+DEV=(/dev/sdb)
+
 MNT=/mnt
 
 
@@ -39,6 +41,9 @@ storage_info()
 	OUTPUTDIR_DEV=""
 	# Identify storage name and set a device result name
 	case $1 in
+		"/dev/sdb") #860PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
+			;;
 		"/dev/sdk") #860PRO
 			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
 			;;

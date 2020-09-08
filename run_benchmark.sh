@@ -1,9 +1,10 @@
 FILEBENCH=benchmark/filebench/filebench
 SYSBENCH=sysbench
 DBENCH=dbench
+MDTEST=benchmark/ior/src/mdtest
 
 ITER=1
-NUM_THREADS=(40)
+NUM_THREADS=(10)
 
 MNT=/mnt
 
@@ -136,6 +137,16 @@ select_workload()
 			dd if=/dev/zero of=${MNT}/test bs=4K count=2621440 oflag=dsync
 			;;
 		"mailbench-p")
+			;;
+		"mdtest")  
+			num_process=${num_threads}
+			num_make=30
+			num_iteration=10
+			read_bytes=4096
+			write_bytes=4096
+
+			mpirun -np ${num_process} ${MDTEST} -n ${num_make} -i ${num_iteration} \
+					-e ${read_bytes} -y -w ${write_bytes} -d ${MNT}
 
 			;;
 	esac
