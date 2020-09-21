@@ -1,6 +1,6 @@
 # bext4_expr
 
-|-------------|	Intel Optane 900p  |	Intel 750 series |
+||	Intel Optane 900p  |	Intel 750 series |
 |-------------|-------------------------------- |-------------------------|
 |Capacity|	280GB	                   |         1.2TB            |
 |출시일	|     2017	                   |            2015          |
