@@ -5,8 +5,11 @@
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
 
 
-BENCHMARK="filebench-varmail"
+#BENCHMARK="dd"
+#BENCHMARK="filebench-varmail"
+#BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
+BENCHMARK="mdtest"
 
 
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
@@ -28,6 +31,7 @@ EXT4_PSP=(0)
 BEXT4_PSP=(0)
 #BEXT4_PSP=(0 8 71 95)
 
+
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
 ITER=5
@@ -38,6 +42,9 @@ storage_info()
 	OUTPUTDIR_DEV=""
 	# Identify storage name and set a device result name
 	case $1 in
+		"/dev/sdb") #860PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
+			;;
 		"/dev/sdk") #860PRO
 			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
 			;;

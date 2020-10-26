@@ -8,7 +8,7 @@ then
 	echo ========ramdisk========
 	umount ${MNT} > /dev/null
 
-	dd if=/dev/zero of=./${dev}/ext4.image bs=1M count=8192 > /dev/null
+	dd if=/dev/zero of=./${dev}/ext4.image bs=1M count=204800 > /dev/null
 	mkfs.ext4 -F -E lazy_journal_init=0,lazy_itable_init=0 ./${dev}/ext4.image
 	mount -o loop ./${dev}/ext4.image ${MNT}
 else
