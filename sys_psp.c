@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[]){
         unsigned int mode = atoi(argv[1]);
-        syscall(316, mode);
+        syscall(329, mode);
         return 0;
 }
 

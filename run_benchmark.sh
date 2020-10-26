@@ -2,7 +2,7 @@ FILEBENCH=benchmark/filebench/filebench
 SYSBENCH=sysbench
 
 ITER=1
-NUM_THREADS=(10 20 30 40)
+NUM_THREADS=(1 4 8 12 20)
 
 MNT=/mnt
 
@@ -23,13 +23,15 @@ pre_run_workload()
 	echo "==== Fotmat complete ===="
 
 	# Initialize Page Conflict List
-#	cat /proc/fs/jbd2/${dev:5}-8/pcl \
-#		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
-#	cat /proc/fs/jbd2/${dev:5}-8/info \
-#		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
+	cat /proc/fs/jbd2/${dev:5}-8/pcl \
+		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+	cat /proc/fs/jbd2/${dev:5}-8/info \
+		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
 #	echo 1 > /proc/sys/kernel/lock_stat
 
 	sync && sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+	dmesg -c > ${OUTPUTDIR_DEV_PSP_ITER}/log_${num_threads}.txt
+		
 }
 
 
@@ -57,6 +59,8 @@ debug()
 		--disk-info ${OUTPUTDIR_DEV_PSP_ITER}/disk_${num_threads} \
 		--pcl-info ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat \
 		--out-file ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
+
+	dmesg -c > ${OUTPUTDIR_DEV_PSP_ITER}/log_${num_threads}.txt
 
 	sudo bash ./avg.sh
 }
@@ -92,7 +96,7 @@ select_workload()
 				benchmark/filebench/workloads/varmail_${num_threads}.f \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
 
-			#debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 
 			;;
 		"filebench-fileserver")

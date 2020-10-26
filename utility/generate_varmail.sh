@@ -6,7 +6,7 @@ MNT_PATH="/mnt"
 
 NTHREADS=`seq 1 80`
 
-#sed -e "s/dir=\/\char/dir=${MNT_PATH}/g" ${VARMAIL_PATH}/varmail.f
+sed -e "s/dir=\/\char/dir=${MNT_PATH}/g" ${VARMAIL_PATH}/varmail.f
 
 sed "s/run [^0-9]*\([0-9]\+\)/run ${TIME}/g" ${VARMAIL_PATH}/varmail.f > ${VARMAIL_PATH}/varmail.f.tmp
 for nthreads in ${NTHREADS[@]}

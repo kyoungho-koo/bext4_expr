@@ -13,8 +13,9 @@ VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 
 
-#DEV=(ramdisk /dev/nvme1n1 /dev/sdm)
-DEV=(ramdisk)
+#DEV=(/dev/sdk /dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1)
+#DEV=(/dev/sdm /dev/sdk /dev/nvme1n1)
+DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1)
 
 MNT=/mnt
 
@@ -24,13 +25,12 @@ MNT=/mnt
 PSP=(0)
 
 EXT4_PSP=(0)
-BEXT4_PSP=(95)
-
-NUM_THREADS=(40)
+BEXT4_PSP=(0)
+#BEXT4_PSP=(0 8 71 95)
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-ITER=1
+ITER=5
 
 
 storage_info()
@@ -41,14 +41,14 @@ storage_info()
 		"/dev/sdk") #860PRO
 			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
 			;;
-		"/dev/sdc") #RAID-Single Storage
-			OUTPUTDIR_DEV=${OUTPUTDIR}/singleraid
-			;;
 		"/dev/nvme0n1") #970pro
 			OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
 			;;
 		"/dev/nvme1n1") #Optane
-			OUTPUTDIR_DEV=${OUTPUTDIR}/optane
+			OUTPUTDIR_DEV=${OUTPUTDIR}/Intel-750
+			;;
+		"/dev/nvme2n1") #Optane
+			OUTPUTDIR_DEV=${OUTPUTDIR}/Intel-900P
 			;;
 		"/dev/md5") #Software RAID 5
 			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid5
@@ -57,7 +57,7 @@ storage_info()
 			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid0
 			;;
 		"/dev/sdj") #Single SSD
-			OUTPUTDIR_DEV=${OUTPUTDIR}/single-ssd
+			OUTPUTDIR_DEV=${OUTPUTDIR}/sm883
 			;;
 		"/dev/sdm") #Hardware RAID 5
 			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid5
@@ -95,6 +95,9 @@ set_schema() {
 		"8") #loop
 			OUTPUTDIR_DEV_PSP=${1}/loop
 			;;
+		"9") #loop-psp-ifs 
+			OUTPUTDIR_DEV_PSP=${1}/loop-psp
+			;;	
 		"11") #loop-psp-ifs 
 			OUTPUTDIR_DEV_PSP=${1}/loop-psp-ifs
 			;;	
