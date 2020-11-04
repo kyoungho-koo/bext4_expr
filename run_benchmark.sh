@@ -4,7 +4,7 @@ DBENCH=dbench
 MDTEST=benchmark/ior/src/mdtest
 
 ITER=1
-NUM_THREADS=(1 4 8 12 20)
+NUM_THREADS=(1 2 4 6 8 10 20 30 40)
 
 MNT=/mnt
 
@@ -106,6 +106,14 @@ select_workload()
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 
 			;;
+		"filebench-varmail-split16")
+			${FILEBENCH} -f \
+				benchmark/filebench/workloads/varmail_split16_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
+
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+
+			;;
 		"filebench-fileserver")
 			;;
 		"sysbench")
@@ -129,6 +137,8 @@ select_workload()
 			num_process=${num_threads}
 			DURATION=60
 			WORKLOAD=benchmark/dbench/loadfiles/client.txt
+			echo "${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat;"
 			${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat;
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}

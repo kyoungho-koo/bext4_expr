@@ -6,10 +6,11 @@
 
 
 #BENCHMARK="dd"
-#BENCHMARK="filebench-varmail"
+BENCHMARK="filebench-varmail"
+#BENCHMARK="filebench-varmail-split16"
 #BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
-BENCHMARK="mdtest"
+#BENCHMARK="mdtest"
 
 
 VERSION="$(uname -r| awk -F '-' '{print $2}')"
@@ -17,8 +18,9 @@ VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 
 #DEV=(/dev/sdk /dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1)
-#DEV=(/dev/sdm /dev/sdk /dev/nvme1n1)
-DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1)
+DEV=(/dev/sdm /dev/nvme2n1)
+#DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1)
+
 
 MNT=/mnt
 
@@ -28,8 +30,11 @@ MNT=/mnt
 PSP=(0)
 
 EXT4_PSP=(0)
-BEXT4_PSP=(0)
+#BEXT4_PSP=(0)
 #BEXT4_PSP=(0 8 71 95)
+BEXT4_PSP=(91 219)
+
+#BEXT4_PSP=(95 152 223)
 
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
@@ -158,6 +163,15 @@ set_schema() {
 			;;	
 		"95") #count-loop-psp-efs-pool
 			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-efs-pool
+			;;
+		"152") #try-commit
+			OUTPUTDIR_DEV_PSP=${1}/tc-count
+			;;
+		"219") #try-commit
+			OUTPUTDIR_DEV_PSP=${1}/count-tc-psp-ifs-pool
+			;;
+		"223") #try-commit
+			OUTPUTDIR_DEV_PSP=${1}/count-tc-psp-efs-pool
 			;;
 	esac
 	./sys_psp $2
