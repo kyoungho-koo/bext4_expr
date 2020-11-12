@@ -1,46 +1,6 @@
 #!/bin/sh
 
-# Device
-# - /dev/sdb: SAMSUNG 860PRO 512GB
-# - /dev/nvme0n1: SAMSUNG 970PRO 512GB
-
-
-#BENCHMARK="dd"
-BENCHMARK="filebench-varmail"
-#BENCHMARK="filebench-varmail-split16"
-#BENCHMARK="dbench-client"
-#BENCHMARK="sysbench"
-#BENCHMARK="mdtest"
-
-
-VERSION="$(uname -r| awk -F '-' '{print $2}')"
-
-
-
-#DEV=(/dev/sdk /dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1)
-DEV=(/dev/sdm /dev/nvme2n1)
-#DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1)
-
-
-MNT=/mnt
-
-
-#PSP=(0 1 3 7 8 15 16 24 25 27 31 65 67 71 75 79 91 95)
-#PSP=(67 71 75 79 91 95)
-PSP=(0)
-
-EXT4_PSP=(0)
-#BEXT4_PSP=(0)
-#BEXT4_PSP=(0 8 71 95)
-BEXT4_PSP=(91 219)
-
-#BEXT4_PSP=(95 152 223)
-
-
-#FTRACE_PATH=/sys/kernel/debug/tracing
-
-ITER=5
-
+source parameter.sh
 
 storage_info()
 {

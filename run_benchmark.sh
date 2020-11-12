@@ -4,7 +4,8 @@ DBENCH=dbench
 MDTEST=benchmark/ior/src/mdtest
 
 ITER=1
-NUM_THREADS=(1 2 4 6 8 10 20 30 40)
+NUM_THREADS=(1 4 12 20)
+#NUM_THREADS=(12)
 
 MNT=/mnt
 
