@@ -1,19 +1,16 @@
+#!/bin/sh
+
+source parameter.sh
+
 FILEBENCH=benchmark/filebench/filebench
 SYSBENCH=sysbench
 DBENCH=dbench
 MDTEST=benchmark/ior/src/mdtest
 
-ITER=1
-NUM_THREADS=(1 4 12 20)
-#NUM_THREADS=(12)
-
-MNT=/mnt
 
 BENCHMARK=$1
 OUTPUTDIR_DEV_PSP=$2
 dev=$3
-
-
 
 
 pre_run_workload() 
@@ -155,14 +152,16 @@ select_workload()
 			;;
 		"mdtest")  
 			num_process=${num_threads}
-			num_make=30
-			num_iteration=10
-			read_bytes=4096
+			num_make=300
+			num_iteration=1
+			num_depth=3
+			num_branch=5
 			write_bytes=4096
 
-			mpirun -np ${num_process} ${MDTEST} -n ${num_make} -i ${num_iteration} \
-					-e ${read_bytes} -y -w ${write_bytes} -d ${MNT}
-
+			/home/oslab/mpich-install/bin/mpirun -np ${num_process} ${MDTEST} -z ${num_depth} -b ${num_branch} \
+				-I ${num_make} -i ${num_iteration} -y -w ${write_bytes} -d ${MNT} -F -C \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 			;;
 	esac
 

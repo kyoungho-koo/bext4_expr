@@ -7,9 +7,6 @@ storage_info()
 	OUTPUTDIR_DEV=""
 	# Identify storage name and set a device result name
 	case $1 in
-		"/dev/sdb") #860PRO
-			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
-			;;
 		"/dev/sdk") #860PRO
 			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
 			;;
@@ -115,6 +112,9 @@ set_schema() {
 		"79") #loop-psp-efs-pool 
 			OUTPUTDIR_DEV_PSP=${1}/loop-psp-efs-pool
 			;;	
+		"87") #count-loop-psp-pool 
+			OUTPUTDIR_DEV_PSP=${1}/count-psp-efs-pool
+			;;
 		"89") #count-loop-psp-pool 
 			OUTPUTDIR_DEV_PSP=${1}/count-loop-psp-pool
 			;;
@@ -141,6 +141,7 @@ set_schema() {
 
 main()
 {
+    PSP=(0)
     if [ "$VERSION" = "barrier" ]
     then
 		PSP=${BEXT4_PSP[@]}
