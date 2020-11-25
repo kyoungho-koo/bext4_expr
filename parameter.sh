@@ -60,6 +60,6 @@ BEXT4_PSP=(0 87 152 223)
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-NUM_THREADS=(1 2 4 6 8 10 20 30 40)
+NUM_THREADS=(40)
 ITER=1
 MNT=/mnt
