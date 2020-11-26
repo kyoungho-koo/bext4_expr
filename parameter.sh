@@ -3,8 +3,10 @@
 # Device
 # - /dev/sdb: SAMSUNG 860PRO 512GB
 # - /dev/nvme0n1: SAMSUNG 970PRO 512GB
+VERSION="$(uname -r| awk -F '-' '{print $1}')"
+EXTRA_VERSION="$(uname -r| awk -F '-' '{print $2}')"
+DEBUG="$(uname -r | awk -F '-' '{print $3}')"
 
-VERSION="$(uname -r| awk -F '-' '{print $2}')"
 
 #BENCHMARK="dd"
 #BENCHMARK="filebench-varmail"
@@ -63,3 +65,16 @@ BEXT4_PSP=(0 87 152 223)
 NUM_THREADS=(40)
 ITER=1
 MNT=/mnt
+
+
+
+VERSION_PATH="raw_data"
+if [ "$EXTRA_VERSION" = "barrier" ]
+then
+	PSP=${BEXT4_PSP[@]}
+	VERSION_PATH=${VERSION_PATH}"/bext4"
+else
+	PSP=${EXT4_PSP[@]}
+	VERSION_PATH=${VERSION_PATH}"/ext4"
+	DEBUG="$EXTRA_VERSION"
+fi 

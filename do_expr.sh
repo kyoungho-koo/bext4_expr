@@ -141,17 +141,16 @@ set_schema() {
 
 main()
 {
-    PSP=(0)
-    if [ "$VERSION" = "barrier" ]
-    then
-		PSP=${BEXT4_PSP[@]}
-		VERSION_PATH="./bext4"
+	PSP=(0)
+
+	if [ "$DEBUG" = "debug" ]
+	then
+		VERSION_PATH="${VERSION_PATH}_${DEBUG}"
+		OUTPUTDIR=${VERSION_PATH}/"${DEBUG}_${BENCHMARK}_`date "+%Y%m%d"`_`date "+%H%M"`"
 	else
-		PSP=${EXT4_PSP[@]}
-		VERSION_PATH="./ext4"
+		OUTPUTDIR=${VERSION_PATH}/"${BENCHMARK}_`date "+%Y%m%d"`_`date "+%H%M"`"
 	fi 
 	
-	OUTPUTDIR=${VERSION_PATH}/"${BENCHMARK}_`date "+%Y%m%d"`_`date "+%H%M"`"
 
 	# Disable ASLR
 	echo 0 > /proc/sys/kernel/randomize_va_space
