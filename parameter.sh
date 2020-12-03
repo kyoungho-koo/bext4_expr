@@ -10,10 +10,11 @@ DEBUG="$(uname -r | awk -F '-' '{print $3}')"
 
 #BENCHMARK="dd"
 #BENCHMARK="filebench-varmail"
+BENCHMARK="filebench-varmail-perthreaddir"
 #BENCHMARK="filebench-varmail-split16"
 #BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
-BENCHMARK="mdtest"
+#BENCHMARK="mdtest"
 
 
 #	/dev/sdk	860PRO
@@ -26,7 +27,7 @@ BENCHMARK="mdtest"
 #	/dev/sdm 	Hardware RAID 5
 #	/dev/sdn 	Hardware RAID 0
 #	ramdisk 	RAMDISK
-DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1 ramdisk)
+DEV=(/dev/nvme2n1)
 
 
 
@@ -57,12 +58,12 @@ DEV=(/dev/sdm /dev/sdj /dev/nvme0n1 /dev/nvme2n1 ramdisk)
 #	219 	tc2 cc psp-ifs pool
 #	223 	tc2 cc psp-efs pool -----> ALL
 EXT4_PSP=(0)
-BEXT4_PSP=(0 87 152 223)
+BEXT4_PSP=(223)
 
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-NUM_THREADS=(40)
+NUM_THREADS=(1 2 4 6 8 10 20 30 40)
 ITER=1
 MNT=/mnt
 
@@ -78,3 +79,4 @@ else
 	VERSION_PATH=${VERSION_PATH}"/ext4"
 	DEBUG="$EXTRA_VERSION"
 fi 
+echo "$VERSION_PATH"

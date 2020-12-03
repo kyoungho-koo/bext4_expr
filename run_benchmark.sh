@@ -2,7 +2,10 @@
 
 source parameter.sh
 
-FILEBENCH=benchmark/filebench/filebench
+FILEBENCH_DIR=benchmark/filebench
+FILEBENCH_PERTHREADDIR_DIR=benchmark/filebench-perthreaddir
+FILEBENCH=${FILEBENCH_DIR}/filebench
+FILEBENCH_PERTHREADDIR=${FILEBENCH_PERTHREADDIR_DIR}/filebench
 SYSBENCH=sysbench
 DBENCH=dbench
 MDTEST=benchmark/ior/src/mdtest
@@ -107,6 +110,17 @@ select_workload()
 		"filebench-varmail-split16")
 			${FILEBENCH} -f \
 				benchmark/filebench/workloads/varmail_split16_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
+
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+
+			;;
+		"filebench-varmail-perthreaddir")
+			echo  "${FILEBENCH_PERTHREADDIR} -f \
+				${FILEBENCH_PERTHREADDIR_DIR}/workloads/varmail_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;"
+			${FILEBENCH_PERTHREADDIR} -f \
+				${FILEBENCH_PERTHREADDIR_DIR}/workloads/varmail_${num_threads}.f \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
 
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
