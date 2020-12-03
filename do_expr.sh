@@ -141,8 +141,6 @@ set_schema() {
 
 main()
 {
-	PSP=(0)
-
 	if [ "$DEBUG" = "debug" ]
 	then
 		VERSION_PATH="${VERSION_PATH}_${DEBUG}"
