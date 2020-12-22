@@ -16,6 +16,15 @@ OUTPUTDIR_DEV_PSP=$2
 dev=$3
 
 
+lockstat_on() {
+	echo 1 > /proc/sys/kernel/lock_stat
+}
+lockstat_off() {
+	echo 0 > /proc/sys/kernel/lock_stat
+	cp /proc/lock_stat $1
+	echo 0 > /proc/lock_stat
+}
+
 pre_run_workload() 
 {
 	OUTPUTDIR_DEV_PSP_ITER=$1
@@ -30,7 +39,9 @@ pre_run_workload()
 		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
 	cat /proc/fs/jbd2/${dev:5}-8/info \
 		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
-#	echo 1 > /proc/sys/kernel/lock_stat
+
+	# Lock statistic
+	lockstat_on
 
 	sync && sh -c 'echo 3 > /proc/sys/vm/drop_caches'
 	dmesg -c > ${OUTPUTDIR_DEV_PSP_ITER}/log_${num_threads}.txt
@@ -51,9 +62,9 @@ debug()
 		> ${OUTPUTDIR_DEV_PSP_ITER}/pcl_${num_threads}.dat;
 	cat /proc/fs/jbd2/${dev:5}-8/info \
 		> ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat;
-#	cat /proc/lock_stat \
-#		> ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
-	# echo 0 > /proc/sys/kernel/lock_stat
+
+	# Lock statistic
+	lockstat_off ${OUTPUTDIR_DEV_PSP_ITER}/lock_stat_${num_threads}.dat;
 
 	# disk anatomy
 	fsstat -i raw -f ext ${dev} \
