@@ -21,6 +21,10 @@ else
 #Journal off
 #       mkfs.ext4 -O ^has_journal -F -E lazy_journal_init=0,lazy_itable_init=0 ${dev}
 
+#Checksum off
+        #mkfs.ext4 -O ^metadata_csum -F -E lazy_journal_init=0,lazy_itable_init=0 ${dev}
+
+
 	mount -t ext4 ${dev} ${MNT} > /dev/null
 	#mount -t ext4 -o nobarrier $1 $2 > /dev/null
 	sync

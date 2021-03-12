@@ -7,13 +7,14 @@ FILEBENCH_PERTHREADDIR_DIR=benchmark/filebench-perthreaddir
 FILEBENCH=${FILEBENCH_DIR}/filebench
 FILEBENCH_PERTHREADDIR=${FILEBENCH_PERTHREADDIR_DIR}/filebench
 SYSBENCH=sysbench
-DBENCH=dbench
+DBENCH=benchmark/dbench/dbench
 MDTEST=benchmark/ior/src/mdtest
 
 
 BENCHMARK=$1
 OUTPUTDIR_DEV_PSP=$2
 dev=$3
+domain=$4
 
 
 lockstat_on() {
@@ -31,7 +32,10 @@ pre_run_workload()
 	num_threads=$2
 
 	# Format and Mount
+
 	sudo bash mkext4.sh $dev $MNT
+
+	#sudo bash mkspanfs.sh $dev $MNT $domain
 	echo "==== Fotmat complete ===="
 
 	# Initialize Page Conflict List
@@ -89,17 +93,17 @@ save_summary()
 	HPT=`grep -E "handles per transaction" ${INFO} | awk '{print $1}'`
 	BPT=`grep -E "blocks per transaction" ${INFO} | awk '{print $1}'`
 	case ${BENCHMARK} in
-		"filebench-varmail"|"filebench-fileserver")
+		"filebench-varmail"|"filebench-fileserver"|"filebench-varmail-perthreaddir")
 		RET2=`grep -E " ops/s" $DAT | awk '{print $6}'`
 		;;
 		"sysbench")
 		RET2=`grep -E " Requests/sec" $DAT | awk '{print $1}'`
 		;;
 		"dbench-client")
-		RET2=`grep -E "Throughput" $DAT | awk '{print $2}'`
+		RET2=`cat $DAT | head -n 97 | tail -n 16 | awk '{sum+=$2} END {print sum/60}'`
 		;;
 	esac
-	echo ${num_threads} ${TX} ${HPT} ${BPT} $RET2
+	echo ${num_threads} ${TX} ${HPT} ${BPT} ${RET2}
 
 }
 
@@ -127,9 +131,6 @@ select_workload()
 
 			;;
 		"filebench-varmail-perthreaddir")
-			echo  "${FILEBENCH_PERTHREADDIR} -f \
-				${FILEBENCH_PERTHREADDIR_DIR}/workloads/varmail_${num_threads}.f \
-				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;"
 			${FILEBENCH_PERTHREADDIR} -f \
 				${FILEBENCH_PERTHREADDIR_DIR}/workloads/varmail_${num_threads}.f \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
@@ -160,9 +161,9 @@ select_workload()
 			num_process=${num_threads}
 			DURATION=60
 			WORKLOAD=benchmark/dbench/loadfiles/client.txt
-			echo "${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
+			echo "./${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat;"
-			${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
+			./${DBENCH} ${num_process} -t ${DURATION} -c ${WORKLOAD} -D ${MNT} --sync-dir \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat;
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 			;;
@@ -183,7 +184,7 @@ select_workload()
 			num_branch=5
 			write_bytes=4096
 
-			/home/oslab/mpich-install/bin/mpirun -np ${num_process} ${MDTEST} -z ${num_depth} -b ${num_branch} \
+			/usr/lib64/openmpi3/bin/mpirun -np ${num_process} --allow-run-as-root ${MDTEST} -z ${num_depth} -b ${num_branch} \
 				-I ${num_make} -i ${num_iteration} -y -w ${write_bytes} -d ${MNT} -F -C \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
@@ -201,9 +202,8 @@ run_bench()
 
 		# Create Directory for Iteration
 		mkdir -p ${OUTPUTDIR_DEV_PSP_ITER}
-		
+		echo `uname -r` >> ${OUTPUTDIR_DEV_PSP_ITER}/summary
 		echo "# thr tx h/tx blk/tx" >> ${OUTPUTDIR_DEV_PSP_ITER}/summary;
-
 		for num_threads in ${NUM_THREADS[@]}
 		do
 			echo $'\n'
@@ -214,9 +214,14 @@ run_bench()
 			pre_run_workload ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads}
 
 			# Run
+			#blktrace -d $dev -o ./blk_result &
+			#blktrace_PID=$!
 			echo "==== Run workload ===="
 			select_workload ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads}
-
+			#sleep 5
+			#kill $blktrace_PID
+			#blkparse -i blk_result -o blk_result.p
+			#rm -rf blk_result.blktrace*
 			echo "==== Workload complete ===="
 
 			save_summary ${OUTPUTDIR_DEV_PSP_ITER}/info_${num_threads}.dat \

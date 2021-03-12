@@ -161,7 +161,7 @@ main()
 		do
 			OUTPUTDIR_DEV_PSP=$(set_schema $OUTPUTDIR_DEV $psp)
 
-			sudo bash run_benchmark.sh ${BENCHMARK} ${OUTPUTDIR_DEV_PSP} ${dev}
+			sudo bash run_benchmark.sh ${BENCHMARK} ${OUTPUTDIR_DEV_PSP} ${dev} ${domain}
 		done
 	done
 

@@ -12,9 +12,9 @@ DEBUG="$(uname -r | awk -F '-' '{print $3}')"
 #BENCHMARK="filebench-varmail"
 #BENCHMARK="filebench-varmail-perthreaddir"
 #BENCHMARK="filebench-varmail-split16"
-#BENCHMARK="dbench-client"
+BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
-BENCHMARK="mdtest"
+#BENCHMARK="mdtest"
 
 
 #	/dev/sdk	860PRO
@@ -29,7 +29,7 @@ BENCHMARK="mdtest"
 #	ramdisk 	RAMDISK
 DEV=(/dev/nvme2n1)
 
-
+domain=40
 
 
 #	0	default     -----------> default
@@ -58,12 +58,12 @@ DEV=(/dev/nvme2n1)
 #	219 	tc2 cc psp-ifs pool
 #	223 	tc2 cc psp-efs pool -----> ALL
 EXT4_PSP=(0)
-BEXT4_PSP=(0 223)
+BEXT4_PSP=(0)
 
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-NUM_THREADS=(40)
+NUM_THREADS=(20 40)
 ITER=1
 MNT=/mnt
 
