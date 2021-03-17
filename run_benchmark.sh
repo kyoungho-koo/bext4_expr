@@ -9,7 +9,8 @@ FILEBENCH_PERTHREADDIR=${FILEBENCH_PERTHREADDIR_DIR}/filebench
 SYSBENCH=sysbench
 DBENCH=benchmark/dbench/dbench
 MDTEST=benchmark/ior/src/mdtest
-
+MOBIBENCH_DIR=benchmark/mobibench/shell
+MOBIBENCH=${MOBIBENCH_DIR}/mobibench
 
 BENCHMARK=$1
 OUTPUTDIR_DEV_PSP=$2
@@ -102,6 +103,8 @@ save_summary()
 		"dbench-client")
 		RET2=`cat $DAT | head -n 97 | tail -n 16 | awk '{sum+=$2} END {print sum/60}'`
 		;;
+		"mobibench")
+		RET2=`grep -E "TIME" $DAT | awk '{print $10}'`
 	esac
 	echo ${num_threads} ${TX} ${HPT} ${BPT} ${RET2}
 
@@ -139,6 +142,10 @@ select_workload()
 
 			;;
 		"filebench-fileserver")
+			;;
+		"mobibench")
+			./${MOBIBENCH} -p $MNT -f 10000000 -r 4 -y 2 -a 0 \
+			> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat
 			;;
 		"sysbench")
 			filesize=128G

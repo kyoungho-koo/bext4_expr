@@ -1,0 +1,18 @@
+-----------------------------------------
+[mobibench measurement setup]
+-----------------------------------------
+File size per thread : 24 KB
+IO size : 4 KB
+IO count : 6 
+Access Mode 0, Sync Mode 8
+# of Threads : 1
+setState: 1
+setState: 2
+00%16%33%50%66%83%100%-----------------------------------------
+[Messurement Result]
+-----------------------------------------
+[CPU] : Active,Idle,IoWait : 7.69 92.31 0.00
+[TIME] :       0 sec 005776us. 	4254848 B/sec, 	4155.12 KB/sec, 	4.06 MB/sec.
+[CON SWITCHES] : 7 7
+setState: 3
+Err string : No error
