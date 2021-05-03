@@ -9,13 +9,13 @@ DEBUG="$(uname -r | awk -F '-' '{print $3}')"
 
 
 #BENCHMARK="dd"
-#BENCHMARK="filebench-varmail"
+BENCHMARK="filebench-varmail"
 #BENCHMARK="filebench-varmail-perthreaddir"
 #BENCHMARK="filebench-varmail-split16"
 #BENCHMARK="dbench-client"
 #BENCHMARK="sysbench"
 #BENCHMARK="mdtest"
-BENCHMARK="mobibench"
+#BENCHMARK="mobibench"
 
 #	/dev/sdk	860PRO
 #	/dev/nvme0n1	970pro
@@ -58,19 +58,19 @@ domain=40
 #	219 	tc2 cc psp-ifs pool
 #	223 	tc2 cc psp-efs pool -----> ALL
 EXT4_PSP=(0)
-BEXT4_PSP=(0 87 152 223)
+BEXT4_PSP=(223)
 
 
 #FTRACE_PATH=/sys/kernel/debug/tracing
 
-NUM_THREADS=(1)
+NUM_THREADS=(10 20 30 40)
 ITER=1
 MNT=/mnt
 
 
 
 VERSION_PATH="raw_data"
-if [ "$EXTRA_VERSION" = "barrier+" ]
+if [ "$EXTRA_VERSION"="barrier" ] || [ "$EXTRA_VERSION"="barrier+" ]
 then
 	PSP=${BEXT4_PSP[@]}
 	VERSION_PATH=${VERSION_PATH}"/bext4"
