@@ -1,0 +1,1545 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCESS3_DELETE	./nfs.h	262;"	d
+ACCESS3_EXECUTE	./nfs.h	263;"	d
+ACCESS3_EXTEND	./nfs.h	261;"	d
+ACCESS3_LOOKUP	./nfs.h	259;"	d
+ACCESS3_MODIFY	./nfs.h	260;"	d
+ACCESS3_READ	./nfs.h	258;"	d
+ACCESS3args	./nfs.h	/^struct ACCESS3args {$/;"	s
+ACCESS3args	./nfs.h	/^typedef struct ACCESS3args ACCESS3args;$/;"	t	typeref:struct:ACCESS3args
+ACCESS3res	./nfs.h	/^struct ACCESS3res {$/;"	s
+ACCESS3res	./nfs.h	/^typedef struct ACCESS3res ACCESS3res;$/;"	t	typeref:struct:ACCESS3res
+ACCESS3res_u	./nfs.h	/^	} ACCESS3res_u;$/;"	m	struct:ACCESS3res	typeref:union:ACCESS3res::__anon13
+ACCESS3resfail	./nfs.h	/^struct ACCESS3resfail {$/;"	s
+ACCESS3resfail	./nfs.h	/^typedef struct ACCESS3resfail ACCESS3resfail;$/;"	t	typeref:struct:ACCESS3resfail
+ACCESS3resok	./nfs.h	/^struct ACCESS3resok {$/;"	s
+ACCESS3resok	./nfs.h	/^typedef struct ACCESS3resok ACCESS3resok;$/;"	t	typeref:struct:ACCESS3resok
+BOOL	./dbench.h	91;"	d
+CC	./Makefile	/^CC=gcc$/;"	m
+CFLAGS	./Makefile	/^CFLAGS=-g -O2 -Wall -W -I. -DVERSION=\\"$(VERSION)\\" -DDATADIR=\\"$(datadir)\\"$/;"	m
+COMMIT3args	./nfs.h	/^struct COMMIT3args {$/;"	s
+COMMIT3args	./nfs.h	/^typedef struct COMMIT3args COMMIT3args;$/;"	t	typeref:struct:COMMIT3args
+COMMIT3res	./nfs.h	/^struct COMMIT3res {$/;"	s
+COMMIT3res	./nfs.h	/^typedef struct COMMIT3res COMMIT3res;$/;"	t	typeref:struct:COMMIT3res
+COMMIT3res_u	./nfs.h	/^	} COMMIT3res_u;$/;"	m	struct:COMMIT3res	typeref:union:COMMIT3res::__anon12
+COMMIT3resfail	./nfs.h	/^struct COMMIT3resfail {$/;"	s
+COMMIT3resfail	./nfs.h	/^typedef struct COMMIT3resfail COMMIT3resfail;$/;"	t	typeref:struct:COMMIT3resfail
+COMMIT3resok	./nfs.h	/^struct COMMIT3resok {$/;"	s
+COMMIT3resok	./nfs.h	/^typedef struct COMMIT3resok COMMIT3resok;$/;"	t	typeref:struct:COMMIT3resok
+CREATE3args	./nfs.h	/^struct CREATE3args {$/;"	s
+CREATE3args	./nfs.h	/^typedef struct CREATE3args CREATE3args;$/;"	t	typeref:struct:CREATE3args
+CREATE3res	./nfs.h	/^struct CREATE3res {$/;"	s
+CREATE3res	./nfs.h	/^typedef struct CREATE3res CREATE3res;$/;"	t	typeref:struct:CREATE3res
+CREATE3res_u	./nfs.h	/^	} CREATE3res_u;$/;"	m	struct:CREATE3res	typeref:union:CREATE3res::__anon23
+CREATE3resfail	./nfs.h	/^struct CREATE3resfail {$/;"	s
+CREATE3resfail	./nfs.h	/^typedef struct CREATE3resfail CREATE3resfail;$/;"	t	typeref:struct:CREATE3resfail
+CREATE3resok	./nfs.h	/^struct CREATE3resok {$/;"	s
+CREATE3resok	./nfs.h	/^typedef struct CREATE3resok CREATE3resok;$/;"	t	typeref:struct:CREATE3resok
+DATA_SYNC	./nfs.h	/^	DATA_SYNC = 1,$/;"	e	enum:stable_how
+DB_OBJS	./Makefile	/^DB_OBJS = fileio.o util.o dbench.o child.o system.o snprintf.o sockio.o nfsio.o libnfs.a socklib.o linux_scsi.o iscsi.o libiscsi.o $/;"	m
+DESTDIR	./Makefile	/^DESTDIR=\/$/;"	m
+DONT_CHANGE	./nfs.h	/^	DONT_CHANGE = 0,$/;"	e	enum:time_how
+DP_C_LDOUBLE	./snprintf.c	155;"	d	file:
+DP_C_LLONG	./snprintf.c	156;"	d	file:
+DP_C_LONG	./snprintf.c	154;"	d	file:
+DP_C_SHORT	./snprintf.c	153;"	d	file:
+DP_F_MINUS	./snprintf.c	144;"	d	file:
+DP_F_NUM	./snprintf.c	147;"	d	file:
+DP_F_PLUS	./snprintf.c	145;"	d	file:
+DP_F_SPACE	./snprintf.c	146;"	d	file:
+DP_F_UNSIGNED	./snprintf.c	150;"	d	file:
+DP_F_UP	./snprintf.c	149;"	d	file:
+DP_F_ZERO	./snprintf.c	148;"	d	file:
+DP_S_CONV	./snprintf.c	140;"	d	file:
+DP_S_DEFAULT	./snprintf.c	134;"	d	file:
+DP_S_DONE	./snprintf.c	141;"	d	file:
+DP_S_DOT	./snprintf.c	137;"	d	file:
+DP_S_FLAGS	./snprintf.c	135;"	d	file:
+DP_S_MAX	./snprintf.c	138;"	d	file:
+DP_S_MIN	./snprintf.c	136;"	d	file:
+DP_S_MOD	./snprintf.c	139;"	d	file:
+EXCLUSIVE	./nfs.h	/^	EXCLUSIVE = 2,$/;"	e	enum:createmode3
+EXEEXT	./Makefile	/^EXEEXT=$/;"	m
+FHSIZE3	./mount.h	18;"	d
+FILE_CREATE	./dbench.h	193;"	d
+FILE_DELETE_ON_CLOSE	./dbench.h	206;"	d
+FILE_DIRECTORY_FILE	./dbench.h	199;"	d
+FILE_EIGHT_DOT_THREE_ONLY	./dbench.h	204;"	d
+FILE_NON_DIRECTORY_FILE	./dbench.h	202;"	d
+FILE_NO_EA_KNOWLEDGE	./dbench.h	203;"	d
+FILE_OPEN	./dbench.h	192;"	d
+FILE_OPEN_IF	./dbench.h	194;"	d
+FILE_OVERWRITE	./dbench.h	195;"	d
+FILE_OVERWRITE_IF	./dbench.h	196;"	d
+FILE_RANDOM_ACCESS	./dbench.h	205;"	d
+FILE_SEQUENTIAL_ONLY	./dbench.h	201;"	d
+FILE_SUPERSEDE	./dbench.h	191;"	d
+FILE_SYNC	./nfs.h	/^	FILE_SYNC = 2,$/;"	e	enum:stable_how
+FILE_WRITE_THROUGH	./dbench.h	200;"	d
+FSF3_CANSETTIME	./nfs.h	485;"	d
+FSF3_HOMOGENEOUS	./nfs.h	484;"	d
+FSF3_LINK	./nfs.h	482;"	d
+FSF3_SYMLINK	./nfs.h	483;"	d
+FSINFO3args	./nfs.h	/^struct FSINFO3args {$/;"	s
+FSINFO3args	./nfs.h	/^typedef struct FSINFO3args FSINFO3args;$/;"	t	typeref:struct:FSINFO3args
+FSINFO3res	./nfs.h	/^struct FSINFO3res {$/;"	s
+FSINFO3res	./nfs.h	/^typedef struct FSINFO3res FSINFO3res;$/;"	t	typeref:struct:FSINFO3res
+FSINFO3res_u	./nfs.h	/^	} FSINFO3res_u;$/;"	m	struct:FSINFO3res	typeref:union:FSINFO3res::__anon27
+FSINFO3resfail	./nfs.h	/^struct FSINFO3resfail {$/;"	s
+FSINFO3resfail	./nfs.h	/^typedef struct FSINFO3resfail FSINFO3resfail;$/;"	t	typeref:struct:FSINFO3resfail
+FSINFO3resok	./nfs.h	/^struct FSINFO3resok {$/;"	s
+FSINFO3resok	./nfs.h	/^typedef struct FSINFO3resok FSINFO3resok;$/;"	t	typeref:struct:FSINFO3resok
+FSSTAT3args	./nfs.h	/^struct FSSTAT3args {$/;"	s
+FSSTAT3args	./nfs.h	/^typedef struct FSSTAT3args FSSTAT3args;$/;"	t	typeref:struct:FSSTAT3args
+FSSTAT3res	./nfs.h	/^struct FSSTAT3res {$/;"	s
+FSSTAT3res	./nfs.h	/^typedef struct FSSTAT3res FSSTAT3res;$/;"	t	typeref:struct:FSSTAT3res
+FSSTAT3res_u	./nfs.h	/^	} FSSTAT3res_u;$/;"	m	struct:FSSTAT3res	typeref:union:FSSTAT3res::__anon28
+FSSTAT3resfail	./nfs.h	/^struct FSSTAT3resfail {$/;"	s
+FSSTAT3resfail	./nfs.h	/^typedef struct FSSTAT3resfail FSSTAT3resfail;$/;"	t	typeref:struct:FSSTAT3resfail
+FSSTAT3resok	./nfs.h	/^struct FSSTAT3resok {$/;"	s
+FSSTAT3resok	./nfs.h	/^typedef struct FSSTAT3resok FSSTAT3resok;$/;"	t	typeref:struct:FSSTAT3resok
+False	./dbench.h	93;"	d
+GETATTR3args	./nfs.h	/^struct GETATTR3args {$/;"	s
+GETATTR3args	./nfs.h	/^typedef struct GETATTR3args GETATTR3args;$/;"	t	typeref:struct:GETATTR3args
+GETATTR3res	./nfs.h	/^struct GETATTR3res {$/;"	s
+GETATTR3res	./nfs.h	/^typedef struct GETATTR3res GETATTR3res;$/;"	t	typeref:struct:GETATTR3res
+GETATTR3res_u	./nfs.h	/^	} GETATTR3res_u;$/;"	m	struct:GETATTR3res	typeref:union:GETATTR3res::__anon14
+GETATTR3resok	./nfs.h	/^struct GETATTR3resok {$/;"	s
+GETATTR3resok	./nfs.h	/^typedef struct GETATTR3resok GETATTR3resok;$/;"	t	typeref:struct:GETATTR3resok
+GUARDED	./nfs.h	/^	GUARDED = 1,$/;"	e	enum:createmode3
+HAVE_ASPRINTF	./config.h	5;"	d
+HAVE_CTYPE_H	./config.h	35;"	d
+HAVE_DIRENT_H	./config.h	39;"	d
+HAVE_EA_SUPPORT	./config.h	42;"	d
+HAVE_FDATASYNC	./config.h	81;"	d
+HAVE_FGETXATTR	./config.h	84;"	d
+HAVE_FLISTXATTR	./config.h	87;"	d
+HAVE_FREMOVEXATTR	./config.h	90;"	d
+HAVE_FSETXATTR	./config.h	93;"	d
+HAVE_GETXATTR	./config.h	96;"	d
+HAVE_INTTYPES_H	./config.h	99;"	d
+HAVE_LGETXATTR	./config.h	102;"	d
+HAVE_LINUX_SCSI_SG	./config.h	111;"	d
+HAVE_LISTXATTR	./config.h	114;"	d
+HAVE_LLISTXATTR	./config.h	117;"	d
+HAVE_LREMOVEXATTR	./config.h	120;"	d
+HAVE_LSETXATTR	./config.h	123;"	d
+HAVE_MEMORY_H	./config.h	126;"	d
+HAVE_REMOVEXATTR	./config.h	132;"	d
+HAVE_SETXATTR	./config.h	135;"	d
+HAVE_SNPRINTF	./config.h	138;"	d
+HAVE_STDINT_H	./config.h	141;"	d
+HAVE_STDLIB_H	./config.h	144;"	d
+HAVE_STRINGS_H	./config.h	147;"	d
+HAVE_STRING_H	./config.h	150;"	d
+HAVE_SYS_MOUNT_H	./config.h	163;"	d
+HAVE_SYS_STATVFS_H	./config.h	170;"	d
+HAVE_SYS_STAT_H	./config.h	173;"	d
+HAVE_SYS_TYPES_H	./config.h	176;"	d
+HAVE_SYS_UIO_H	./config.h	179;"	d
+HAVE_SYS_VFS_H	./config.h	182;"	d
+HAVE_SYS_WAIT_H	./config.h	185;"	d
+HAVE_SYS_XATTR_H	./config.h	188;"	d
+HAVE_UNISTD_H	./config.h	191;"	d
+HAVE_VASPRINTF	./config.h	194;"	d
+HAVE_VA_COPY	./config.h	197;"	d
+HAVE_VSNPRINTF	./config.h	200;"	d
+INSTALLCMD	./Makefile	/^INSTALLCMD=\/bin\/install -c$/;"	m
+LDOUBLE	./snprintf.c	103;"	d	file:
+LDOUBLE	./snprintf.c	105;"	d	file:
+LIBNFS_OBJ	./Makefile	/^LIBNFS_OBJ = libnfs.o mount_client.o nfs_client.o mount_xdr.o nfs_xdr.o$/;"	m
+LIBS	./Makefile	/^LIBS= -lpopt -lz  $/;"	m
+LINK3args	./nfs.h	/^struct LINK3args {$/;"	s
+LINK3args	./nfs.h	/^typedef struct LINK3args LINK3args;$/;"	t	typeref:struct:LINK3args
+LINK3res	./nfs.h	/^struct LINK3res {$/;"	s
+LINK3res	./nfs.h	/^typedef struct LINK3res LINK3res;$/;"	t	typeref:struct:LINK3res
+LINK3res_u	./nfs.h	/^	} LINK3res_u;$/;"	m	struct:LINK3res	typeref:union:LINK3res::__anon39
+LINK3resfail	./nfs.h	/^struct LINK3resfail {$/;"	s
+LINK3resfail	./nfs.h	/^typedef struct LINK3resfail LINK3resfail;$/;"	t	typeref:struct:LINK3resfail
+LINK3resok	./nfs.h	/^struct LINK3resok {$/;"	s
+LINK3resok	./nfs.h	/^typedef struct LINK3resok LINK3resok;$/;"	t	typeref:struct:LINK3resok
+LLONG	./snprintf.c	109;"	d	file:
+LLONG	./snprintf.c	111;"	d	file:
+LOOKUP3args	./nfs.h	/^struct LOOKUP3args {$/;"	s
+LOOKUP3args	./nfs.h	/^typedef struct LOOKUP3args LOOKUP3args;$/;"	t	typeref:struct:LOOKUP3args
+LOOKUP3res	./nfs.h	/^struct LOOKUP3res {$/;"	s
+LOOKUP3res	./nfs.h	/^typedef struct LOOKUP3res LOOKUP3res;$/;"	t	typeref:struct:LOOKUP3res
+LOOKUP3res_u	./nfs.h	/^	} LOOKUP3res_u;$/;"	m	struct:LOOKUP3res	typeref:union:LOOKUP3res::__anon11
+LOOKUP3resfail	./nfs.h	/^struct LOOKUP3resfail {$/;"	s
+LOOKUP3resfail	./nfs.h	/^typedef struct LOOKUP3resfail LOOKUP3resfail;$/;"	t	typeref:struct:LOOKUP3resfail
+LOOKUP3resok	./nfs.h	/^struct LOOKUP3resok {$/;"	s
+LOOKUP3resok	./nfs.h	/^typedef struct LOOKUP3resok LOOKUP3resok;$/;"	t	typeref:struct:LOOKUP3resok
+MAX	./snprintf.c	160;"	d	file:
+MAX_FILES	./fileio.c	23;"	d	file:
+MAX_FILES	./io.c	25;"	d	file:
+MAX_FILES	./nfsio.c	30;"	d	file:
+MAX_FILES	./sockio.c	21;"	d	file:
+MAX_OPS	./dbench.h	104;"	d
+MAX_PARM_LEN	./child.c	314;"	d	file:
+MAX_RND_STR	./child.c	219;"	d	file:
+MIN	./dbench.h	85;"	d
+MKDIR3args	./nfs.h	/^struct MKDIR3args {$/;"	s
+MKDIR3args	./nfs.h	/^typedef struct MKDIR3args MKDIR3args;$/;"	t	typeref:struct:MKDIR3args
+MKDIR3res	./nfs.h	/^struct MKDIR3res {$/;"	s
+MKDIR3res	./nfs.h	/^typedef struct MKDIR3res MKDIR3res;$/;"	t	typeref:struct:MKDIR3res
+MKDIR3res_u	./nfs.h	/^	} MKDIR3res_u;$/;"	m	struct:MKDIR3res	typeref:union:MKDIR3res::__anon34
+MKDIR3resfail	./nfs.h	/^struct MKDIR3resfail {$/;"	s
+MKDIR3resfail	./nfs.h	/^typedef struct MKDIR3resfail MKDIR3resfail;$/;"	t	typeref:struct:MKDIR3resfail
+MKDIR3resok	./nfs.h	/^struct MKDIR3resok {$/;"	s
+MKDIR3resok	./nfs.h	/^typedef struct MKDIR3resok MKDIR3resok;$/;"	t	typeref:struct:MKDIR3resok
+MKNOD3args	./nfs.h	/^struct MKNOD3args {$/;"	s
+MKNOD3args	./nfs.h	/^typedef struct MKNOD3args MKNOD3args;$/;"	t	typeref:struct:MKNOD3args
+MKNOD3res	./nfs.h	/^struct MKNOD3res {$/;"	s
+MKNOD3res	./nfs.h	/^typedef struct MKNOD3res MKNOD3res;$/;"	t	typeref:struct:MKNOD3res
+MKNOD3res_u	./nfs.h	/^	} MKNOD3res_u;$/;"	m	struct:MKNOD3res	typeref:union:MKNOD3res::__anon33
+MKNOD3resfail	./nfs.h	/^struct MKNOD3resfail {$/;"	s
+MKNOD3resfail	./nfs.h	/^typedef struct MKNOD3resfail MKNOD3resfail;$/;"	t	typeref:struct:MKNOD3resfail
+MKNOD3resok	./nfs.h	/^struct MKNOD3resok {$/;"	s
+MKNOD3resok	./nfs.h	/^typedef struct MKNOD3resok MKNOD3resok;$/;"	t	typeref:struct:MKNOD3resok
+MNT3ERR_ACCES	./mount.h	/^	MNT3ERR_ACCES = 13,$/;"	e	enum:mountstat3
+MNT3ERR_INVAL	./mount.h	/^	MNT3ERR_INVAL = 22,$/;"	e	enum:mountstat3
+MNT3ERR_IO	./mount.h	/^	MNT3ERR_IO = 5,$/;"	e	enum:mountstat3
+MNT3ERR_NAMETOOLONG	./mount.h	/^	MNT3ERR_NAMETOOLONG = 63,$/;"	e	enum:mountstat3
+MNT3ERR_NOENT	./mount.h	/^	MNT3ERR_NOENT = 2,$/;"	e	enum:mountstat3
+MNT3ERR_NOTDIR	./mount.h	/^	MNT3ERR_NOTDIR = 20,$/;"	e	enum:mountstat3
+MNT3ERR_NOTSUPP	./mount.h	/^	MNT3ERR_NOTSUPP = 10004,$/;"	e	enum:mountstat3
+MNT3ERR_PERM	./mount.h	/^	MNT3ERR_PERM = 1,$/;"	e	enum:mountstat3
+MNT3ERR_SERVERFAULT	./mount.h	/^	MNT3ERR_SERVERFAULT = 10006,$/;"	e	enum:mountstat3
+MNT3_OK	./mount.h	/^	MNT3_OK = 0,$/;"	e	enum:mountstat3
+MNTNAMLEN	./mount.h	17;"	d
+MNTPATHLEN	./mount.h	16;"	d
+MOUNTPROC3_DUMP	./mount.h	117;"	d
+MOUNTPROC3_DUMP	./mount.h	96;"	d
+MOUNTPROC3_EXPORT	./mount.h	105;"	d
+MOUNTPROC3_EXPORT	./mount.h	126;"	d
+MOUNTPROC3_MNT	./mount.h	114;"	d
+MOUNTPROC3_MNT	./mount.h	93;"	d
+MOUNTPROC3_NULL	./mount.h	111;"	d
+MOUNTPROC3_NULL	./mount.h	90;"	d
+MOUNTPROC3_UMNT	./mount.h	120;"	d
+MOUNTPROC3_UMNT	./mount.h	99;"	d
+MOUNTPROC3_UMNTALL	./mount.h	102;"	d
+MOUNTPROC3_UMNTALL	./mount.h	123;"	d
+MOUNT_PROGRAM	./mount.h	86;"	d
+MOUNT_V3	./mount.h	87;"	d
+MSG_WAITALL	./dbench.h	79;"	d
+NF3BLK	./nfs.h	/^	NF3BLK = 3,$/;"	e	enum:ftype3
+NF3CHR	./nfs.h	/^	NF3CHR = 4,$/;"	e	enum:ftype3
+NF3DIR	./nfs.h	/^	NF3DIR = 2,$/;"	e	enum:ftype3
+NF3FIFO	./nfs.h	/^	NF3FIFO = 7,$/;"	e	enum:ftype3
+NF3LNK	./nfs.h	/^	NF3LNK = 5,$/;"	e	enum:ftype3
+NF3REG	./nfs.h	/^	NF3REG = 1,$/;"	e	enum:ftype3
+NF3SOCK	./nfs.h	/^	NF3SOCK = 6,$/;"	e	enum:ftype3
+NFS3ERR_ACCES	./nfs.h	/^	NFS3ERR_ACCES = 13,$/;"	e	enum:nfsstat3
+NFS3ERR_BADHANDLE	./nfs.h	/^	NFS3ERR_BADHANDLE = 10001,$/;"	e	enum:nfsstat3
+NFS3ERR_BADTYPE	./nfs.h	/^	NFS3ERR_BADTYPE = 10007,$/;"	e	enum:nfsstat3
+NFS3ERR_BAD_COOKIE	./nfs.h	/^	NFS3ERR_BAD_COOKIE = 10003,$/;"	e	enum:nfsstat3
+NFS3ERR_DQUOT	./nfs.h	/^	NFS3ERR_DQUOT = 69,$/;"	e	enum:nfsstat3
+NFS3ERR_EXIST	./nfs.h	/^	NFS3ERR_EXIST = 17,$/;"	e	enum:nfsstat3
+NFS3ERR_FBIG	./nfs.h	/^	NFS3ERR_FBIG = 27,$/;"	e	enum:nfsstat3
+NFS3ERR_INVAL	./nfs.h	/^	NFS3ERR_INVAL = 22,$/;"	e	enum:nfsstat3
+NFS3ERR_IO	./nfs.h	/^	NFS3ERR_IO = 5,$/;"	e	enum:nfsstat3
+NFS3ERR_ISDIR	./nfs.h	/^	NFS3ERR_ISDIR = 21,$/;"	e	enum:nfsstat3
+NFS3ERR_JUKEBOX	./nfs.h	/^	NFS3ERR_JUKEBOX = 10008,$/;"	e	enum:nfsstat3
+NFS3ERR_MLINK	./nfs.h	/^	NFS3ERR_MLINK = 31,$/;"	e	enum:nfsstat3
+NFS3ERR_NAMETOOLONG	./nfs.h	/^	NFS3ERR_NAMETOOLONG = 63,$/;"	e	enum:nfsstat3
+NFS3ERR_NODEV	./nfs.h	/^	NFS3ERR_NODEV = 19,$/;"	e	enum:nfsstat3
+NFS3ERR_NOENT	./nfs.h	/^	NFS3ERR_NOENT = 2,$/;"	e	enum:nfsstat3
+NFS3ERR_NOSPC	./nfs.h	/^	NFS3ERR_NOSPC = 28,$/;"	e	enum:nfsstat3
+NFS3ERR_NOTDIR	./nfs.h	/^	NFS3ERR_NOTDIR = 20,$/;"	e	enum:nfsstat3
+NFS3ERR_NOTEMPTY	./nfs.h	/^	NFS3ERR_NOTEMPTY = 66,$/;"	e	enum:nfsstat3
+NFS3ERR_NOTSUPP	./nfs.h	/^	NFS3ERR_NOTSUPP = 10004,$/;"	e	enum:nfsstat3
+NFS3ERR_NOT_SYNC	./nfs.h	/^	NFS3ERR_NOT_SYNC = 10002,$/;"	e	enum:nfsstat3
+NFS3ERR_NXIO	./nfs.h	/^	NFS3ERR_NXIO = 6,$/;"	e	enum:nfsstat3
+NFS3ERR_PERM	./nfs.h	/^	NFS3ERR_PERM = 1,$/;"	e	enum:nfsstat3
+NFS3ERR_REMOTE	./nfs.h	/^	NFS3ERR_REMOTE = 71,$/;"	e	enum:nfsstat3
+NFS3ERR_ROFS	./nfs.h	/^	NFS3ERR_ROFS = 30,$/;"	e	enum:nfsstat3
+NFS3ERR_SERVERFAULT	./nfs.h	/^	NFS3ERR_SERVERFAULT = 10006,$/;"	e	enum:nfsstat3
+NFS3ERR_STALE	./nfs.h	/^	NFS3ERR_STALE = 70,$/;"	e	enum:nfsstat3
+NFS3ERR_TOOSMALL	./nfs.h	/^	NFS3ERR_TOOSMALL = 10005,$/;"	e	enum:nfsstat3
+NFS3ERR_XDEV	./nfs.h	/^	NFS3ERR_XDEV = 18,$/;"	e	enum:nfsstat3
+NFS3_COOKIEVERFSIZE	./nfs.h	19;"	d
+NFS3_CREATEVERFSIZE	./nfs.h	18;"	d
+NFS3_FHSIZE	./nfs.h	16;"	d
+NFS3_OK	./nfs.h	/^	NFS3_OK = 0,$/;"	e	enum:nfsstat3
+NFS3_WRITEVERFSIZE	./nfs.h	17;"	d
+NFSPROC3_ACCESS	./nfs.h	891;"	d
+NFSPROC3_ACCESS	./nfs.h	954;"	d
+NFSPROC3_COMMIT	./nfs.h	1002;"	d
+NFSPROC3_COMMIT	./nfs.h	939;"	d
+NFSPROC3_CREATE	./nfs.h	903;"	d
+NFSPROC3_CREATE	./nfs.h	966;"	d
+NFSPROC3_FSINFO	./nfs.h	933;"	d
+NFSPROC3_FSINFO	./nfs.h	996;"	d
+NFSPROC3_FSSTAT	./nfs.h	930;"	d
+NFSPROC3_FSSTAT	./nfs.h	993;"	d
+NFSPROC3_GETATTR	./nfs.h	885;"	d
+NFSPROC3_GETATTR	./nfs.h	948;"	d
+NFSPROC3_LINK	./nfs.h	921;"	d
+NFSPROC3_LINK	./nfs.h	984;"	d
+NFSPROC3_LOOKUP	./nfs.h	888;"	d
+NFSPROC3_LOOKUP	./nfs.h	951;"	d
+NFSPROC3_MKDIR	./nfs.h	906;"	d
+NFSPROC3_MKDIR	./nfs.h	969;"	d
+NFSPROC3_NULL	./nfs.h	882;"	d
+NFSPROC3_NULL	./nfs.h	945;"	d
+NFSPROC3_PATHCONF	./nfs.h	936;"	d
+NFSPROC3_PATHCONF	./nfs.h	999;"	d
+NFSPROC3_READ	./nfs.h	897;"	d
+NFSPROC3_READ	./nfs.h	960;"	d
+NFSPROC3_READDIR	./nfs.h	924;"	d
+NFSPROC3_READDIR	./nfs.h	987;"	d
+NFSPROC3_READDIRPLUS	./nfs.h	927;"	d
+NFSPROC3_READDIRPLUS	./nfs.h	990;"	d
+NFSPROC3_READLINK	./nfs.h	894;"	d
+NFSPROC3_READLINK	./nfs.h	957;"	d
+NFSPROC3_REMOVE	./nfs.h	912;"	d
+NFSPROC3_REMOVE	./nfs.h	975;"	d
+NFSPROC3_RENAME	./nfs.h	918;"	d
+NFSPROC3_RENAME	./nfs.h	981;"	d
+NFSPROC3_RMDIR	./nfs.h	915;"	d
+NFSPROC3_RMDIR	./nfs.h	978;"	d
+NFSPROC3_SYMLINK	./nfs.h	909;"	d
+NFSPROC3_SYMLINK	./nfs.h	972;"	d
+NFSPROC3_WRITE	./nfs.h	900;"	d
+NFSPROC3_WRITE	./nfs.h	963;"	d
+NFS_PROGRAM	./nfs.h	878;"	d
+NFS_V3	./nfs.h	879;"	d
+NULL	./snprintf.c	61;"	d	file:
+OPT_BOOL	./socklib.c	/^enum SOCK_OPT_TYPES {OPT_BOOL,OPT_INT,OPT_ON};$/;"	e	enum:SOCK_OPT_TYPES	file:
+OPT_INT	./socklib.c	/^enum SOCK_OPT_TYPES {OPT_BOOL,OPT_INT,OPT_ON};$/;"	e	enum:SOCK_OPT_TYPES	file:
+OPT_ON	./socklib.c	/^enum SOCK_OPT_TYPES {OPT_BOOL,OPT_INT,OPT_ON};$/;"	e	enum:SOCK_OPT_TYPES	file:
+OP_LATENCY	./child.c	94;"	d	file:
+O_DIRECTORY	./dbench.h	209;"	d
+PACKAGE_BUGREPORT	./config.h	206;"	d
+PACKAGE_NAME	./config.h	209;"	d
+PACKAGE_STRING	./config.h	212;"	d
+PACKAGE_TARNAME	./config.h	215;"	d
+PACKAGE_URL	./config.h	218;"	d
+PACKAGE_VERSION	./config.h	221;"	d
+PARAMETERS_SIZE	./iscsi.c	83;"	d	file:
+PATHCONF3args	./nfs.h	/^struct PATHCONF3args {$/;"	s
+PATHCONF3args	./nfs.h	/^typedef struct PATHCONF3args PATHCONF3args;$/;"	t	typeref:struct:PATHCONF3args
+PATHCONF3res	./nfs.h	/^struct PATHCONF3res {$/;"	s
+PATHCONF3res	./nfs.h	/^typedef struct PATHCONF3res PATHCONF3res;$/;"	t	typeref:struct:PATHCONF3res
+PATHCONF3res_u	./nfs.h	/^	} PATHCONF3res_u;$/;"	m	struct:PATHCONF3res	typeref:union:PATHCONF3res::__anon29
+PATHCONF3resfail	./nfs.h	/^struct PATHCONF3resfail {$/;"	s
+PATHCONF3resfail	./nfs.h	/^typedef struct PATHCONF3resfail PATHCONF3resfail;$/;"	t	typeref:struct:PATHCONF3resfail
+PATHCONF3resok	./nfs.h	/^struct PATHCONF3resok {$/;"	s
+PATHCONF3resok	./nfs.h	/^typedef struct PATHCONF3resok PATHCONF3resok;$/;"	t	typeref:struct:PATHCONF3resok
+POW10	./snprintf.c	/^static LDOUBLE POW10(int exp)$/;"	f	file:
+PRINT_FREQ	./dbench.h	82;"	d
+PROUT_CMD	./iscsi.c	84;"	d	file:
+PROUT_SCOPE_LU_SCOPE	./iscsi.c	85;"	d	file:
+READ3args	./nfs.h	/^struct READ3args {$/;"	s
+READ3args	./nfs.h	/^typedef struct READ3args READ3args;$/;"	t	typeref:struct:READ3args
+READ3res	./nfs.h	/^struct READ3res {$/;"	s
+READ3res	./nfs.h	/^typedef struct READ3res READ3res;$/;"	t	typeref:struct:READ3res
+READ3res_u	./nfs.h	/^	} READ3res_u;$/;"	m	struct:READ3res	typeref:union:READ3res::__anon26
+READ3resfail	./nfs.h	/^struct READ3resfail {$/;"	s
+READ3resfail	./nfs.h	/^typedef struct READ3resfail READ3resfail;$/;"	t	typeref:struct:READ3resfail
+READ3resok	./nfs.h	/^struct READ3resok {$/;"	s
+READ3resok	./nfs.h	/^typedef struct READ3resok READ3resok;$/;"	t	typeref:struct:READ3resok
+READDIR3args	./nfs.h	/^struct READDIR3args {$/;"	s
+READDIR3args	./nfs.h	/^typedef struct READDIR3args READDIR3args;$/;"	t	typeref:struct:READDIR3args
+READDIR3res	./nfs.h	/^struct READDIR3res {$/;"	s
+READDIR3res	./nfs.h	/^typedef struct READDIR3res READDIR3res;$/;"	t	typeref:struct:READDIR3res
+READDIR3res_u	./nfs.h	/^	} READDIR3res_u;$/;"	m	struct:READDIR3res	typeref:union:READDIR3res::__anon38
+READDIR3resfail	./nfs.h	/^struct READDIR3resfail {$/;"	s
+READDIR3resfail	./nfs.h	/^typedef struct READDIR3resfail READDIR3resfail;$/;"	t	typeref:struct:READDIR3resfail
+READDIR3resok	./nfs.h	/^struct READDIR3resok {$/;"	s
+READDIR3resok	./nfs.h	/^typedef struct READDIR3resok READDIR3resok;$/;"	t	typeref:struct:READDIR3resok
+READDIRPLUS3args	./nfs.h	/^struct READDIRPLUS3args {$/;"	s
+READDIRPLUS3args	./nfs.h	/^typedef struct READDIRPLUS3args READDIRPLUS3args;$/;"	t	typeref:struct:READDIRPLUS3args
+READDIRPLUS3res	./nfs.h	/^struct READDIRPLUS3res {$/;"	s
+READDIRPLUS3res	./nfs.h	/^typedef struct READDIRPLUS3res READDIRPLUS3res;$/;"	t	typeref:struct:READDIRPLUS3res
+READDIRPLUS3res_u	./nfs.h	/^	} READDIRPLUS3res_u;$/;"	m	struct:READDIRPLUS3res	typeref:union:READDIRPLUS3res::__anon37
+READDIRPLUS3resfail	./nfs.h	/^struct READDIRPLUS3resfail {$/;"	s
+READDIRPLUS3resfail	./nfs.h	/^typedef struct READDIRPLUS3resfail READDIRPLUS3resfail;$/;"	t	typeref:struct:READDIRPLUS3resfail
+READDIRPLUS3resok	./nfs.h	/^struct READDIRPLUS3resok {$/;"	s
+READDIRPLUS3resok	./nfs.h	/^typedef struct READDIRPLUS3resok READDIRPLUS3resok;$/;"	t	typeref:struct:READDIRPLUS3resok
+READLINK3args	./nfs.h	/^struct READLINK3args {$/;"	s
+READLINK3args	./nfs.h	/^typedef struct READLINK3args READLINK3args;$/;"	t	typeref:struct:READLINK3args
+READLINK3res	./nfs.h	/^struct READLINK3res {$/;"	s
+READLINK3res	./nfs.h	/^typedef struct READLINK3res READLINK3res;$/;"	t	typeref:struct:READLINK3res
+READLINK3res_u	./nfs.h	/^	} READLINK3res_u;$/;"	m	struct:READLINK3res	typeref:union:READLINK3res::__anon31
+READLINK3resfail	./nfs.h	/^struct READLINK3resfail {$/;"	s
+READLINK3resfail	./nfs.h	/^typedef struct READLINK3resfail READLINK3resfail;$/;"	t	typeref:struct:READLINK3resfail
+READLINK3resok	./nfs.h	/^struct READLINK3resok {$/;"	s
+READLINK3resok	./nfs.h	/^typedef struct READLINK3resok READLINK3resok;$/;"	t	typeref:struct:READLINK3resok
+REMOVE3args	./nfs.h	/^struct REMOVE3args {$/;"	s
+REMOVE3args	./nfs.h	/^typedef struct REMOVE3args REMOVE3args;$/;"	t	typeref:struct:REMOVE3args
+REMOVE3res	./nfs.h	/^struct REMOVE3res {$/;"	s
+REMOVE3res	./nfs.h	/^typedef struct REMOVE3res REMOVE3res;$/;"	t	typeref:struct:REMOVE3res
+REMOVE3res_u	./nfs.h	/^	} REMOVE3res_u;$/;"	m	struct:REMOVE3res	typeref:union:REMOVE3res::__anon24
+REMOVE3resfail	./nfs.h	/^struct REMOVE3resfail {$/;"	s
+REMOVE3resfail	./nfs.h	/^typedef struct REMOVE3resfail REMOVE3resfail;$/;"	t	typeref:struct:REMOVE3resfail
+REMOVE3resok	./nfs.h	/^struct REMOVE3resok {$/;"	s
+REMOVE3resok	./nfs.h	/^typedef struct REMOVE3resok REMOVE3resok;$/;"	t	typeref:struct:REMOVE3resok
+RENAME3args	./nfs.h	/^struct RENAME3args {$/;"	s
+RENAME3args	./nfs.h	/^typedef struct RENAME3args RENAME3args;$/;"	t	typeref:struct:RENAME3args
+RENAME3res	./nfs.h	/^struct RENAME3res {$/;"	s
+RENAME3res	./nfs.h	/^typedef struct RENAME3res RENAME3res;$/;"	t	typeref:struct:RENAME3res
+RENAME3res_u	./nfs.h	/^	} RENAME3res_u;$/;"	m	struct:RENAME3res	typeref:union:RENAME3res::__anon36
+RENAME3resfail	./nfs.h	/^struct RENAME3resfail {$/;"	s
+RENAME3resfail	./nfs.h	/^typedef struct RENAME3resfail RENAME3resfail;$/;"	t	typeref:struct:RENAME3resfail
+RENAME3resok	./nfs.h	/^struct RENAME3resok {$/;"	s
+RENAME3resok	./nfs.h	/^typedef struct RENAME3resok RENAME3resok;$/;"	t	typeref:struct:RENAME3resok
+RMDIR3args	./nfs.h	/^struct RMDIR3args {$/;"	s
+RMDIR3args	./nfs.h	/^typedef struct RMDIR3args RMDIR3args;$/;"	t	typeref:struct:RMDIR3args
+RMDIR3res	./nfs.h	/^struct RMDIR3res {$/;"	s
+RMDIR3res	./nfs.h	/^typedef struct RMDIR3res RMDIR3res;$/;"	t	typeref:struct:RMDIR3res
+RMDIR3res_u	./nfs.h	/^	} RMDIR3res_u;$/;"	m	struct:RMDIR3res	typeref:union:RMDIR3res::__anon35
+RMDIR3resfail	./nfs.h	/^struct RMDIR3resfail {$/;"	s
+RMDIR3resfail	./nfs.h	/^typedef struct RMDIR3resfail RMDIR3resfail;$/;"	t	typeref:struct:RMDIR3resfail
+RMDIR3resok	./nfs.h	/^struct RMDIR3resok {$/;"	s
+RMDIR3resok	./nfs.h	/^typedef struct RMDIR3resok RMDIR3resok;$/;"	t	typeref:struct:RMDIR3resok
+ROUND	./snprintf.c	/^static LLONG ROUND(LDOUBLE value)$/;"	f	file:
+RWBUFSIZE	./child.c	33;"	d	file:
+SAFE_FREE	./snprintf.c	116;"	d	file:
+SCSI_STATUS_ACA_ACTIVE	./iscsi.c	92;"	d	file:
+SCSI_STATUS_BUSY	./iscsi.c	89;"	d	file:
+SCSI_STATUS_CHECK_CONDITION	./iscsi.c	88;"	d	file:
+SCSI_STATUS_GOOD	./iscsi.c	87;"	d	file:
+SCSI_STATUS_RESERVATION_CONFLICT	./iscsi.c	90;"	d	file:
+SCSI_STATUS_TASK_ABORTED	./iscsi.c	93;"	d	file:
+SCSI_STATUS_TASK_SET_FULL	./iscsi.c	91;"	d	file:
+SCSI_TIMEOUT	./linux_scsi.c	28;"	d	file:
+SET_TO_CLIENT_TIME	./nfs.h	/^	SET_TO_CLIENT_TIME = 2,$/;"	e	enum:time_how
+SET_TO_SERVER_TIME	./nfs.h	/^	SET_TO_SERVER_TIME = 1,$/;"	e	enum:time_how
+SG_DXFER_FROM_DEV	./iscsi.c	81;"	d	file:
+SG_DXFER_NONE	./iscsi.c	75;"	d	file:
+SG_DXFER_TO_DEV	./iscsi.c	78;"	d	file:
+SHM_R	./util.c	26;"	d	file:
+SHM_W	./util.c	22;"	d	file:
+SOCK_OPT_TYPES	./socklib.c	/^enum SOCK_OPT_TYPES {OPT_BOOL,OPT_INT,OPT_ON};$/;"	g	file:
+SRV_OBJS	./Makefile	/^SRV_OBJS = util.o tbench_srv.o socklib.o$/;"	m
+STDC_HEADERS	./config.h	224;"	d
+SYMLINK3args	./nfs.h	/^struct SYMLINK3args {$/;"	s
+SYMLINK3args	./nfs.h	/^typedef struct SYMLINK3args SYMLINK3args;$/;"	t	typeref:struct:SYMLINK3args
+SYMLINK3res	./nfs.h	/^struct SYMLINK3res {$/;"	s
+SYMLINK3res	./nfs.h	/^typedef struct SYMLINK3res SYMLINK3res;$/;"	t	typeref:struct:SYMLINK3res
+SYMLINK3res_u	./nfs.h	/^	} SYMLINK3res_u;$/;"	m	struct:SYMLINK3res	typeref:union:SYMLINK3res::__anon30
+SYMLINK3resfail	./nfs.h	/^struct SYMLINK3resfail {$/;"	s
+SYMLINK3resfail	./nfs.h	/^typedef struct SYMLINK3resfail SYMLINK3resfail;$/;"	t	typeref:struct:SYMLINK3resfail
+SYMLINK3resok	./nfs.h	/^struct SYMLINK3resok {$/;"	s
+SYMLINK3resok	./nfs.h	/^typedef struct SYMLINK3resok SYMLINK3resok;$/;"	t	typeref:struct:SYMLINK3resok
+TCP_OPTIONS	./dbench.h	89;"	d
+TCP_PORT	./dbench.h	88;"	d
+TIMEOUT	./mount_client.c	/^static struct timeval TIMEOUT = { 25, 0 };$/;"	v	typeref:struct:timeval	file:
+TIMEOUT	./nfs_client.c	/^static struct timeval TIMEOUT = { 25, 0 };$/;"	v	typeref:struct:timeval	file:
+TIME_WITH_SYS_TIME	./config.h	227;"	d
+True	./dbench.h	92;"	d
+UNCHECKED	./nfs.h	/^	UNCHECKED = 0,$/;"	e	enum:createmode3
+UNSTABLE	./nfs.h	/^	UNSTABLE = 0,$/;"	e	enum:stable_how
+VA_COPY	./snprintf.c	86;"	d	file:
+VA_COPY	./snprintf.c	88;"	d	file:
+VA_COPY	./snprintf.c	90;"	d	file:
+VERSION	./Makefile	/^VERSION=4.00$/;"	m
+WRITE3args	./nfs.h	/^struct WRITE3args {$/;"	s
+WRITE3args	./nfs.h	/^typedef struct WRITE3args WRITE3args;$/;"	t	typeref:struct:WRITE3args
+WRITE3res	./nfs.h	/^struct WRITE3res {$/;"	s
+WRITE3res	./nfs.h	/^typedef struct WRITE3res WRITE3res;$/;"	t	typeref:struct:WRITE3res
+WRITE3res_u	./nfs.h	/^	} WRITE3res_u;$/;"	m	struct:WRITE3res	typeref:union:WRITE3res::__anon10
+WRITE3resfail	./nfs.h	/^struct WRITE3resfail {$/;"	s
+WRITE3resfail	./nfs.h	/^typedef struct WRITE3resfail WRITE3resfail;$/;"	t	typeref:struct:WRITE3resfail
+WRITE3resok	./nfs.h	/^struct WRITE3resok {$/;"	s
+WRITE3resok	./nfs.h	/^typedef struct WRITE3resok WRITE3resok;$/;"	t	typeref:struct:WRITE3resok
+XATTR_CREATE	./system.c	84;"	d	file:
+XATTR_REPLACE	./system.c	85;"	d	file:
+XSLTPROC	./Makefile	/^XSLTPROC = \/usr\/bin\/xsltproc$/;"	m
+ZERO_STRUCT	./dbench.h	102;"	d
+_FILE_OFFSET_BITS	./dbench.h	18;"	d
+_FILE_OFFSET_BITS	./libnfs.c	19;"	d	file:
+_FILE_OFFSET_BITS	./nfsio.c	18;"	d	file:
+_GNU_SOURCE	./config.h	230;"	d
+_GNU_SOURCE	./linux_scsi.c	19;"	d	file:
+_GNU_SOURCE	./linux_scsi.c	21;"	d	file:
+_MOUNT_H_RPCGEN	./mount.h	7;"	d
+_NFS_H_RPCGEN	./nfs.h	7;"	d
+_PROTO_H_	./proto.h	2;"	d
+_data_t	./libnfs.c	/^typedef struct _data_t {$/;"	s	file:
+_data_t	./smb.c	/^typedef struct _data_t {$/;"	s	file:
+_smb_handle_t	./smb.c	/^typedef struct _smb_handle_t {$/;"	s	file:
+_tree_t	./libnfs.c	/^typedef struct _tree_t {$/;"	s	file:
+_tree_t	./smb.c	/^typedef struct _tree_t {$/;"	s	file:
+abs_val	./snprintf.c	/^static LDOUBLE abs_val(LDOUBLE value)$/;"	f	file:
+abytes	./nfs.h	/^	size3 abytes;$/;"	m	struct:FSSTAT3resok
+ac_fn_c_check_func	./configure	/^ac_fn_c_check_func ()$/;"	f
+ac_fn_c_check_header_compile	./configure	/^ac_fn_c_check_header_compile ()$/;"	f
+ac_fn_c_check_header_mongrel	./configure	/^ac_fn_c_check_header_mongrel ()$/;"	f
+ac_fn_c_try_compile	./configure	/^ac_fn_c_try_compile ()$/;"	f
+ac_fn_c_try_cpp	./configure	/^ac_fn_c_try_cpp ()$/;"	f
+ac_fn_c_try_link	./configure	/^ac_fn_c_try_link ()$/;"	f
+ac_fn_c_try_run	./configure	/^ac_fn_c_try_run ()$/;"	f
+access	./nfs.h	/^	uint32 access;$/;"	m	struct:ACCESS3args
+access	./nfs.h	/^	uint32 access;$/;"	m	struct:ACCESS3resok
+add_login_param	./iscsi.c	/^static void add_login_param(char *arg, char *value)$/;"	f	file:
+afiles	./nfs.h	/^	size3 afiles;$/;"	m	struct:FSSTAT3resok
+after	./nfs.h	/^	post_op_attr after;$/;"	m	struct:wcc_data
+all_string_sub	./util.c	/^void all_string_sub(char *s,const char *pattern,const char *insert)$/;"	f
+allow_scsi_writes	./dbench.h	/^	int allow_scsi_writes;$/;"	m	struct:options
+arg	./iscsi.c	/^       char *arg;$/;"	m	struct:login_param	file:
+as_fn_append	./config.status	/^  as_fn_append ()$/;"	f
+as_fn_append	./configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	./config.status	/^  as_fn_arith ()$/;"	f
+as_fn_arith	./configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	./config.status	/^as_fn_error ()$/;"	f
+as_fn_error	./configure	/^as_fn_error ()$/;"	f
+as_fn_executable_p	./config.status	/^as_fn_executable_p ()$/;"	f
+as_fn_executable_p	./configure	/^as_fn_executable_p ()$/;"	f
+as_fn_exit	./config.status	/^as_fn_exit ()$/;"	f
+as_fn_exit	./configure	/^as_fn_exit ()$/;"	f
+as_fn_failure	./configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	./config.status	/^as_fn_mkdir_p ()$/;"	f
+as_fn_mkdir_p	./configure	/^as_fn_mkdir_p ()$/;"	f
+as_fn_ret_failure	./configure	/^as_fn_ret_failure () { return 1; }$/;"	f
+as_fn_ret_success	./configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	./config.status	/^as_fn_set_status ()$/;"	f
+as_fn_set_status	./configure	/^as_fn_set_status ()$/;"	f
+as_fn_success	./configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	./config.status	/^as_fn_unset ()$/;"	f
+as_fn_unset	./configure	/^as_fn_unset ()$/;"	f
+asprintf	./snprintf.c	/^ int asprintf(char **ptr, const char *format, ...)$/;"	f
+atime	./nfs.h	/^		nfstime3 atime;$/;"	m	union:set_atime::__anon19
+atime	./nfs.h	/^	nfstime3 atime;$/;"	m	struct:fattr3
+atime	./nfs.h	/^	set_atime atime;$/;"	m	struct:sattr3
+attributes	./nfs.h	/^		fattr3 attributes;$/;"	m	union:post_op_attr::__anon7
+attributes	./nfs.h	/^		wcc_attr attributes;$/;"	m	union:pre_op_attr::__anon8
+attributes	./nfs.h	/^	sattr3 attributes;$/;"	m	struct:MKDIR3args
+attributes_follow	./nfs.h	/^	bool_t attributes_follow;$/;"	m	struct:post_op_attr
+attributes_follow	./nfs.h	/^	bool_t attributes_follow;$/;"	m	struct:pre_op_attr
+auth_flavors	./mount.h	/^	} auth_flavors;$/;"	m	struct:mountres3_ok	typeref:struct:mountres3_ok::__anon4
+auth_flavors_len	./mount.h	/^		u_int auth_flavors_len;$/;"	m	struct:mountres3_ok::__anon4
+auth_flavors_val	./mount.h	/^		int *auth_flavors_val;$/;"	m	struct:mountres3_ok::__anon4
+backend	./dbench.h	/^	const char *backend;$/;"	m	struct:options
+backend_name	./dbench.h	/^	const char *backend_name;	$/;"	m	struct:nb_operations
+backend_op	./dbench.h	/^struct backend_op {$/;"	s
+barrier	./dbench.c	/^static int barrier=-1;$/;"	v	file:
+before	./nfs.h	/^	pre_op_attr before;$/;"	m	struct:wcc_data
+bindir	./Makefile	/^bindir=${exec_prefix}\/bin$/;"	m
+blocks	./iscsi.c	/^       uint64_t blocks;$/;"	m	struct:iscsi_device	file:
+blocks	./libiscsi.c	/^       uint64_t blocks;$/;"	m	struct:iscsi_device	file:
+blocks	./linux_scsi.c	/^	uint32_t blocks;$/;"	m	struct:scsi_device	file:
+buf	./io.c	/^static char buf[70000];$/;"	v	file:
+buf	./sockio.c	/^	char buf[70000];$/;"	m	struct:sockio	file:
+bytes	./dbench.h	/^	double bytes;$/;"	m	struct:child_struct
+bytes_done_warmup	./dbench.h	/^	double bytes_done_warmup;$/;"	m	struct:child_struct
+bytes_since_fsync	./dbench.h	/^	off_t bytes_since_fsync;$/;"	m	struct:child_struct
+case_insensitive	./nfs.h	/^	bool_t case_insensitive;$/;"	m	struct:PATHCONF3resok
+case_preserving	./nfs.h	/^	bool_t case_preserving;$/;"	m	struct:PATHCONF3resok
+cb_data	./nfsio.c	/^struct cb_data {$/;"	s	file:
+char_to_int	./snprintf.c	158;"	d	file:
+check_sense	./iscsi.c	/^static int check_sense(unsigned char sc, const char *expected)$/;"	f	file:
+check_sense	./libiscsi.c	/^static int check_sense(unsigned char sc, const char *expected)$/;"	f	file:
+check_sense	./linux_scsi.c	/^static int check_sense(unsigned char sc, const char *expected)$/;"	f	file:
+check_status	./nfsio.c	/^static int check_status(int status, const char *expected)$/;"	f	file:
+check_status	./smb.c	/^static int check_status(int ret, const char *status)$/;"	f	file:
+checkdir_pkt	./genloadfile/genloadfile.sh	/^checkdir_pkt() {$/;"	f
+child	./dbench.h	/^	struct child_struct *child;$/;"	m	struct:dbench_op	typeref:struct:dbench_op::child_struct
+child_op	./child.c	/^static void child_op(struct child_struct *child, const char *opname,$/;"	f	file:
+child_run	./child.c	/^void child_run(struct child_struct *child0, const char *loadfile)$/;"	f
+child_struct	./dbench.h	/^struct child_struct {$/;"	s
+children	./dbench.c	/^static struct child_struct *children;$/;"	v	typeref:struct:child_struct	file:
+chown_restricted	./nfs.h	/^	bool_t chown_restricted;$/;"	m	struct:PATHCONF3resok
+cleanup	./dbench.h	/^	int cleanup;$/;"	m	struct:child_struct
+cleanup	./dbench.h	/^	void (*cleanup)(struct child_struct *child);$/;"	m	struct:nb_operations
+cleanup_finished	./dbench.h	/^	int cleanup_finished;$/;"	m	struct:child_struct
+clients_per_process	./dbench.h	/^	int clients_per_process;$/;"	m	struct:options
+clnt	./libnfs.c	/^	CLIENT *clnt;$/;"	m	struct:nfsio	file:
+close_pkt	./genloadfile/genloadfile.sh	/^close_pkt() {$/;"	f
+cmd_sn	./iscsi.c	/^       uint32_t cmd_sn;$/;"	m	struct:iscsi_device	file:
+cname	./dbench.h	/^	char *cname;$/;"	m	struct:child_struct
+committed	./nfs.h	/^	stable_how committed;$/;"	m	struct:WRITE3resok
+cookie	./nfs.h	/^	cookie3 cookie;$/;"	m	struct:READDIR3args
+cookie	./nfs.h	/^	cookie3 cookie;$/;"	m	struct:READDIRPLUS3args
+cookie	./nfs.h	/^	cookie3 cookie;$/;"	m	struct:entry3
+cookie	./nfs.h	/^	cookie3 cookie;$/;"	m	struct:entryplus3
+cookie3	./nfs.h	/^typedef uint64 cookie3;$/;"	t
+cookieverf	./nfs.h	/^	cookieverf3 cookieverf;$/;"	m	struct:READDIR3args
+cookieverf	./nfs.h	/^	cookieverf3 cookieverf;$/;"	m	struct:READDIR3resok
+cookieverf	./nfs.h	/^	cookieverf3 cookieverf;$/;"	m	struct:READDIRPLUS3args
+cookieverf	./nfs.h	/^	cookieverf3 cookieverf;$/;"	m	struct:READDIRPLUS3resok
+cookieverf3	./nfs.h	/^typedef char cookieverf3[NFS3_COOKIEVERFSIZE];$/;"	t
+count	./dbench.h	/^	unsigned count;$/;"	m	struct:op
+count	./nfs.h	/^	count3 count;$/;"	m	struct:COMMIT3args
+count	./nfs.h	/^	count3 count;$/;"	m	struct:READ3args
+count	./nfs.h	/^	count3 count;$/;"	m	struct:READ3resok
+count	./nfs.h	/^	count3 count;$/;"	m	struct:READDIR3args
+count	./nfs.h	/^	count3 count;$/;"	m	struct:WRITE3args
+count	./nfs.h	/^	count3 count;$/;"	m	struct:WRITE3resok
+count3	./nfs.h	/^typedef uint32 count3;$/;"	t
+create_procs	./dbench.c	/^static void create_procs(int nprocs, void (*fn)(struct child_struct *, const char *))$/;"	f	file:
+createdir_pkt	./genloadfile/genloadfile.sh	/^createdir_pkt() {$/;"	f
+createhow3	./nfs.h	/^struct createhow3 {$/;"	s
+createhow3	./nfs.h	/^typedef struct createhow3 createhow3;$/;"	t	typeref:struct:createhow3
+createhow3_u	./nfs.h	/^	} createhow3_u;$/;"	m	struct:createhow3	typeref:union:createhow3::__anon21
+createmode3	./nfs.h	/^enum createmode3 {$/;"	g
+createmode3	./nfs.h	/^typedef enum createmode3 createmode3;$/;"	t	typeref:enum:createmode3
+createverf3	./nfs.h	/^typedef char createverf3[NFS3_CREATEVERFSIZE];$/;"	t
+ctime	./nfs.h	/^	nfstime3 ctime;$/;"	m	struct:fattr3
+ctime	./nfs.h	/^	nfstime3 ctime;$/;"	m	struct:wcc_attr
+ctx	./smb.c	/^	SMBCCTX *ctx;$/;"	m	struct:smb_child	file:
+data	./nfs.h	/^	nfspath3 data;$/;"	m	struct:READLINK3resok
+data	./nfs.h	/^	} data;$/;"	m	struct:READ3resok	typeref:struct:READ3resok::__anon25
+data	./nfs.h	/^	} data;$/;"	m	struct:WRITE3args	typeref:struct:WRITE3args::__anon9
+data	./nfs.h	/^	} data;$/;"	m	struct:nfs_fh3	typeref:struct:nfs_fh3::__anon6
+data_len	./nfs.h	/^		u_int data_len;$/;"	m	struct:READ3resok::__anon25
+data_len	./nfs.h	/^		u_int data_len;$/;"	m	struct:WRITE3args::__anon9
+data_len	./nfs.h	/^		u_int data_len;$/;"	m	struct:nfs_fh3::__anon6
+data_t	./libnfs.c	/^} data_t;$/;"	t	typeref:struct:_data_t	file:
+data_t	./smb.c	/^} data_t;$/;"	t	typeref:struct:_data_t	file:
+data_val	./nfs.h	/^		char *data_val;$/;"	m	struct:READ3resok::__anon25
+data_val	./nfs.h	/^		char *data_val;$/;"	m	struct:WRITE3args::__anon9
+data_val	./nfs.h	/^		char *data_val;$/;"	m	struct:nfs_fh3::__anon6
+datadir	./Makefile	/^datadir=${prefix}\/share$/;"	m
+dbench.1	./doc/dbench.1.html	/^<html><head><meta http-equiv="Content-Type" content="text\/html; charset=ISO-8859-1"><title>dbench<\/title><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><\/head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="refentry" title="dbench"><a name="dbench.1"><\/a><div class="titlepage"><\/div><div class="refnamediv"><h2>Name<\/h2><p>dbench &#8212; a benchmark tool<\/p><\/div><div class="refsynopsisdiv" title="Synopsis"><h2>Synopsis<\/h2><div class="cmdsynopsis"><p><code class="command">dbench [OPTIONS] &lt;num-procs&gt;<\/code> <\/p><\/div><div class="cmdsynopsis"><p><code class="command">dbench<\/code>  [-B --backend=&lt;dbench backend&gt;] [-c --loadfile=&lt;filename&gt;] [-D --directory=&lt;string&gt;] [-F --fsync] [-R --target-rate=&lt;double&gt;] [-s --sync] [-S --sync-dir] [-t --timelimit=&lt;integer&gt;] [-T --tcp-options=&lt;string&gt;] [--run-once] [--fake-io] [--scsi=&lt;scsi-device&gt;] [--server=&lt;hostname&gt;] [--export=&lt;string&gt;] [--protocol=&lt;string&gt;] [--clients-per-process=&lt;integer&gt;] [--trunc-io=&lt;integer&gt;] [--stat-check] [--skip-cleanup] [--per-client-results] [--iscsi-device=&lt;iSCSI URL&gt;] [--iscsi-initiatorname=&lt;iSCSI InitiatorName&gt;] [-? --help] [--usage]<\/p><\/div><\/div><div class="refsect1" title="DESCRIPTION"><a name="id327222"><\/a><h2>DESCRIPTION<\/h2><p>$/;"	a
+dbench_op	./dbench.h	/^struct dbench_op {$/;"	s
+delete_fhandle	./libnfs.c	/^static void delete_fhandle(struct nfsio *nfsio, const char *name)$/;"	f	file:
+delete_path	./smb.c	/^static void delete_path(const char *path)$/;"	f	file:
+delete_pkt	./genloadfile/genloadfile.sh	/^delete_pkt() {$/;"	f
+deletedir_pkt	./genloadfile/genloadfile.sh	/^deletedir_pkt() {$/;"	f
+dev_attributes	./nfs.h	/^	sattr3 dev_attributes;$/;"	m	struct:devicedata3
+device	./nfs.h	/^		devicedata3 device;$/;"	m	union:mknoddata3::__anon32
+devicedata3	./nfs.h	/^struct devicedata3 {$/;"	s
+devicedata3	./nfs.h	/^typedef struct devicedata3 devicedata3;$/;"	t	typeref:struct:devicedata3
+dir	./nfs.h	/^	nfs_fh3 dir;$/;"	m	struct:READDIR3args
+dir	./nfs.h	/^	nfs_fh3 dir;$/;"	m	struct:READDIRPLUS3args
+dir	./nfs.h	/^	nfs_fh3 dir;$/;"	m	struct:diropargs3
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:LOOKUP3resfail
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:LOOKUP3resok
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:READDIR3resfail
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:READDIR3resok
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:READDIRPLUS3resfail
+dir_attributes	./nfs.h	/^	post_op_attr dir_attributes;$/;"	m	struct:READDIRPLUS3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:CREATE3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:CREATE3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:MKDIR3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:MKDIR3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:MKNOD3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:MKNOD3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:REMOVE3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:REMOVE3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:RMDIR3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:RMDIR3resok
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:SYMLINK3resfail
+dir_wcc	./nfs.h	/^	wcc_data dir_wcc;$/;"	m	struct:SYMLINK3resok
+dircount	./nfs.h	/^	count3 dircount;$/;"	m	struct:READDIRPLUS3args
+directory	./dbench.h	/^	const char *directory;$/;"	m	struct:child_struct
+directory	./dbench.h	/^	const char *directory;$/;"	m	struct:options
+dirent_cb	./nfsio.c	/^static void dirent_cb(struct entryplus3 *e, void *private_data)$/;"	f	file:
+dirlist3	./nfs.h	/^struct dirlist3 {$/;"	s
+dirlist3	./nfs.h	/^typedef struct dirlist3 dirlist3;$/;"	t	typeref:struct:dirlist3
+dirlistplus3	./nfs.h	/^struct dirlistplus3 {$/;"	s
+dirlistplus3	./nfs.h	/^typedef struct dirlistplus3 dirlistplus3;$/;"	t	typeref:struct:dirlistplus3
+dirname	./nfsio.c	/^	char *dirname;$/;"	m	struct:cb_data	file:
+diropargs3	./nfs.h	/^struct diropargs3 {$/;"	s
+diropargs3	./nfs.h	/^typedef struct diropargs3 diropargs3;$/;"	t	typeref:struct:diropargs3
+dirpath	./mount.h	/^typedef char *dirpath;$/;"	t
+discard_const	./iscsi.c	28;"	d	file:
+discard_const	./libiscsi.c	29;"	d	file:
+discard_const	./libnfs.c	27;"	d	file:
+discard_const	./linux_scsi.c	30;"	d	file:
+discard_const	./nfsio.c	28;"	d	file:
+discard_const	./smb.c	25;"	d	file:
+do_access	./web/nfsloadfile.sh	/^do_access() {$/;"	f
+do_close	./io.c	/^void do_close(int handle)$/;"	f
+do_create	./io.c	/^void do_create(char *fname, int size)$/;"	f
+do_create	./web/nfsloadfile.sh	/^do_create() {$/;"	f
+do_fsinfo	./web/nfsloadfile.sh	/^do_fsinfo() {$/;"	f
+do_fsync	./dbench.h	/^	int do_fsync;$/;"	m	struct:options
+do_getattr	./web/nfsloadfile.sh	/^do_getattr() {$/;"	f
+do_iscsi_io	./iscsi.c	/^static int do_iscsi_io(struct iscsi_device *sd, unsigned char *cdb, unsigned char cdb_size, int xfer_dir, unsigned int *data_size, char *data, unsigned char *sc, int *sense_key, int *sense_ascq)$/;"	f	file:
+do_lookup	./web/nfsloadfile.sh	/^do_lookup() {$/;"	f
+do_mkdir	./io.c	/^void do_mkdir(char *fname)$/;"	f
+do_open	./io.c	/^void do_open(char *fname, int handle, int size)$/;"	f
+do_packets	./sockio.c	/^static void do_packets(struct child_struct *child, int send_size, int recv_size)$/;"	f	file:
+do_read	./io.c	/^void do_read(int handle, int size, int offset)$/;"	f
+do_read	./web/nfsloadfile.sh	/^do_read() {$/;"	f
+do_readdirplus	./web/nfsloadfile.sh	/^do_readdirplus() {$/;"	f
+do_rename	./io.c	/^void do_rename(char *old, char *new)$/;"	f
+do_rmdir	./io.c	/^void do_rmdir(char *fname)$/;"	f
+do_stat	./io.c	/^void do_stat(char *fname, int size)$/;"	f
+do_unlink	./io.c	/^void do_unlink(char *fname)$/;"	f
+do_write	./io.c	/^void do_write(int handle, int size, int offset)$/;"	f
+do_write	./web/nfsloadfile.sh	/^do_write() {$/;"	f
+docdir	./Makefile	/^docdir=${prefix}\/share\/doc\/dbench$/;"	m
+done	./dbench.h	/^	int done;$/;"	m	struct:child_struct
+dopr	./snprintf.c	/^static size_t dopr(char *buffer, size_t maxlen, const char *format, va_list args_in)$/;"	f	file:
+dopr_outch	./snprintf.c	/^static void dopr_outch(char *buffer, size_t *currlen, size_t maxlen, char c)$/;"	f	file:
+dptr	./libnfs.c	/^	const char *dptr;$/;"	m	struct:_data_t	file:
+dptr	./smb.c	/^	const char *dptr;$/;"	m	struct:_data_t	file:
+dsize	./libnfs.c	/^	int dsize;$/;"	m	struct:_data_t	file:
+dsize	./smb.c	/^	int dsize;$/;"	m	struct:_data_t	file:
+dtpref	./nfs.h	/^	uint32 dtpref;$/;"	m	struct:FSINFO3resok
+dummy_snprintf	./snprintf.c	/^ void dummy_snprintf(void) {} $/;"	f
+ea_enable	./dbench.h	/^	int ea_enable;$/;"	m	struct:options
+entries	./nfs.h	/^	entry3 *entries;$/;"	m	struct:dirlist3
+entries	./nfs.h	/^	entryplus3 *entries;$/;"	m	struct:dirlistplus3
+entry3	./nfs.h	/^struct entry3 {$/;"	s
+entry3	./nfs.h	/^typedef struct entry3 entry3;$/;"	t	typeref:struct:entry3
+entryplus3	./nfs.h	/^struct entryplus3 {$/;"	s
+entryplus3	./nfs.h	/^typedef struct entryplus3 entryplus3;$/;"	t	typeref:struct:entryplus3
+eof	./nfs.h	/^	bool_t eof;$/;"	m	struct:READ3resok
+eof	./nfs.h	/^	bool_t eof;$/;"	m	struct:dirlist3
+eof	./nfs.h	/^	bool_t eof;$/;"	m	struct:dirlistplus3
+err	./libnfs.c	/^	const char *err;$/;"	m	struct:nfs_errors	file:
+ex_dir	./mount.h	/^	dirpath ex_dir;$/;"	m	struct:exportnode
+ex_groups	./mount.h	/^	groups ex_groups;$/;"	m	struct:exportnode
+ex_next	./mount.h	/^	exports ex_next;$/;"	m	struct:exportnode
+exec_prefix	./Makefile	/^exec_prefix=${prefix}$/;"	m
+exp_stat_sn	./iscsi.c	/^       uint32_t exp_stat_sn;$/;"	m	struct:iscsi_device	file:
+expand_file	./io.c	/^void expand_file(int fd, int size)$/;"	f
+expected_status	./fileio.c	/^static int expected_status(const char *status)$/;"	f	file:
+export	./dbench.h	/^	const char *export;$/;"	m	struct:options
+exportnode	./mount.h	/^struct exportnode {$/;"	s
+exportnode	./mount.h	/^typedef struct exportnode exportnode;$/;"	t	typeref:struct:exportnode
+exports	./mount.h	/^typedef struct exportnode *exports;$/;"	t	typeref:struct:exportnode
+extract_field	./genloadfile/genloadfile.sh	/^extract_field() {$/;"	f
+extract_field	./web/nfsloadfile.sh	/^extract_field() {$/;"	f
+extract_name	./genloadfile/genloadfile.sh	/^extract_name() {$/;"	f
+extract_quoted_field	./web/nfsloadfile.sh	/^extract_quoted_field() {$/;"	f
+failed	./dbench.h	/^	int failed;$/;"	m	struct:child_struct
+failed	./fileio.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+failed	./iscsi.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+failed	./libiscsi.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+failed	./linux_scsi.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+failed	./nfsio.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+failed	./smb.c	/^static void failed(struct child_struct *child)$/;"	f	file:
+fake_io	./dbench.h	/^	int fake_io;$/;"	m	struct:options
+fattr3	./nfs.h	/^struct fattr3 {$/;"	s
+fattr3	./nfs.h	/^typedef struct fattr3 fattr3;$/;"	t	typeref:struct:fattr3
+fbytes	./nfs.h	/^	size3 fbytes;$/;"	m	struct:FSSTAT3resok
+fd	./fileio.c	/^	int fd;$/;"	m	struct:ftable	file:
+fd	./io.c	/^	int fd;$/;"	m	struct:__anon2	file:
+fd	./linux_scsi.c	/^	int fd;$/;"	m	struct:scsi_device	file:
+fd	./smb.c	/^	int fd;$/;"	m	struct:_smb_handle_t	file:
+ffiles	./nfs.h	/^	size3 ffiles;$/;"	m	struct:FSSTAT3resok
+fh	./libnfs.c	/^	data_t fh;$/;"	m	struct:_tree_t	file:
+fhandle	./mount.h	/^	fhandle3 fhandle;$/;"	m	struct:mountres3_ok
+fhandle3	./mount.h	/^} fhandle3;$/;"	t	typeref:struct:__anon3
+fhandle3_len	./mount.h	/^	u_int fhandle3_len;$/;"	m	struct:__anon3
+fhandle3_val	./mount.h	/^	char *fhandle3_val;$/;"	m	struct:__anon3
+fhandles	./libnfs.c	/^	tree_t *fhandles;$/;"	m	struct:nfsio	file:
+fhs_status	./mount.h	/^	mountstat3 fhs_status;$/;"	m	struct:mountres3
+file	./nfs.h	/^	nfs_fh3 file;$/;"	m	struct:COMMIT3args
+file	./nfs.h	/^	nfs_fh3 file;$/;"	m	struct:LINK3args
+file	./nfs.h	/^	nfs_fh3 file;$/;"	m	struct:READ3args
+file	./nfs.h	/^	nfs_fh3 file;$/;"	m	struct:WRITE3args
+file_attributes	./nfs.h	/^	post_op_attr file_attributes;$/;"	m	struct:LINK3resfail
+file_attributes	./nfs.h	/^	post_op_attr file_attributes;$/;"	m	struct:LINK3resok
+file_attributes	./nfs.h	/^	post_op_attr file_attributes;$/;"	m	struct:READ3resfail
+file_attributes	./nfs.h	/^	post_op_attr file_attributes;$/;"	m	struct:READ3resok
+file_size	./libnfs.c	/^	off_t  file_size;$/;"	m	struct:_tree_t	file:
+file_wcc	./nfs.h	/^	wcc_data file_wcc;$/;"	m	struct:COMMIT3resfail
+file_wcc	./nfs.h	/^	wcc_data file_wcc;$/;"	m	struct:COMMIT3resok
+file_wcc	./nfs.h	/^	wcc_data file_wcc;$/;"	m	struct:WRITE3resfail
+file_wcc	./nfs.h	/^	wcc_data file_wcc;$/;"	m	struct:WRITE3resok
+fileid	./nfs.h	/^	fileid3 fileid;$/;"	m	struct:entry3
+fileid	./nfs.h	/^	fileid3 fileid;$/;"	m	struct:entryplus3
+fileid	./nfs.h	/^	fileid3 fileid;$/;"	m	struct:fattr3
+fileid3	./nfs.h	/^typedef uint64 fileid3;$/;"	t
+fileio_ops	./fileio.c	/^struct nb_operations fileio_ops = {$/;"	v	typeref:struct:nb_operations
+filename3	./nfs.h	/^typedef char *filename3;$/;"	t
+find_fhandle	./libnfs.c	/^static tree_t *find_fhandle(tree_t *tree, const char *key)$/;"	f	file:
+find_handle	./fileio.c	/^static int find_handle(struct child_struct *child, int handle)$/;"	f	file:
+find_path	./smb.c	/^static tree_t *find_path(tree_t *tree, const char *path)$/;"	f	file:
+finish_op	./child.c	/^static void finish_op(struct child_struct *child, struct op *op)$/;"	f	file:
+fio_cleanup	./fileio.c	/^static void fio_cleanup(struct child_struct *child)$/;"	f	file:
+fio_close	./fileio.c	/^static void fio_close(struct dbench_op *op)$/;"	f	file:
+fio_createx	./fileio.c	/^static void fio_createx(struct dbench_op *op)$/;"	f	file:
+fio_deltree	./fileio.c	/^static void fio_deltree(struct dbench_op *op)$/;"	f	file:
+fio_findfirst	./fileio.c	/^static void fio_findfirst(struct dbench_op *op)$/;"	f	file:
+fio_flush	./fileio.c	/^static void fio_flush(struct dbench_op *op)$/;"	f	file:
+fio_lockx	./fileio.c	/^static void fio_lockx(struct dbench_op *op)$/;"	f	file:
+fio_mkdir	./fileio.c	/^static void fio_mkdir(struct dbench_op *op)$/;"	f	file:
+fio_qfileinfo	./fileio.c	/^static void fio_qfileinfo(struct dbench_op *op)$/;"	f	file:
+fio_qfsinfo	./fileio.c	/^static void fio_qfsinfo(struct dbench_op *op)$/;"	f	file:
+fio_qpathinfo	./fileio.c	/^static void fio_qpathinfo(struct dbench_op *op)$/;"	f	file:
+fio_readx	./fileio.c	/^static void fio_readx(struct dbench_op *op)$/;"	f	file:
+fio_rename	./fileio.c	/^static void fio_rename(struct dbench_op *op)$/;"	f	file:
+fio_rmdir	./fileio.c	/^static void fio_rmdir(struct dbench_op *op)$/;"	f	file:
+fio_setup	./fileio.c	/^static void fio_setup(struct child_struct *child)$/;"	f	file:
+fio_sfileinfo	./fileio.c	/^static void fio_sfileinfo(struct dbench_op *op)$/;"	f	file:
+fio_unlink	./fileio.c	/^static void fio_unlink(struct dbench_op *op)$/;"	f	file:
+fio_unlockx	./fileio.c	/^static void fio_unlockx(struct dbench_op *op)$/;"	f	file:
+fio_writex	./fileio.c	/^static void fio_writex(struct dbench_op *op)$/;"	f	file:
+flush_pkt	./genloadfile/genloadfile.sh	/^flush_pkt() {$/;"	f
+fmtfp	./snprintf.c	/^static void fmtfp (char *buffer, size_t *currlen, size_t maxlen,$/;"	f	file:
+fmtint	./snprintf.c	/^static void fmtint(char *buffer, size_t *currlen, size_t maxlen,$/;"	f	file:
+fmtstr	./snprintf.c	/^static void fmtstr(char *buffer, size_t *currlen, size_t maxlen,$/;"	f	file:
+fn	./dbench.h	/^	void (*fn)(struct dbench_op *);$/;"	m	struct:backend_op
+fname	./dbench.h	/^	const char *fname;$/;"	m	struct:dbench_op
+fname2	./dbench.h	/^	const char *fname2;$/;"	m	struct:dbench_op
+free_node	./libnfs.c	/^static void free_node(tree_t *t)$/;"	f	file:
+free_node	./smb.c	/^static void free_node(tree_t *t)$/;"	f	file:
+from	./nfs.h	/^	diropargs3 from;$/;"	m	struct:RENAME3args
+fromdir_wcc	./nfs.h	/^	wcc_data fromdir_wcc;$/;"	m	struct:RENAME3resfail
+fromdir_wcc	./nfs.h	/^	wcc_data fromdir_wcc;$/;"	m	struct:RENAME3resok
+fsid	./nfs.h	/^	uint64 fsid;$/;"	m	struct:fattr3
+fsroot	./nfs.h	/^	nfs_fh3 fsroot;$/;"	m	struct:FSINFO3args
+fsroot	./nfs.h	/^	nfs_fh3 fsroot;$/;"	m	struct:FSSTAT3args
+fsync_frequency	./dbench.h	/^	int fsync_frequency;$/;"	m	struct:options
+ftable	./fileio.c	/^struct ftable {$/;"	s	file:
+ftable	./io.c	/^} ftable[MAX_FILES];$/;"	v	typeref:struct:__anon2	file:
+ftype3	./nfs.h	/^enum ftype3 {$/;"	g
+ftype3	./nfs.h	/^typedef enum ftype3 ftype3;$/;"	t	typeref:enum:ftype3
+get_random_string	./child.c	/^static char *get_random_string(unsigned int idx)$/;"	f	file:
+gid	./nfs.h	/^		gid3 gid;$/;"	m	union:set_gid3::__anon17
+gid	./nfs.h	/^	gid3 gid;$/;"	m	struct:fattr3
+gid	./nfs.h	/^	set_gid3 gid;$/;"	m	struct:sattr3
+gid3	./nfs.h	/^typedef uint32 gid3;$/;"	t
+global_random	./dbench.c	/^int global_random;$/;"	v
+gr_name	./mount.h	/^	name gr_name;$/;"	m	struct:groupnode
+gr_next	./mount.h	/^	groups gr_next;$/;"	m	struct:groupnode
+groupnode	./mount.h	/^struct groupnode {$/;"	s
+groupnode	./mount.h	/^typedef struct groupnode groupnode;$/;"	t	typeref:struct:groupnode
+groups	./mount.h	/^typedef struct groupnode *groups;$/;"	t	typeref:struct:groupnode
+handle	./fileio.c	/^	int handle;$/;"	m	struct:ftable	file:
+handle	./io.c	/^	int handle;$/;"	m	struct:__anon2	file:
+handle	./nfs.h	/^		nfs_fh3 handle;$/;"	m	union:post_op_fh3::__anon22
+handle	./smb.c	/^	smb_handle_t handle;$/;"	m	struct:_tree_t	file:
+handle_follows	./nfs.h	/^	bool_t handle_follows;$/;"	m	struct:post_op_fh3
+handle_loadparm	./mkproto.pl	/^sub handle_loadparm {$/;"	s
+how	./nfs.h	/^	createhow3 how;$/;"	m	struct:CREATE3args
+id	./dbench.h	/^	int id;$/;"	m	struct:child_struct
+id327232	./doc/dbench.1.html	/^    <\/p><\/div><div class="refsect1" title="STANDARD OPTIONS"><a name="id327232"><\/a><h2>STANDARD OPTIONS<\/h2><div class="refsect2" title="-B --backend=&lt;dbench backend&gt;"><a name="id327238"><\/a><h3>-B --backend=&lt;dbench backend&gt;<\/h3><p>$/;"	a
+id327254	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-c --loadfile=&lt;filename&gt;"><a name="id327254"><\/a><h3>-c --loadfile=&lt;filename&gt;<\/h3><p>$/;"	a
+id327265	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-D --directory=&lt;string&gt;"><a name="id327265"><\/a><h3>-D --directory=&lt;string&gt;<\/h3><p>$/;"	a
+id327276	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-R --target-rate=&lt;double&gt;"><a name="id327276"><\/a><h3>-R --target-rate=&lt;double&gt;<\/h3><p>$/;"	a
+id327299	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-t --timelimit=&lt;integer&gt;"><a name="id327299"><\/a><h3>-t --timelimit=&lt;integer&gt;<\/h3><p>$/;"	a
+id327308	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--run-once"><a name="id327308"><\/a><h3>--run-once<\/h3><p>$/;"	a
+id327322	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--clients-per-process=&lt;integer&gt;"><a name="id327322"><\/a><h3>--clients-per-process=&lt;integer&gt;<\/h3><p>$/;"	a
+id327338	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--skip-cleanup"><a name="id327338"><\/a><h3>--skip-cleanup<\/h3><p>$/;"	a
+id327348	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--per-client-results"><a name="id327348"><\/a><h3>--per-client-results<\/h3><p>$/;"	a
+id327359	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="FILEIO OPTIONS"><a name="id327359"><\/a><h2>FILEIO OPTIONS<\/h2><div class="refsect2" title="-F --fsync"><a name="id327365"><\/a><h3>-F --fsync<\/h3><p>$/;"	a
+id327378	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-s --sync-open"><a name="id327378"><\/a><h3>-s --sync-open<\/h3><p>$/;"	a
+id327391	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="-S --sync-dir"><a name="id327391"><\/a><h3>-S --sync-dir<\/h3><p>$/;"	a
+id327405	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--fake-io"><a name="id327405"><\/a><h3>--fake-io<\/h3><p>$/;"	a
+id327417	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--stat-check"><a name="id327417"><\/a><h3>--stat-check<\/h3><p>$/;"	a
+id327433	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="SOCKIO OPTIONS"><a name="id327433"><\/a><h2>SOCKIO OPTIONS<\/h2><div class="refsect2" title="-T --tcp-options=&lt;string&gt;"><a name="id327438"><\/a><h3>-T --tcp-options=&lt;string&gt;<\/h3><p>$/;"	a
+id327448	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="SMB OPTIONS"><a name="id327448"><\/a><h2>SMB OPTIONS<\/h2><div class="refsect2" title="--smb-share=\/\/&lt;hostname&gt;\/&lt;share&gt;[\/&lt;path&gt;]"><a name="id327454"><\/a><h3>--smb-share=\/\/&lt;hostname&gt;\/&lt;share&gt;[\/&lt;path&gt;]<\/h3><p>$/;"	a
+id327474	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--smb-user=[&lt;domain&gt;\/]&lt;user&gt;%&lt;password&gt;"><a name="id327474"><\/a><h3>--smb-user=[&lt;domain&gt;\/]&lt;user&gt;%&lt;password&gt;<\/h3><p>$/;"	a
+id327495	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="NFS OPTIONS"><a name="id327495"><\/a><h2>NFS OPTIONS<\/h2><div class="refsect2" title="--server=&lt;hostname&gt;"><a name="id327500"><\/a><h3>--server=&lt;hostname&gt;<\/h3><p>$/;"	a
+id327516	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--export=&lt;string&gt;"><a name="id327516"><\/a><h3>--export=&lt;string&gt;<\/h3><p>$/;"	a
+id327531	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--protocol=&lt;string&gt;"><a name="id327531"><\/a><h3>--protocol=&lt;string&gt;<\/h3><p>$/;"	a
+id327543	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--trunc-io=&lt;integer&gt;"><a name="id327543"><\/a><h3>--trunc-io=&lt;integer&gt;<\/h3><p>$/;"	a
+id327559	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="SCSI OPTIONS"><a name="id327559"><\/a><h2>SCSI OPTIONS<\/h2><div class="refsect2" title="--scsi=&lt;scsi-device&gt;"><a name="id327564"><\/a><h3>--scsi=&lt;scsi-device&gt;<\/h3><p>$/;"	a
+id327582	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="iSCSI OPTIONS"><a name="id327582"><\/a><h2>iSCSI OPTIONS<\/h2><p>$/;"	a
+id327592	./doc/dbench.1.html	/^    <\/p><div class="refsect2" title="--iscsi-device=&lt;iSCSI URL&gt;"><a name="id327592"><\/a><h3>--iscsi-device=&lt;iSCSI URL&gt;<\/h3><p>$/;"	a
+id327609	./doc/dbench.1.html	/^      <\/p><\/div><div class="refsect2" title="--iscsi-initiatorname=&lt;iSCSI InitiatorName&gt;"><a name="id327609"><\/a><h3>--iscsi-initiatorname=&lt;iSCSI InitiatorName&gt;<\/h3><p>$/;"	a
+id327626	./doc/dbench.1.html	/^      <\/p><\/div><\/div><div class="refsect1" title="COPYRIGHT\/LICENSE"><a name="id327626"><\/a><h2>COPYRIGHT\/LICENSE<\/h2><div class="literallayout"><p><br>$/;"	a
+idx	./libnfs.c	/^	int idx;$/;"	m	struct:nfs_errors	file:
+init	./dbench.h	/^	int (*init)(void);$/;"	m	struct:nb_operations
+initiator_name	./iscsi.c	/^       char *initiator_name;$/;"	m	struct:iscsi_device	file:
+initiator_name	./libiscsi.c	/^       char *initiator_name;$/;"	m	struct:iscsi_device	file:
+insert_fhandle	./libnfs.c	/^static void insert_fhandle(struct nfsio *nfsio, const char *name, const char *fhandle, int length, off_t off)$/;"	f	file:
+insert_path	./smb.c	/^static void insert_path(const char *path, smb_handle_t *hnd)$/;"	f	file:
+int32	./nfs.h	/^typedef long int32;$/;"	t
+invarsec	./nfs.h	/^	uint32 invarsec;$/;"	m	struct:FSSTAT3resok
+iscsi	./libiscsi.c	/^       struct iscsi_context *iscsi;$/;"	m	struct:iscsi_device	typeref:struct:iscsi_device::iscsi_context	file:
+iscsi_cleanup	./iscsi.c	/^static void iscsi_cleanup(struct child_struct *child)$/;"	f	file:
+iscsi_cleanup	./libiscsi.c	/^static void iscsi_cleanup(struct child_struct *child)$/;"	f	file:
+iscsi_device	./dbench.h	/^	const char *iscsi_device;$/;"	m	struct:options
+iscsi_device	./iscsi.c	/^struct iscsi_device {$/;"	s	file:
+iscsi_device	./libiscsi.c	/^struct iscsi_device {$/;"	s	file:
+iscsi_init	./iscsi.c	/^static int iscsi_init(void)$/;"	f	file:
+iscsi_init	./libiscsi.c	/^static int iscsi_init(void)$/;"	f	file:
+iscsi_initiatorname	./dbench.h	/^	const char *iscsi_initiatorname;$/;"	m	struct:options
+iscsi_login	./iscsi.c	/^static int iscsi_login(struct iscsi_device *sd)$/;"	f	file:
+iscsi_ops	./iscsi.c	/^struct nb_operations iscsi_ops = {$/;"	v	typeref:struct:nb_operations
+iscsi_ops	./libiscsi.c	/^struct nb_operations iscsi_ops = {$/;"	v	typeref:struct:nb_operations
+iscsi_prout	./iscsi.c	/^static void iscsi_prout(struct dbench_op *op)$/;"	f	file:
+iscsi_read10	./iscsi.c	/^static void iscsi_read10(struct dbench_op *op)$/;"	f	file:
+iscsi_read10	./libiscsi.c	/^static void iscsi_read10(struct dbench_op *op)$/;"	f	file:
+iscsi_readcapacity10	./iscsi.c	/^static void iscsi_readcapacity10(struct dbench_op *op)$/;"	f	file:
+iscsi_readcapacity10	./libiscsi.c	/^static void iscsi_readcapacity10(struct dbench_op *op)$/;"	f	file:
+iscsi_setup	./iscsi.c	/^static void iscsi_setup(struct child_struct *child)$/;"	f	file:
+iscsi_setup	./libiscsi.c	/^static void iscsi_setup(struct child_struct *child)$/;"	f	file:
+iscsi_synchronizecache10	./iscsi.c	/^static void iscsi_synchronizecache10(struct dbench_op *op)$/;"	f	file:
+iscsi_synchronizecache10	./libiscsi.c	/^static void iscsi_synchronizecache10(struct dbench_op *op)$/;"	f	file:
+iscsi_testunitready	./iscsi.c	/^static void iscsi_testunitready(struct dbench_op *op)$/;"	f	file:
+iscsi_testunitready	./libiscsi.c	/^static void iscsi_testunitready(struct dbench_op *op)$/;"	f	file:
+iscsi_write10	./iscsi.c	/^static void iscsi_write10(struct dbench_op *op)$/;"	f	file:
+iscsi_write10	./libiscsi.c	/^static void iscsi_write10(struct dbench_op *op)$/;"	f	file:
+isid	./iscsi.c	/^       uint64_t isid;$/;"	m	struct:iscsi_device	file:
+itt	./iscsi.c	/^       uint32_t itt;$/;"	m	struct:iscsi_device	file:
+ival	./child.c	31;"	d	file:
+key	./libnfs.c	/^	data_t key;$/;"	m	struct:_tree_t	file:
+last_bytes	./dbench.h	/^		double last_bytes;$/;"	m	struct:child_struct::__anon1
+last_time	./dbench.h	/^		struct timeval last_time;$/;"	m	struct:child_struct::__anon1	typeref:struct:child_struct::__anon1::timeval
+lasttime	./dbench.h	/^	struct timeval lasttime;$/;"	m	struct:child_struct	typeref:struct:child_struct::timeval
+left	./libnfs.c	/^	struct _tree_t *left;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+left	./smb.c	/^	struct _tree_t *left;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+level	./socklib.c	/^  int level;$/;"	m	struct:__anon40	file:
+line	./dbench.h	/^	int line;$/;"	m	struct:child_struct
+link	./nfs.h	/^	diropargs3 link;$/;"	m	struct:LINK3args
+linkdir_wcc	./nfs.h	/^	wcc_data linkdir_wcc;$/;"	m	struct:LINK3resfail
+linkdir_wcc	./nfs.h	/^	wcc_data linkdir_wcc;$/;"	m	struct:LINK3resok
+linkmax	./nfs.h	/^	uint32 linkmax;$/;"	m	struct:PATHCONF3resok
+listener	./tbench_srv.c	/^static void listener(void)$/;"	f	file:
+loadfile	./dbench.h	/^	char *loadfile;$/;"	m	struct:options
+local_iscsi_readcapacity10	./iscsi.c	/^static void local_iscsi_readcapacity10(struct dbench_op *op, uint64_t *blocks)$/;"	f	file:
+local_iscsi_readcapacity10	./libiscsi.c	/^static void local_iscsi_readcapacity10(struct dbench_op *op, uint64_t *blocks)$/;"	f	file:
+lockandx_pkt	./genloadfile/genloadfile.sh	/^lockandx_pkt() {$/;"	f
+login_param	./iscsi.c	/^struct login_param {$/;"	s	file:
+login_params	./iscsi.c	/^struct login_param *login_params;$/;"	v	typeref:struct:login_param
+lookup_fhandle	./libnfs.c	/^static data_t *lookup_fhandle(struct nfsio *nfsio, const char *name, off_t *off)$/;"	f	file:
+lookup_path	./smb.c	/^static smb_handle_t *lookup_path(const char *path)$/;"	f	file:
+lun	./iscsi.c	/^       int lun;$/;"	m	struct:iscsi_device	file:
+lun	./libiscsi.c	/^       int lun;$/;"	m	struct:iscsi_device	file:
+machine_readable	./dbench.h	/^	int machine_readable;$/;"	m	struct:options
+main	./dbench.c	/^ int main(int argc, const char *argv[])$/;"	f
+main	./snprintf.c	/^ int main (void)$/;"	f
+main	./tbench_srv.c	/^ int main(int argc, char *argv[])$/;"	f
+mandir	./Makefile	/^mandir=${prefix}\/share\/man$/;"	m
+max_latency	./dbench.h	/^	double max_latency;$/;"	m	struct:child_struct
+max_latency	./dbench.h	/^	double max_latency;$/;"	m	struct:op
+maxcount	./nfs.h	/^	count3 maxcount;$/;"	m	struct:READDIRPLUS3args
+maxfilesize	./nfs.h	/^	size3 maxfilesize;$/;"	m	struct:FSINFO3resok
+mknoddata3	./nfs.h	/^struct mknoddata3 {$/;"	s
+mknoddata3	./nfs.h	/^typedef struct mknoddata3 mknoddata3;$/;"	t	typeref:struct:mknoddata3
+mknoddata3_u	./nfs.h	/^	} mknoddata3_u;$/;"	m	struct:mknoddata3	typeref:union:mknoddata3::__anon32
+ml_directory	./mount.h	/^	dirpath ml_directory;$/;"	m	struct:mountbody
+ml_hostname	./mount.h	/^	name ml_hostname;$/;"	m	struct:mountbody
+ml_next	./mount.h	/^	mountlist ml_next;$/;"	m	struct:mountbody
+mode	./nfs.h	/^		mode3 mode;$/;"	m	union:set_mode3::__anon15
+mode	./nfs.h	/^	createmode3 mode;$/;"	m	struct:createhow3
+mode	./nfs.h	/^	mode3 mode;$/;"	m	struct:fattr3
+mode	./nfs.h	/^	set_mode3 mode;$/;"	m	struct:sattr3
+mode3	./nfs.h	/^typedef uint32 mode3;$/;"	t
+mountbody	./mount.h	/^struct mountbody {$/;"	s
+mountbody	./mount.h	/^typedef struct mountbody mountbody;$/;"	t	typeref:struct:mountbody
+mountinfo	./mount.h	/^		mountres3_ok mountinfo;$/;"	m	union:mountres3::__anon5
+mountlist	./mount.h	/^typedef struct mountbody *mountlist;$/;"	t	typeref:struct:mountbody
+mountproc3_dump_3	./mount_client.c	/^mountproc3_dump_3(void *argp, CLIENT *clnt)$/;"	f
+mountproc3_export_3	./mount_client.c	/^mountproc3_export_3(void *argp, CLIENT *clnt)$/;"	f
+mountproc3_mnt_3	./mount_client.c	/^mountproc3_mnt_3(dirpath *argp, CLIENT *clnt)$/;"	f
+mountproc3_null_3	./mount_client.c	/^mountproc3_null_3(void *argp, CLIENT *clnt)$/;"	f
+mountproc3_umnt_3	./mount_client.c	/^mountproc3_umnt_3(dirpath *argp, CLIENT *clnt)$/;"	f
+mountproc3_umntall_3	./mount_client.c	/^mountproc3_umntall_3(void *argp, CLIENT *clnt)$/;"	f
+mountres3	./mount.h	/^struct mountres3 {$/;"	s
+mountres3	./mount.h	/^typedef struct mountres3 mountres3;$/;"	t	typeref:struct:mountres3
+mountres3_ok	./mount.h	/^struct mountres3_ok {$/;"	s
+mountres3_ok	./mount.h	/^typedef struct mountres3_ok mountres3_ok;$/;"	t	typeref:struct:mountres3_ok
+mountres3_u	./mount.h	/^	} mountres3_u;$/;"	m	struct:mountres3	typeref:union:mountres3::__anon5
+mountstat3	./mount.h	/^enum mountstat3 {$/;"	g
+mountstat3	./mount.h	/^typedef enum mountstat3 mountstat3;$/;"	t	typeref:enum:mountstat3
+msleep	./util.c	/^void msleep(unsigned int t)$/;"	f
+mtime	./nfs.h	/^		nfstime3 mtime;$/;"	m	union:set_mtime::__anon20
+mtime	./nfs.h	/^	nfstime3 mtime;$/;"	m	struct:fattr3
+mtime	./nfs.h	/^	nfstime3 mtime;$/;"	m	struct:wcc_attr
+mtime	./nfs.h	/^	set_mtime mtime;$/;"	m	struct:sattr3
+my_modf	./snprintf.c	/^static double my_modf(double x0, double *iptr)$/;"	f	file:
+name	./dbench.h	/^	const char *name;$/;"	m	struct:backend_op
+name	./fileio.c	/^	char *name;$/;"	m	struct:ftable	file:
+name	./iscsi.c	/^       const char *name;$/;"	m	struct:scsi_status_name	file:
+name	./mount.h	/^typedef char *name;$/;"	t
+name	./nfs.h	/^	filename3 name;$/;"	m	struct:diropargs3
+name	./nfs.h	/^	filename3 name;$/;"	m	struct:entry3
+name	./nfs.h	/^	filename3 name;$/;"	m	struct:entryplus3
+name	./socklib.c	/^  char *name;$/;"	m	struct:__anon40	file:
+name_attributes	./nfs.h	/^	post_op_attr name_attributes;$/;"	m	struct:entryplus3
+name_handle	./nfs.h	/^	post_op_fh3 name_handle;$/;"	m	struct:entryplus3
+name_max	./nfs.h	/^	uint32 name_max;$/;"	m	struct:PATHCONF3resok
+nb_operations	./dbench.h	/^struct nb_operations {$/;"	s
+nb_ops	./dbench.c	/^struct nb_operations *nb_ops;$/;"	v	typeref:struct:nb_operations
+nb_sleep	./child.c	/^static void nb_sleep(int usec)$/;"	f	file:
+nb_target_rate	./child.c	/^static void nb_target_rate(struct child_struct *child, double rate)$/;"	f	file:
+nb_time_delay	./child.c	/^static void nb_time_delay(struct child_struct *child, double targett)$/;"	f	file:
+nb_time_reset	./child.c	/^static void nb_time_reset(struct child_struct *child)$/;"	f	file:
+next	./iscsi.c	/^       struct login_param *next;$/;"	m	struct:login_param	typeref:struct:login_param::login_param	file:
+next_token	./util.c	/^BOOL next_token(char **ptr,char *buff,char *sep)$/;"	f
+nextentry	./nfs.h	/^	struct entry3 *nextentry;$/;"	m	struct:entry3	typeref:struct:entry3::entry3
+nextentry	./nfs.h	/^	struct entryplus3 *nextentry;$/;"	m	struct:entryplus3	typeref:struct:entryplus3::entryplus3
+nfs3_access	./nfsio.c	/^static void nfs3_access(struct dbench_op *op)$/;"	f	file:
+nfs3_cleanup	./nfsio.c	/^static void nfs3_cleanup(struct child_struct *child)$/;"	f	file:
+nfs3_commit	./nfsio.c	/^static void nfs3_commit(struct dbench_op *op)$/;"	f	file:
+nfs3_create	./nfsio.c	/^static void nfs3_create(struct dbench_op *op)$/;"	f	file:
+nfs3_deltree	./nfsio.c	/^static void nfs3_deltree(struct dbench_op *op)$/;"	f	file:
+nfs3_dirent_cb	./libnfs.h	/^typedef void (*nfs3_dirent_cb)(struct entryplus3 *e, void *private_data);$/;"	t
+nfs3_fsinfo	./nfsio.c	/^static void nfs3_fsinfo(struct dbench_op *op)$/;"	f	file:
+nfs3_fsstat	./nfsio.c	/^static void nfs3_fsstat(struct dbench_op *op)$/;"	f	file:
+nfs3_getattr	./nfsio.c	/^static void nfs3_getattr(struct dbench_op *op)$/;"	f	file:
+nfs3_init	./nfsio.c	/^static int nfs3_init(void)$/;"	f	file:
+nfs3_link	./nfsio.c	/^static void nfs3_link(struct dbench_op *op)$/;"	f	file:
+nfs3_lookup	./nfsio.c	/^static void nfs3_lookup(struct dbench_op *op)$/;"	f	file:
+nfs3_mkdir	./nfsio.c	/^static void nfs3_mkdir(struct dbench_op *op)$/;"	f	file:
+nfs3_read	./nfsio.c	/^static void nfs3_read(struct dbench_op *op)$/;"	f	file:
+nfs3_readdirplus	./nfsio.c	/^static void nfs3_readdirplus(struct dbench_op *op)$/;"	f	file:
+nfs3_remove	./nfsio.c	/^static void nfs3_remove(struct dbench_op *op)$/;"	f	file:
+nfs3_rename	./nfsio.c	/^static void nfs3_rename(struct dbench_op *op)$/;"	f	file:
+nfs3_rmdir	./nfsio.c	/^static void nfs3_rmdir(struct dbench_op *op)$/;"	f	file:
+nfs3_setup	./nfsio.c	/^static void nfs3_setup(struct child_struct *child)$/;"	f	file:
+nfs3_symlink	./nfsio.c	/^static void nfs3_symlink(struct dbench_op *op)$/;"	f	file:
+nfs3_write	./nfsio.c	/^static void nfs3_write(struct dbench_op *op)$/;"	f	file:
+nfs_error	./libnfs.c	/^const char *nfs_error(int error)$/;"	f
+nfs_errors	./libnfs.c	/^static const struct nfs_errors nfs_errors[] = {$/;"	v	typeref:struct:nfs_errors	file:
+nfs_errors	./libnfs.c	/^struct nfs_errors {$/;"	s	file:
+nfs_fh3	./nfs.h	/^struct nfs_fh3 {$/;"	s
+nfs_fh3	./nfs.h	/^typedef struct nfs_fh3 nfs_fh3;$/;"	t	typeref:struct:nfs_fh3
+nfs_ops	./nfsio.c	/^struct nb_operations nfs_ops = {$/;"	v	typeref:struct:nb_operations
+nfsio	./libnfs.c	/^struct nfsio {$/;"	s	file:
+nfsio	./nfsio.c	/^	struct nfsio *nfsio;$/;"	m	struct:cb_data	typeref:struct:cb_data::nfsio	file:
+nfsio_access	./libnfs.c	/^nfsstat3 nfsio_access(struct nfsio *nfsio, const char *name, uint32 desired, uint32 *access)$/;"	f
+nfsio_commit	./libnfs.c	/^nfsstat3 nfsio_commit(struct nfsio *nfsio, const char *name)$/;"	f
+nfsio_connect	./libnfs.c	/^struct nfsio *nfsio_connect(const char *server, const char *export, const char *protocol, int initial_xid, int xid_stride)$/;"	f
+nfsio_create	./libnfs.c	/^nfsstat3 nfsio_create(struct nfsio *nfsio, const char *name)$/;"	f
+nfsio_disconnect	./libnfs.c	/^void nfsio_disconnect(struct nfsio *nfsio)$/;"	f
+nfsio_fsinfo	./libnfs.c	/^nfsstat3 nfsio_fsinfo(struct nfsio *nfsio)$/;"	f
+nfsio_fsstat	./libnfs.c	/^nfsstat3 nfsio_fsstat(struct nfsio *nfsio)$/;"	f
+nfsio_getattr	./libnfs.c	/^nfsstat3 nfsio_getattr(struct nfsio *nfsio, const char *name, fattr3 *attributes)$/;"	f
+nfsio_link	./libnfs.c	/^nfsstat3 nfsio_link(struct nfsio *nfsio, const char *old, const char *new)$/;"	f
+nfsio_lookup	./libnfs.c	/^nfsstat3 nfsio_lookup(struct nfsio *nfsio, const char *name, fattr3 *attributes)$/;"	f
+nfsio_mkdir	./libnfs.c	/^nfsstat3 nfsio_mkdir(struct nfsio *nfsio, const char *name)$/;"	f
+nfsio_pathconf	./libnfs.c	/^nfsstat3 nfsio_pathconf(struct nfsio *nfsio, char *name)$/;"	f
+nfsio_read	./libnfs.c	/^nfsstat3 nfsio_read(struct nfsio *nfsio, const char *name, char *buf, uint64_t offset, int len, int *count, int *eof)$/;"	f
+nfsio_readdirplus	./libnfs.c	/^nfsstat3 nfsio_readdirplus(struct nfsio *nfsio, const char *name, nfs3_dirent_cb cb, void *private_data)$/;"	f
+nfsio_readlink	./libnfs.c	/^nfsstat3 nfsio_readlink(struct nfsio *nfsio, char *name, char **link_name)$/;"	f
+nfsio_remove	./libnfs.c	/^nfsstat3 nfsio_remove(struct nfsio *nfsio, const char *name)$/;"	f
+nfsio_rename	./libnfs.c	/^nfsstat3 nfsio_rename(struct nfsio *nfsio, const char *old, const char *new)$/;"	f
+nfsio_rmdir	./libnfs.c	/^nfsstat3 nfsio_rmdir(struct nfsio *nfsio, const char *name)$/;"	f
+nfsio_symlink	./libnfs.c	/^nfsstat3 nfsio_symlink(struct nfsio *nfsio, const char *old, const char *new)$/;"	f
+nfsio_write	./libnfs.c	/^nfsstat3 nfsio_write(struct nfsio *nfsio, const char *name, char *buf, uint64_t offset, int len, int stable)$/;"	f
+nfspath3	./nfs.h	/^typedef char *nfspath3;$/;"	t
+nfsproc3_access_3	./nfs_client.c	/^nfsproc3_access_3(ACCESS3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_commit_3	./nfs_client.c	/^nfsproc3_commit_3(COMMIT3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_create_3	./nfs_client.c	/^nfsproc3_create_3(CREATE3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_fsinfo_3	./nfs_client.c	/^nfsproc3_fsinfo_3(FSINFO3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_fsstat_3	./nfs_client.c	/^nfsproc3_fsstat_3(FSSTAT3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_getattr_3	./nfs_client.c	/^nfsproc3_getattr_3(GETATTR3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_link_3	./nfs_client.c	/^nfsproc3_link_3(LINK3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_lookup_3	./nfs_client.c	/^nfsproc3_lookup_3(LOOKUP3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_mkdir_3	./nfs_client.c	/^nfsproc3_mkdir_3(MKDIR3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_null_3	./nfs_client.c	/^nfsproc3_null_3(void *argp, CLIENT *clnt)$/;"	f
+nfsproc3_pathconf_3	./nfs_client.c	/^nfsproc3_pathconf_3(PATHCONF3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_read_3	./nfs_client.c	/^nfsproc3_read_3(READ3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_readdir_3	./nfs_client.c	/^nfsproc3_readdir_3(READDIR3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_readdirplus_3	./nfs_client.c	/^nfsproc3_readdirplus_3(READDIRPLUS3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_readlink_3	./nfs_client.c	/^nfsproc3_readlink_3(READLINK3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_remove_3	./nfs_client.c	/^nfsproc3_remove_3(REMOVE3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_rename_3	./nfs_client.c	/^nfsproc3_rename_3(RENAME3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_rmdir_3	./nfs_client.c	/^nfsproc3_rmdir_3(RMDIR3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_symlink_3	./nfs_client.c	/^nfsproc3_symlink_3(SYMLINK3args *argp, CLIENT *clnt)$/;"	f
+nfsproc3_write_3	./nfs_client.c	/^nfsproc3_write_3(WRITE3args *argp, CLIENT *clnt)$/;"	f
+nfsstat3	./nfs.h	/^enum nfsstat3 {$/;"	g
+nfsstat3	./nfs.h	/^typedef enum nfsstat3 nfsstat3;$/;"	t	typeref:enum:nfsstat3
+nfstime3	./nfs.h	/^struct nfstime3 {$/;"	s
+nfstime3	./nfs.h	/^typedef struct nfstime3 nfstime3;$/;"	t	typeref:struct:nfstime3
+nlink	./nfs.h	/^	uint32 nlink;$/;"	m	struct:fattr3
+no_resolve	./dbench.h	/^	int no_resolve;$/;"	m	struct:options
+no_trunc	./nfs.h	/^	bool_t no_trunc;$/;"	m	struct:PATHCONF3resok
+nprocs	./dbench.h	/^	int nprocs;$/;"	m	struct:options
+nseconds	./nfs.h	/^	uint32 nseconds;$/;"	m	struct:nfstime3
+ntcreate_andx_pkt	./genloadfile/genloadfile.sh	/^ntcreate_andx_pkt() {$/;"	f
+num_clients	./dbench.h	/^	int num_clients;$/;"	m	struct:child_struct
+num_device_blocks	./linux_scsi.c	/^static void num_device_blocks(struct scsi_device *sd)$/;"	f	file:
+obj	./nfs.h	/^	post_op_fh3 obj;$/;"	m	struct:CREATE3resok
+obj	./nfs.h	/^	post_op_fh3 obj;$/;"	m	struct:MKDIR3resok
+obj	./nfs.h	/^	post_op_fh3 obj;$/;"	m	struct:MKNOD3resok
+obj	./nfs.h	/^	post_op_fh3 obj;$/;"	m	struct:SYMLINK3resok
+obj_attributes	./nfs.h	/^		sattr3 obj_attributes;$/;"	m	union:createhow3::__anon21
+obj_attributes	./nfs.h	/^	fattr3 obj_attributes;$/;"	m	struct:GETATTR3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:ACCESS3resfail
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:ACCESS3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:CREATE3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:FSINFO3resfail
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:FSINFO3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:FSSTAT3resfail
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:FSSTAT3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:LOOKUP3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:MKDIR3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:MKNOD3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:PATHCONF3resfail
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:PATHCONF3resok
+obj_attributes	./nfs.h	/^	post_op_attr obj_attributes;$/;"	m	struct:SYMLINK3resok
+object	./nfs.h	/^	diropargs3 object;$/;"	m	struct:REMOVE3args
+object	./nfs.h	/^	diropargs3 object;$/;"	m	struct:RMDIR3args
+object	./nfs.h	/^	nfs_fh3 object;$/;"	m	struct:ACCESS3args
+object	./nfs.h	/^	nfs_fh3 object;$/;"	m	struct:GETATTR3args
+object	./nfs.h	/^	nfs_fh3 object;$/;"	m	struct:LOOKUP3resok
+object	./nfs.h	/^	nfs_fh3 object;$/;"	m	struct:PATHCONF3args
+offset	./nfs.h	/^	offset3 offset;$/;"	m	struct:COMMIT3args
+offset	./nfs.h	/^	offset3 offset;$/;"	m	struct:READ3args
+offset	./nfs.h	/^	offset3 offset;$/;"	m	struct:WRITE3args
+offset3	./nfs.h	/^typedef uint64 offset3;$/;"	t
+one_byte_write_fix	./dbench.h	/^	int one_byte_write_fix;$/;"	m	struct:options
+op	./dbench.h	/^	const char *op;$/;"	m	struct:dbench_op
+op	./dbench.h	/^struct op {$/;"	s
+open_files	./smb.c	/^static tree_t *open_files;$/;"	v	file:
+open_loadfile	./dbench.c	/^static gzFile *open_loadfile(void)$/;"	f	file:
+open_socket_in	./socklib.c	/^int open_socket_in(int type, int port)$/;"	f
+open_socket_out	./socklib.c	/^int open_socket_out(const char *host, int port)$/;"	f
+ops	./dbench.h	/^	struct backend_op *ops;$/;"	m	struct:nb_operations	typeref:struct:nb_operations::backend_op
+ops	./dbench.h	/^	struct op ops[MAX_OPS];$/;"	m	struct:child_struct	typeref:struct:child_struct::op
+ops	./fileio.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./iscsi.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./libiscsi.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./linux_scsi.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./nfsio.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./smb.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+ops	./sockio.c	/^static struct backend_op ops[] = {$/;"	v	typeref:struct:backend_op	file:
+option	./socklib.c	/^  int option;$/;"	m	struct:__anon40	file:
+options	./dbench.c	/^struct options options = {$/;"	v	typeref:struct:options
+options	./dbench.h	/^struct options {$/;"	s
+options	./tbench_srv.c	/^struct options options = {$/;"	v	typeref:struct:options
+opttype	./socklib.c	/^  int opttype;$/;"	m	struct:__anon40	file:
+params	./dbench.h	/^	int64_t params[10];$/;"	m	struct:dbench_op
+parent	./libnfs.c	/^	struct _tree_t *parent;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+parent	./smb.c	/^	struct _tree_t *parent;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+parse_randomstring	./child.c	/^static int parse_randomstring(char *line)$/;"	f	file:
+parse_special	./child.c	/^static uint64_t parse_special(const char *fmt, uint64_t prev_val)$/;"	f	file:
+path	./smb.c	/^	data_t path;$/;"	m	struct:_tree_t	file:
+per_client_results	./dbench.h	/^	int per_client_results;$/;"	m	struct:options
+pipe_attributes	./nfs.h	/^		sattr3 pipe_attributes;$/;"	m	union:mknoddata3::__anon32
+port	./iscsi.c	/^       int port;$/;"	m	struct:iscsi_device	file:
+portal	./iscsi.c	/^       const char *portal;$/;"	m	struct:iscsi_device	file:
+post_op_attr	./nfs.h	/^struct post_op_attr {$/;"	s
+post_op_attr	./nfs.h	/^typedef struct post_op_attr post_op_attr;$/;"	t	typeref:struct:post_op_attr
+post_op_attr_u	./nfs.h	/^	} post_op_attr_u;$/;"	m	struct:post_op_attr	typeref:union:post_op_attr::__anon7
+post_op_fh3	./nfs.h	/^struct post_op_fh3 {$/;"	s
+post_op_fh3	./nfs.h	/^typedef struct post_op_fh3 post_op_fh3;$/;"	t	typeref:struct:post_op_fh3
+post_op_fh3_u	./nfs.h	/^	} post_op_fh3_u;$/;"	m	struct:post_op_fh3	typeref:union:post_op_fh3::__anon22
+pre_op_attr	./nfs.h	/^struct pre_op_attr {$/;"	s
+pre_op_attr	./nfs.h	/^typedef struct pre_op_attr pre_op_attr;$/;"	t	typeref:struct:pre_op_attr
+pre_op_attr_u	./nfs.h	/^	} pre_op_attr_u;$/;"	m	struct:pre_op_attr	typeref:union:pre_op_attr::__anon8
+prefix	./Makefile	/^prefix=\/usr\/local$/;"	m
+print_footer	./mkproto.pl	/^sub print_footer {$/;"	s
+print_header	./mkproto.pl	/^sub print_header {$/;"	s
+process_file	./mkproto.pl	/^sub process_file($) $/;"	s
+process_files	./mkproto.pl	/^sub process_files {$/;"	s
+process_opts	./dbench.c	/^static void process_opts(int argc, const char **argv)$/;"	f	file:
+process_opts	./tbench_srv.c	/^static void process_opts(int argc, char **argv)$/;"	f	file:
+properties	./nfs.h	/^	uint32 properties;$/;"	m	struct:FSINFO3resok
+protocol	./dbench.h	/^	const char *protocol;$/;"	m	struct:options
+prototypes	./configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+random_string	./child.c	/^static char random_string[MAX_RND_STR][256];$/;"	v	file:
+rate	./dbench.h	/^	} rate;$/;"	m	struct:child_struct	typeref:struct:child_struct::__anon1
+rdev	./nfs.h	/^	specdata3 rdev;$/;"	m	struct:fattr3
+read_andx_pkt	./genloadfile/genloadfile.sh	/^read_andx_pkt() {$/;"	f
+read_sock	./socklib.c	/^int read_sock(int s, char *buf, int size)$/;"	f
+recursive_delete_tree	./smb.c	/^static void recursive_delete_tree(struct dbench_op *op, const char *url)$/;"	f	file:
+recursive_lookup_fhandle	./libnfs.c	/^static data_t *recursive_lookup_fhandle(struct nfsio *nfsio, const char *name)$/;"	f	file:
+rename_pkt	./genloadfile/genloadfile.sh	/^rename_pkt() {$/;"	f
+reply	./nfs.h	/^	dirlist3 reply;$/;"	m	struct:READDIR3resok
+reply	./nfs.h	/^	dirlistplus3 reply;$/;"	m	struct:READDIRPLUS3resok
+report_latencies	./dbench.c	/^static void report_latencies(void)$/;"	f	file:
+resfail	./nfs.h	/^		ACCESS3resfail resfail;$/;"	m	union:ACCESS3res::__anon13
+resfail	./nfs.h	/^		COMMIT3resfail resfail;$/;"	m	union:COMMIT3res::__anon12
+resfail	./nfs.h	/^		CREATE3resfail resfail;$/;"	m	union:CREATE3res::__anon23
+resfail	./nfs.h	/^		FSINFO3resfail resfail;$/;"	m	union:FSINFO3res::__anon27
+resfail	./nfs.h	/^		FSSTAT3resfail resfail;$/;"	m	union:FSSTAT3res::__anon28
+resfail	./nfs.h	/^		LINK3resfail resfail;$/;"	m	union:LINK3res::__anon39
+resfail	./nfs.h	/^		LOOKUP3resfail resfail;$/;"	m	union:LOOKUP3res::__anon11
+resfail	./nfs.h	/^		MKDIR3resfail resfail;$/;"	m	union:MKDIR3res::__anon34
+resfail	./nfs.h	/^		MKNOD3resfail resfail;$/;"	m	union:MKNOD3res::__anon33
+resfail	./nfs.h	/^		PATHCONF3resfail resfail;$/;"	m	union:PATHCONF3res::__anon29
+resfail	./nfs.h	/^		READ3resfail resfail;$/;"	m	union:READ3res::__anon26
+resfail	./nfs.h	/^		READDIR3resfail resfail;$/;"	m	union:READDIR3res::__anon38
+resfail	./nfs.h	/^		READDIRPLUS3resfail resfail;$/;"	m	union:READDIRPLUS3res::__anon37
+resfail	./nfs.h	/^		READLINK3resfail resfail;$/;"	m	union:READLINK3res::__anon31
+resfail	./nfs.h	/^		REMOVE3resfail resfail;$/;"	m	union:REMOVE3res::__anon24
+resfail	./nfs.h	/^		RENAME3resfail resfail;$/;"	m	union:RENAME3res::__anon36
+resfail	./nfs.h	/^		RMDIR3resfail resfail;$/;"	m	union:RMDIR3res::__anon35
+resfail	./nfs.h	/^		SYMLINK3resfail resfail;$/;"	m	union:SYMLINK3res::__anon30
+resfail	./nfs.h	/^		WRITE3resfail resfail;$/;"	m	union:WRITE3res::__anon10
+resok	./nfs.h	/^		ACCESS3resok resok;$/;"	m	union:ACCESS3res::__anon13
+resok	./nfs.h	/^		COMMIT3resok resok;$/;"	m	union:COMMIT3res::__anon12
+resok	./nfs.h	/^		CREATE3resok resok;$/;"	m	union:CREATE3res::__anon23
+resok	./nfs.h	/^		FSINFO3resok resok;$/;"	m	union:FSINFO3res::__anon27
+resok	./nfs.h	/^		FSSTAT3resok resok;$/;"	m	union:FSSTAT3res::__anon28
+resok	./nfs.h	/^		GETATTR3resok resok;$/;"	m	union:GETATTR3res::__anon14
+resok	./nfs.h	/^		LINK3resok resok;$/;"	m	union:LINK3res::__anon39
+resok	./nfs.h	/^		LOOKUP3resok resok;$/;"	m	union:LOOKUP3res::__anon11
+resok	./nfs.h	/^		MKDIR3resok resok;$/;"	m	union:MKDIR3res::__anon34
+resok	./nfs.h	/^		MKNOD3resok resok;$/;"	m	union:MKNOD3res::__anon33
+resok	./nfs.h	/^		PATHCONF3resok resok;$/;"	m	union:PATHCONF3res::__anon29
+resok	./nfs.h	/^		READ3resok resok;$/;"	m	union:READ3res::__anon26
+resok	./nfs.h	/^		READDIR3resok resok;$/;"	m	union:READDIR3res::__anon38
+resok	./nfs.h	/^		READDIRPLUS3resok resok;$/;"	m	union:READDIRPLUS3res::__anon37
+resok	./nfs.h	/^		READLINK3resok resok;$/;"	m	union:READLINK3res::__anon31
+resok	./nfs.h	/^		REMOVE3resok resok;$/;"	m	union:REMOVE3res::__anon24
+resok	./nfs.h	/^		RENAME3resok resok;$/;"	m	union:RENAME3res::__anon36
+resok	./nfs.h	/^		RMDIR3resok resok;$/;"	m	union:RMDIR3res::__anon35
+resok	./nfs.h	/^		SYMLINK3resok resok;$/;"	m	union:SYMLINK3res::__anon30
+resok	./nfs.h	/^		WRITE3resok resok;$/;"	m	union:WRITE3res::__anon10
+resolve_name	./fileio.c	/^static void resolve_name(struct child_struct *child, const char *name)$/;"	f	file:
+right	./libnfs.c	/^	struct _tree_t *right;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+right	./smb.c	/^	struct _tree_t *right;$/;"	m	struct:_tree_t	typeref:struct:_tree_t::_tree_t	file:
+rtmax	./nfs.h	/^	uint32 rtmax;$/;"	m	struct:FSINFO3resok
+rtmult	./nfs.h	/^	uint32 rtmult;$/;"	m	struct:FSINFO3resok
+rtpref	./nfs.h	/^	uint32 rtpref;$/;"	m	struct:FSINFO3resok
+run_once	./dbench.h	/^	int run_once;$/;"	m	struct:options
+rw_buf	./child.c	/^char rw_buf[RWBUFSIZE];$/;"	v
+s	./iscsi.c	/^       int s;$/;"	m	struct:iscsi_device	file:
+s	./libnfs.c	/^	int s;$/;"	m	struct:nfsio	file:
+sattr3	./nfs.h	/^struct sattr3 {$/;"	s
+sattr3	./nfs.h	/^typedef struct sattr3 sattr3;$/;"	t	typeref:struct:sattr3
+sc	./iscsi.c	/^       int sc;$/;"	m	struct:scsi_status_name	file:
+scsi_ascq_names	./iscsi.c	/^static struct scsi_status_name scsi_ascq_names[] = {$/;"	v	typeref:struct:scsi_status_name	file:
+scsi_cleanup	./linux_scsi.c	/^static void scsi_cleanup(struct child_struct *child)$/;"	f	file:
+scsi_dev	./dbench.h	/^	const char *scsi_dev;$/;"	m	struct:options
+scsi_device	./linux_scsi.c	/^struct scsi_device {$/;"	s	file:
+scsi_io	./linux_scsi.c	/^static int scsi_io(int fd, unsigned char *cdb, unsigned char cdb_size, int xfer_dir, unsigned int *data_size, char *data, unsigned char *sc)$/;"	f	file:
+scsi_key_names	./iscsi.c	/^static struct scsi_status_name scsi_key_names[] = {$/;"	v	typeref:struct:scsi_status_name	file:
+scsi_ops	./linux_scsi.c	/^struct nb_operations scsi_ops = {$/;"	v	typeref:struct:nb_operations
+scsi_read10	./linux_scsi.c	/^static void scsi_read10(struct dbench_op *op)$/;"	f	file:
+scsi_read6	./linux_scsi.c	/^static void scsi_read6(struct dbench_op *op)$/;"	f	file:
+scsi_readcapacity10	./linux_scsi.c	/^static void scsi_readcapacity10(struct dbench_op *op)$/;"	f	file:
+scsi_setup	./linux_scsi.c	/^static void scsi_setup(struct child_struct *child)$/;"	f	file:
+scsi_status_name	./iscsi.c	/^const char *scsi_status_name(int sc, struct scsi_status_name *names) {$/;"	f
+scsi_status_name	./iscsi.c	/^struct scsi_status_name {$/;"	s	file:
+scsi_status_names	./iscsi.c	/^static struct scsi_status_name scsi_status_names[] = {$/;"	v	typeref:struct:scsi_status_name	file:
+scsi_synchronizecache10	./linux_scsi.c	/^static void scsi_synchronizecache10(struct dbench_op *op)$/;"	f	file:
+scsi_testunitready	./linux_scsi.c	/^static void scsi_testunitready(struct dbench_op *op)$/;"	f	file:
+scsi_write10	./linux_scsi.c	/^static void scsi_write10(struct dbench_op *op)$/;"	f	file:
+search	./web/footer.html	/^    <TD><BR><a name="search"><\/a><img src="bar1.jpg" WIDTH="493" HEIGHT="26" BORDER="0" alt="=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=">$/;"	a
+seconds	./nfs.h	/^	uint32 seconds;$/;"	m	struct:nfstime3
+sem_cleanup	./dbench.c	/^static void sem_cleanup() {$/;"	f	file:
+send_iscsi_pdu	./iscsi.c	/^static int send_iscsi_pdu(struct iscsi_device *sd, char *ish, char *data, int len)$/;"	f	file:
+server	./dbench.h	/^	const char *server;$/;"	m	struct:options
+server	./tbench_srv.c	/^static void server(int fd)$/;"	f	file:
+set_atime	./nfs.h	/^struct set_atime {$/;"	s
+set_atime	./nfs.h	/^typedef struct set_atime set_atime;$/;"	t	typeref:struct:set_atime
+set_atime_u	./nfs.h	/^	} set_atime_u;$/;"	m	struct:set_atime	typeref:union:set_atime::__anon19
+set_gid3	./nfs.h	/^struct set_gid3 {$/;"	s
+set_gid3	./nfs.h	/^typedef struct set_gid3 set_gid3;$/;"	t	typeref:struct:set_gid3
+set_gid3_u	./nfs.h	/^	} set_gid3_u;$/;"	m	struct:set_gid3	typeref:union:set_gid3::__anon17
+set_it	./nfs.h	/^	bool_t set_it;$/;"	m	struct:set_gid3
+set_it	./nfs.h	/^	bool_t set_it;$/;"	m	struct:set_mode3
+set_it	./nfs.h	/^	bool_t set_it;$/;"	m	struct:set_size3
+set_it	./nfs.h	/^	bool_t set_it;$/;"	m	struct:set_uid3
+set_it	./nfs.h	/^	time_how set_it;$/;"	m	struct:set_atime
+set_it	./nfs.h	/^	time_how set_it;$/;"	m	struct:set_mtime
+set_mode3	./nfs.h	/^struct set_mode3 {$/;"	s
+set_mode3	./nfs.h	/^typedef struct set_mode3 set_mode3;$/;"	t	typeref:struct:set_mode3
+set_mode3_u	./nfs.h	/^	} set_mode3_u;$/;"	m	struct:set_mode3	typeref:union:set_mode3::__anon15
+set_mtime	./nfs.h	/^struct set_mtime {$/;"	s
+set_mtime	./nfs.h	/^typedef struct set_mtime set_mtime;$/;"	t	typeref:struct:set_mtime
+set_mtime_u	./nfs.h	/^	} set_mtime_u;$/;"	m	struct:set_mtime	typeref:union:set_mtime::__anon20
+set_new_xid	./libnfs.c	/^static void set_new_xid(struct nfsio *nfsio)$/;"	f	file:
+set_nonblocking	./iscsi.c	/^void set_nonblocking(int fd)$/;"	f
+set_size3	./nfs.h	/^struct set_size3 {$/;"	s
+set_size3	./nfs.h	/^typedef struct set_size3 set_size3;$/;"	t	typeref:struct:set_size3
+set_size3_u	./nfs.h	/^	} set_size3_u;$/;"	m	struct:set_size3	typeref:union:set_size3::__anon18
+set_socket_options	./socklib.c	/^void set_socket_options(int fd, char *options)$/;"	f
+set_uid3	./nfs.h	/^struct set_uid3 {$/;"	s
+set_uid3	./nfs.h	/^typedef struct set_uid3 set_uid3;$/;"	t	typeref:struct:set_uid3
+set_uid3_u	./nfs.h	/^	} set_uid3_u;$/;"	m	struct:set_uid3	typeref:union:set_uid3::__anon16
+setup	./dbench.h	/^	void (*setup)(struct child_struct *child);$/;"	m	struct:nb_operations
+shm_setup	./util.c	/^void *shm_setup(int size)$/;"	f
+show_one_latency	./dbench.c	/^static void show_one_latency(struct op *ops, struct op *ops_all)$/;"	f	file:
+sig_alarm	./dbench.c	/^static void sig_alarm(int sig)$/;"	f	file:
+single_string_sub	./util.c	/^void single_string_sub(char *s,const char *pattern,const char *insert)$/;"	f
+sio_cleanup	./sockio.c	/^static void sio_cleanup(struct child_struct *child)$/;"	f	file:
+sio_close	./sockio.c	/^static void sio_close(struct dbench_op *op)$/;"	f	file:
+sio_createx	./sockio.c	/^static void sio_createx(struct dbench_op *op)$/;"	f	file:
+sio_deltree	./sockio.c	/^static void sio_deltree(struct dbench_op *op)$/;"	f	file:
+sio_findfirst	./sockio.c	/^static void sio_findfirst(struct dbench_op *op)$/;"	f	file:
+sio_flush	./sockio.c	/^static void sio_flush(struct dbench_op *op)$/;"	f	file:
+sio_lockx	./sockio.c	/^static void sio_lockx(struct dbench_op *op)$/;"	f	file:
+sio_mkdir	./sockio.c	/^static void sio_mkdir(struct dbench_op *op)$/;"	f	file:
+sio_qfileinfo	./sockio.c	/^static void sio_qfileinfo(struct dbench_op *op)$/;"	f	file:
+sio_qfsinfo	./sockio.c	/^static void sio_qfsinfo(struct dbench_op *op)$/;"	f	file:
+sio_qpathinfo	./sockio.c	/^static void sio_qpathinfo(struct dbench_op *op)$/;"	f	file:
+sio_readx	./sockio.c	/^static void sio_readx(struct dbench_op *op)$/;"	f	file:
+sio_rename	./sockio.c	/^static void sio_rename(struct dbench_op *op)$/;"	f	file:
+sio_rmdir	./sockio.c	/^static void sio_rmdir(struct dbench_op *op)$/;"	f	file:
+sio_setup	./sockio.c	/^static void sio_setup(struct child_struct *child)$/;"	f	file:
+sio_sfileinfo	./sockio.c	/^static void sio_sfileinfo(struct dbench_op *op)$/;"	f	file:
+sio_unlink	./sockio.c	/^static void sio_unlink(struct dbench_op *op)$/;"	f	file:
+sio_unlockx	./sockio.c	/^static void sio_unlockx(struct dbench_op *op)$/;"	f	file:
+sio_writex	./sockio.c	/^static void sio_writex(struct dbench_op *op)$/;"	f	file:
+size	./nfs.h	/^		size3 size;$/;"	m	union:set_size3::__anon18
+size	./nfs.h	/^	set_size3 size;$/;"	m	struct:sattr3
+size	./nfs.h	/^	size3 size;$/;"	m	struct:fattr3
+size	./nfs.h	/^	size3 size;$/;"	m	struct:wcc_attr
+size3	./nfs.h	/^typedef uint64 size3;$/;"	t
+skip_cleanup	./dbench.h	/^	int skip_cleanup;$/;"	m	struct:options
+smb_auth_fn	./smb.c	/^void smb_auth_fn(const char *server, const char *share, char *wrkgrp, int wrkgrplen, char *user, int userlen, char *passwd, int passwdlen)$/;"	f
+smb_child	./smb.c	/^struct smb_child {$/;"	s	file:
+smb_cleanup	./smb.c	/^static void smb_cleanup(struct child_struct *child)$/;"	f	file:
+smb_close	./smb.c	/^static void smb_close(struct dbench_op *op)$/;"	f	file:
+smb_deltree	./smb.c	/^static void smb_deltree(struct dbench_op *op)$/;"	f	file:
+smb_domain	./smb.c	/^static char *smb_domain;$/;"	v	file:
+smb_handle_t	./smb.c	/^} smb_handle_t;$/;"	t	typeref:struct:_smb_handle_t	file:
+smb_init	./smb.c	/^static int smb_init(void)$/;"	f	file:
+smb_mkdir	./smb.c	/^static void smb_mkdir(struct dbench_op *op)$/;"	f	file:
+smb_open	./smb.c	/^static void smb_open(struct dbench_op *op)$/;"	f	file:
+smb_ops	./smb.c	/^struct nb_operations smb_ops = {$/;"	v	typeref:struct:nb_operations
+smb_password	./smb.c	/^static char *smb_password;$/;"	v	file:
+smb_read	./smb.c	/^static void smb_read(struct dbench_op *op)$/;"	f	file:
+smb_readdir	./smb.c	/^static void smb_readdir(struct dbench_op *op)$/;"	f	file:
+smb_rmdir	./smb.c	/^static void smb_rmdir(struct dbench_op *op)$/;"	f	file:
+smb_server	./smb.c	/^static char *smb_server;$/;"	v	file:
+smb_setup	./smb.c	/^static void smb_setup(struct child_struct *child)$/;"	f	file:
+smb_share	./dbench.h	/^	const char *smb_share;$/;"	m	struct:options
+smb_share	./smb.c	/^static char *smb_share;$/;"	v	file:
+smb_unlink	./smb.c	/^static void smb_unlink(struct dbench_op *op)$/;"	f	file:
+smb_user	./dbench.h	/^	const char *smb_user;$/;"	m	struct:options
+smb_user	./smb.c	/^static char *smb_user;$/;"	v	file:
+smb_write	./smb.c	/^static void smb_write(struct dbench_op *op)$/;"	f	file:
+snprintf	./snprintf.c	/^ int snprintf(char *str,size_t count,const char *fmt,...)$/;"	f
+sock	./sockio.c	/^	int sock;$/;"	m	struct:sockio	file:
+socket_options	./socklib.c	/^} socket_options[] = {$/;"	v	typeref:struct:__anon40	file:
+sockio	./sockio.c	/^struct sockio {$/;"	s	file:
+sockio_ops	./sockio.c	/^struct nb_operations sockio_ops = {$/;"	v	typeref:struct:nb_operations
+spec	./nfs.h	/^	specdata3 spec;$/;"	m	struct:devicedata3
+specdata1	./nfs.h	/^	uint32 specdata1;$/;"	m	struct:specdata3
+specdata2	./nfs.h	/^	uint32 specdata2;$/;"	m	struct:specdata3
+specdata3	./nfs.h	/^struct specdata3 {$/;"	s
+specdata3	./nfs.h	/^typedef struct specdata3 specdata3;$/;"	t	typeref:struct:specdata3
+srcdir	./Makefile	/^srcdir=.$/;"	m
+stable	./nfs.h	/^	stable_how stable;$/;"	m	struct:WRITE3args
+stable_how	./nfs.h	/^enum stable_how {$/;"	g
+stable_how	./nfs.h	/^typedef enum stable_how stable_how;$/;"	t	typeref:enum:stable_how
+starttime	./dbench.h	/^	struct timeval starttime;$/;"	m	struct:child_struct	typeref:struct:child_struct::timeval
+stat_check	./dbench.h	/^	int stat_check;$/;"	m	struct:options
+status	./dbench.h	/^	const char *status;$/;"	m	struct:dbench_op
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:ACCESS3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:COMMIT3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:CREATE3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:FSINFO3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:FSSTAT3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:GETATTR3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:LINK3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:LOOKUP3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:MKDIR3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:MKNOD3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:PATHCONF3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:READ3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:READDIR3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:READDIRPLUS3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:READLINK3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:REMOVE3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:RENAME3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:RMDIR3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:SYMLINK3res
+status	./nfs.h	/^	nfsstat3 status;$/;"	m	struct:WRITE3res
+store_random_string	./child.c	/^static int store_random_string(unsigned int idx, char *str)$/;"	f	file:
+symlink	./nfs.h	/^	nfs_fh3 symlink;$/;"	m	struct:READLINK3args
+symlink	./nfs.h	/^	symlinkdata3 symlink;$/;"	m	struct:SYMLINK3args
+symlink_attributes	./nfs.h	/^	post_op_attr symlink_attributes;$/;"	m	struct:READLINK3resfail
+symlink_attributes	./nfs.h	/^	post_op_attr symlink_attributes;$/;"	m	struct:READLINK3resok
+symlink_attributes	./nfs.h	/^	sattr3 symlink_attributes;$/;"	m	struct:symlinkdata3
+symlink_data	./nfs.h	/^	nfspath3 symlink_data;$/;"	m	struct:symlinkdata3
+symlinkdata3	./nfs.h	/^struct symlinkdata3 {$/;"	s
+symlinkdata3	./nfs.h	/^typedef struct symlinkdata3 symlinkdata3;$/;"	t	typeref:struct:symlinkdata3
+sync_dirs	./dbench.h	/^	int sync_dirs;$/;"	m	struct:options
+sync_open	./dbench.h	/^	int sync_open;$/;"	m	struct:options
+sync_parent	./fileio.c	/^static void sync_parent(struct child_struct *child, const char *fname)$/;"	f	file:
+sys_fgetxattr	./system.c	/^ssize_t sys_fgetxattr (int filedes, const char *name, void *value, size_t size)$/;"	f
+sys_fsetxattr	./system.c	/^int sys_fsetxattr (int filedes, const char *name, const void *value, size_t size, int flags)$/;"	f
+sys_getxattr	./system.c	/^ssize_t sys_getxattr (const char *path, const char *name, void *value, size_t size)$/;"	f
+target	./iscsi.c	/^       const char *target;$/;"	m	struct:iscsi_device	file:
+targetrate	./dbench.h	/^	double targetrate;$/;"	m	struct:options
+tbytes	./nfs.h	/^	size3 tbytes;$/;"	m	struct:FSSTAT3resok
+tcp_options	./dbench.h	/^	char *tcp_options;$/;"	m	struct:options
+tfiles	./nfs.h	/^	size3 tfiles;$/;"	m	struct:FSSTAT3resok
+throughput	./dbench.c	/^static double throughput;$/;"	v	file:
+time_delta	./nfs.h	/^	nfstime3 time_delta;$/;"	m	struct:FSINFO3resok
+time_how	./nfs.h	/^enum time_how {$/;"	g
+time_how	./nfs.h	/^typedef enum time_how time_how;$/;"	t	typeref:enum:time_how
+timelimit	./dbench.h	/^	int timelimit;$/;"	m	struct:options
+timeval_current	./util.c	/^struct timeval timeval_current(void)$/;"	f
+timeval_elapsed	./util.c	/^double timeval_elapsed(struct timeval *tv)$/;"	f
+timeval_elapsed2	./util.c	/^double timeval_elapsed2(struct timeval *tv1, struct timeval *tv2)$/;"	f
+to	./nfs.h	/^	diropargs3 to;$/;"	m	struct:RENAME3args
+todir_wcc	./nfs.h	/^	wcc_data todir_wcc;$/;"	m	struct:RENAME3resfail
+todir_wcc	./nfs.h	/^	wcc_data todir_wcc;$/;"	m	struct:RENAME3resok
+total_time	./dbench.h	/^	double total_time;$/;"	m	struct:op
+trans2_ff2_pkt	./genloadfile/genloadfile.sh	/^trans2_ff2_pkt() {$/;"	f
+trans2_qfi_pkt	./genloadfile/genloadfile.sh	/^trans2_qfi_pkt() {$/;"	f
+trans2_qfsi_pkt	./genloadfile/genloadfile.sh	/^trans2_qfsi_pkt() {$/;"	f
+trans2_qpi_pkt	./genloadfile/genloadfile.sh	/^trans2_qpi_pkt() {$/;"	f
+trans2_sfi_pkt	./genloadfile/genloadfile.sh	/^trans2_sfi_pkt() {$/;"	f
+tree_t	./libnfs.c	/^} tree_t;$/;"	t	typeref:struct:_tree_t	file:
+tree_t	./smb.c	/^} tree_t;$/;"	t	typeref:struct:_tree_t	file:
+trunc_io	./dbench.h	/^	int trunc_io;$/;"	m	struct:options
+tv_end	./dbench.c	/^static struct timeval tv_end;$/;"	v	typeref:struct:timeval	file:
+tv_start	./dbench.c	/^static struct timeval tv_start;$/;"	v	typeref:struct:timeval	file:
+type	./nfs.h	/^	ftype3 type;$/;"	m	struct:fattr3
+type	./nfs.h	/^	ftype3 type;$/;"	m	struct:mknoddata3
+uid	./nfs.h	/^		uid3 uid;$/;"	m	union:set_uid3::__anon16
+uid	./nfs.h	/^	set_uid3 uid;$/;"	m	struct:sattr3
+uid	./nfs.h	/^	uid3 uid;$/;"	m	struct:fattr3
+uid3	./nfs.h	/^typedef uint32 uid3;$/;"	t
+uint32	./dbench.h	94;"	d
+uint32	./nfs.h	/^typedef u_long uint32;$/;"	t
+uint64	./nfs.h	/^typedef u_quad_t uint64;$/;"	t
+unlockandx_pkt	./genloadfile/genloadfile.sh	/^unlockandx_pkt() {$/;"	f
+usage	./tbench_srv.c	/^static void usage(void)$/;"	f	file:
+used	./nfs.h	/^	size3 used;$/;"	m	struct:fattr3
+value	./iscsi.c	/^       char *value;$/;"	m	struct:login_param	file:
+value	./socklib.c	/^  int value;$/;"	m	struct:__anon40	file:
+vasprintf	./snprintf.c	/^ int vasprintf(char **ptr, const char *format, va_list ap)$/;"	f
+verf	./nfs.h	/^		createverf3 verf;$/;"	m	union:createhow3::__anon21
+verf	./nfs.h	/^	writeverf3 verf;$/;"	m	struct:COMMIT3resok
+verf	./nfs.h	/^	writeverf3 verf;$/;"	m	struct:WRITE3resok
+vsnprintf	./snprintf.c	/^ int vsnprintf (char *str, size_t count, const char *fmt, va_list args)$/;"	f
+wait_for_pdu	./iscsi.c	/^static int wait_for_pdu(struct iscsi_device *sd, char *ish, char *data, unsigned int *data_size, char *sense_data)$/;"	f	file:
+warmup	./dbench.h	/^	int warmup;$/;"	m	struct:options
+wcc_attr	./nfs.h	/^struct wcc_attr {$/;"	s
+wcc_attr	./nfs.h	/^typedef struct wcc_attr wcc_attr;$/;"	t	typeref:struct:wcc_attr
+wcc_data	./nfs.h	/^struct wcc_data {$/;"	s
+wcc_data	./nfs.h	/^typedef struct wcc_data wcc_data;$/;"	t	typeref:struct:wcc_data
+what	./nfs.h	/^	diropargs3 what;$/;"	m	struct:LOOKUP3args
+what	./nfs.h	/^	mknoddata3 what;$/;"	m	struct:MKNOD3args
+where	./nfs.h	/^	diropargs3 where;$/;"	m	struct:CREATE3args
+where	./nfs.h	/^	diropargs3 where;$/;"	m	struct:MKDIR3args
+where	./nfs.h	/^	diropargs3 where;$/;"	m	struct:MKNOD3args
+where	./nfs.h	/^	diropargs3 where;$/;"	m	struct:SYMLINK3args
+worst_latency	./dbench.h	/^	double worst_latency;$/;"	m	struct:child_struct
+write_andx_pkt	./genloadfile/genloadfile.sh	/^write_andx_pkt() {$/;"	f
+write_sock	./socklib.c	/^int write_sock(int s, char *buf, int size)$/;"	f
+writeverf3	./nfs.h	/^typedef char writeverf3[NFS3_WRITEVERFSIZE];$/;"	t
+wtmax	./nfs.h	/^	uint32 wtmax;$/;"	m	struct:FSINFO3resok
+wtmult	./nfs.h	/^	uint32 wtmult;$/;"	m	struct:FSINFO3resok
+wtpref	./nfs.h	/^	uint32 wtpref;$/;"	m	struct:FSINFO3resok
+xattr_fd_read_hook	./fileio.c	/^static void xattr_fd_read_hook(struct child_struct *child, int fd)$/;"	f	file:
+xattr_fd_write_hook	./fileio.c	/^static void xattr_fd_write_hook(struct child_struct *child, int fd)$/;"	f	file:
+xattr_fname_read_hook	./fileio.c	/^static void xattr_fname_read_hook(struct child_struct *child, const char *fname)$/;"	f	file:
+xdr_ACCESS3args	./nfs_xdr.c	/^xdr_ACCESS3args (XDR *xdrs, ACCESS3args *objp)$/;"	f
+xdr_ACCESS3res	./nfs_xdr.c	/^xdr_ACCESS3res (XDR *xdrs, ACCESS3res *objp)$/;"	f
+xdr_ACCESS3resfail	./nfs_xdr.c	/^xdr_ACCESS3resfail (XDR *xdrs, ACCESS3resfail *objp)$/;"	f
+xdr_ACCESS3resok	./nfs_xdr.c	/^xdr_ACCESS3resok (XDR *xdrs, ACCESS3resok *objp)$/;"	f
+xdr_COMMIT3args	./nfs_xdr.c	/^xdr_COMMIT3args (XDR *xdrs, COMMIT3args *objp)$/;"	f
+xdr_COMMIT3res	./nfs_xdr.c	/^xdr_COMMIT3res (XDR *xdrs, COMMIT3res *objp)$/;"	f
+xdr_COMMIT3resfail	./nfs_xdr.c	/^xdr_COMMIT3resfail (XDR *xdrs, COMMIT3resfail *objp)$/;"	f
+xdr_COMMIT3resok	./nfs_xdr.c	/^xdr_COMMIT3resok (XDR *xdrs, COMMIT3resok *objp)$/;"	f
+xdr_CREATE3args	./nfs_xdr.c	/^xdr_CREATE3args (XDR *xdrs, CREATE3args *objp)$/;"	f
+xdr_CREATE3res	./nfs_xdr.c	/^xdr_CREATE3res (XDR *xdrs, CREATE3res *objp)$/;"	f
+xdr_CREATE3resfail	./nfs_xdr.c	/^xdr_CREATE3resfail (XDR *xdrs, CREATE3resfail *objp)$/;"	f
+xdr_CREATE3resok	./nfs_xdr.c	/^xdr_CREATE3resok (XDR *xdrs, CREATE3resok *objp)$/;"	f
+xdr_FSINFO3args	./nfs_xdr.c	/^xdr_FSINFO3args (XDR *xdrs, FSINFO3args *objp)$/;"	f
+xdr_FSINFO3res	./nfs_xdr.c	/^xdr_FSINFO3res (XDR *xdrs, FSINFO3res *objp)$/;"	f
+xdr_FSINFO3resfail	./nfs_xdr.c	/^xdr_FSINFO3resfail (XDR *xdrs, FSINFO3resfail *objp)$/;"	f
+xdr_FSINFO3resok	./nfs_xdr.c	/^xdr_FSINFO3resok (XDR *xdrs, FSINFO3resok *objp)$/;"	f
+xdr_FSSTAT3args	./nfs_xdr.c	/^xdr_FSSTAT3args (XDR *xdrs, FSSTAT3args *objp)$/;"	f
+xdr_FSSTAT3res	./nfs_xdr.c	/^xdr_FSSTAT3res (XDR *xdrs, FSSTAT3res *objp)$/;"	f
+xdr_FSSTAT3resfail	./nfs_xdr.c	/^xdr_FSSTAT3resfail (XDR *xdrs, FSSTAT3resfail *objp)$/;"	f
+xdr_FSSTAT3resok	./nfs_xdr.c	/^xdr_FSSTAT3resok (XDR *xdrs, FSSTAT3resok *objp)$/;"	f
+xdr_GETATTR3args	./nfs_xdr.c	/^xdr_GETATTR3args (XDR *xdrs, GETATTR3args *objp)$/;"	f
+xdr_GETATTR3res	./nfs_xdr.c	/^xdr_GETATTR3res (XDR *xdrs, GETATTR3res *objp)$/;"	f
+xdr_GETATTR3resok	./nfs_xdr.c	/^xdr_GETATTR3resok (XDR *xdrs, GETATTR3resok *objp)$/;"	f
+xdr_LINK3args	./nfs_xdr.c	/^xdr_LINK3args (XDR *xdrs, LINK3args *objp)$/;"	f
+xdr_LINK3res	./nfs_xdr.c	/^xdr_LINK3res (XDR *xdrs, LINK3res *objp)$/;"	f
+xdr_LINK3resfail	./nfs_xdr.c	/^xdr_LINK3resfail (XDR *xdrs, LINK3resfail *objp)$/;"	f
+xdr_LINK3resok	./nfs_xdr.c	/^xdr_LINK3resok (XDR *xdrs, LINK3resok *objp)$/;"	f
+xdr_LOOKUP3args	./nfs_xdr.c	/^xdr_LOOKUP3args (XDR *xdrs, LOOKUP3args *objp)$/;"	f
+xdr_LOOKUP3res	./nfs_xdr.c	/^xdr_LOOKUP3res (XDR *xdrs, LOOKUP3res *objp)$/;"	f
+xdr_LOOKUP3resfail	./nfs_xdr.c	/^xdr_LOOKUP3resfail (XDR *xdrs, LOOKUP3resfail *objp)$/;"	f
+xdr_LOOKUP3resok	./nfs_xdr.c	/^xdr_LOOKUP3resok (XDR *xdrs, LOOKUP3resok *objp)$/;"	f
+xdr_MKDIR3args	./nfs_xdr.c	/^xdr_MKDIR3args (XDR *xdrs, MKDIR3args *objp)$/;"	f
+xdr_MKDIR3res	./nfs_xdr.c	/^xdr_MKDIR3res (XDR *xdrs, MKDIR3res *objp)$/;"	f
+xdr_MKDIR3resfail	./nfs_xdr.c	/^xdr_MKDIR3resfail (XDR *xdrs, MKDIR3resfail *objp)$/;"	f
+xdr_MKDIR3resok	./nfs_xdr.c	/^xdr_MKDIR3resok (XDR *xdrs, MKDIR3resok *objp)$/;"	f
+xdr_MKNOD3args	./nfs_xdr.c	/^xdr_MKNOD3args (XDR *xdrs, MKNOD3args *objp)$/;"	f
+xdr_MKNOD3res	./nfs_xdr.c	/^xdr_MKNOD3res (XDR *xdrs, MKNOD3res *objp)$/;"	f
+xdr_MKNOD3resfail	./nfs_xdr.c	/^xdr_MKNOD3resfail (XDR *xdrs, MKNOD3resfail *objp)$/;"	f
+xdr_MKNOD3resok	./nfs_xdr.c	/^xdr_MKNOD3resok (XDR *xdrs, MKNOD3resok *objp)$/;"	f
+xdr_PATHCONF3args	./nfs_xdr.c	/^xdr_PATHCONF3args (XDR *xdrs, PATHCONF3args *objp)$/;"	f
+xdr_PATHCONF3res	./nfs_xdr.c	/^xdr_PATHCONF3res (XDR *xdrs, PATHCONF3res *objp)$/;"	f
+xdr_PATHCONF3resfail	./nfs_xdr.c	/^xdr_PATHCONF3resfail (XDR *xdrs, PATHCONF3resfail *objp)$/;"	f
+xdr_PATHCONF3resok	./nfs_xdr.c	/^xdr_PATHCONF3resok (XDR *xdrs, PATHCONF3resok *objp)$/;"	f
+xdr_READ3args	./nfs_xdr.c	/^xdr_READ3args (XDR *xdrs, READ3args *objp)$/;"	f
+xdr_READ3res	./nfs_xdr.c	/^xdr_READ3res (XDR *xdrs, READ3res *objp)$/;"	f
+xdr_READ3resfail	./nfs_xdr.c	/^xdr_READ3resfail (XDR *xdrs, READ3resfail *objp)$/;"	f
+xdr_READ3resok	./nfs_xdr.c	/^xdr_READ3resok (XDR *xdrs, READ3resok *objp)$/;"	f
+xdr_READDIR3args	./nfs_xdr.c	/^xdr_READDIR3args (XDR *xdrs, READDIR3args *objp)$/;"	f
+xdr_READDIR3res	./nfs_xdr.c	/^xdr_READDIR3res (XDR *xdrs, READDIR3res *objp)$/;"	f
+xdr_READDIR3resfail	./nfs_xdr.c	/^xdr_READDIR3resfail (XDR *xdrs, READDIR3resfail *objp)$/;"	f
+xdr_READDIR3resok	./nfs_xdr.c	/^xdr_READDIR3resok (XDR *xdrs, READDIR3resok *objp)$/;"	f
+xdr_READDIRPLUS3args	./nfs_xdr.c	/^xdr_READDIRPLUS3args (XDR *xdrs, READDIRPLUS3args *objp)$/;"	f
+xdr_READDIRPLUS3res	./nfs_xdr.c	/^xdr_READDIRPLUS3res (XDR *xdrs, READDIRPLUS3res *objp)$/;"	f
+xdr_READDIRPLUS3resfail	./nfs_xdr.c	/^xdr_READDIRPLUS3resfail (XDR *xdrs, READDIRPLUS3resfail *objp)$/;"	f
+xdr_READDIRPLUS3resok	./nfs_xdr.c	/^xdr_READDIRPLUS3resok (XDR *xdrs, READDIRPLUS3resok *objp)$/;"	f
+xdr_READLINK3args	./nfs_xdr.c	/^xdr_READLINK3args (XDR *xdrs, READLINK3args *objp)$/;"	f
+xdr_READLINK3res	./nfs_xdr.c	/^xdr_READLINK3res (XDR *xdrs, READLINK3res *objp)$/;"	f
+xdr_READLINK3resfail	./nfs_xdr.c	/^xdr_READLINK3resfail (XDR *xdrs, READLINK3resfail *objp)$/;"	f
+xdr_READLINK3resok	./nfs_xdr.c	/^xdr_READLINK3resok (XDR *xdrs, READLINK3resok *objp)$/;"	f
+xdr_REMOVE3args	./nfs_xdr.c	/^xdr_REMOVE3args (XDR *xdrs, REMOVE3args *objp)$/;"	f
+xdr_REMOVE3res	./nfs_xdr.c	/^xdr_REMOVE3res (XDR *xdrs, REMOVE3res *objp)$/;"	f
+xdr_REMOVE3resfail	./nfs_xdr.c	/^xdr_REMOVE3resfail (XDR *xdrs, REMOVE3resfail *objp)$/;"	f
+xdr_REMOVE3resok	./nfs_xdr.c	/^xdr_REMOVE3resok (XDR *xdrs, REMOVE3resok *objp)$/;"	f
+xdr_RENAME3args	./nfs_xdr.c	/^xdr_RENAME3args (XDR *xdrs, RENAME3args *objp)$/;"	f
+xdr_RENAME3res	./nfs_xdr.c	/^xdr_RENAME3res (XDR *xdrs, RENAME3res *objp)$/;"	f
+xdr_RENAME3resfail	./nfs_xdr.c	/^xdr_RENAME3resfail (XDR *xdrs, RENAME3resfail *objp)$/;"	f
+xdr_RENAME3resok	./nfs_xdr.c	/^xdr_RENAME3resok (XDR *xdrs, RENAME3resok *objp)$/;"	f
+xdr_RMDIR3args	./nfs_xdr.c	/^xdr_RMDIR3args (XDR *xdrs, RMDIR3args *objp)$/;"	f
+xdr_RMDIR3res	./nfs_xdr.c	/^xdr_RMDIR3res (XDR *xdrs, RMDIR3res *objp)$/;"	f
+xdr_RMDIR3resfail	./nfs_xdr.c	/^xdr_RMDIR3resfail (XDR *xdrs, RMDIR3resfail *objp)$/;"	f
+xdr_RMDIR3resok	./nfs_xdr.c	/^xdr_RMDIR3resok (XDR *xdrs, RMDIR3resok *objp)$/;"	f
+xdr_SYMLINK3args	./nfs_xdr.c	/^xdr_SYMLINK3args (XDR *xdrs, SYMLINK3args *objp)$/;"	f
+xdr_SYMLINK3res	./nfs_xdr.c	/^xdr_SYMLINK3res (XDR *xdrs, SYMLINK3res *objp)$/;"	f
+xdr_SYMLINK3resfail	./nfs_xdr.c	/^xdr_SYMLINK3resfail (XDR *xdrs, SYMLINK3resfail *objp)$/;"	f
+xdr_SYMLINK3resok	./nfs_xdr.c	/^xdr_SYMLINK3resok (XDR *xdrs, SYMLINK3resok *objp)$/;"	f
+xdr_WRITE3args	./nfs_xdr.c	/^xdr_WRITE3args (XDR *xdrs, WRITE3args *objp)$/;"	f
+xdr_WRITE3res	./nfs_xdr.c	/^xdr_WRITE3res (XDR *xdrs, WRITE3res *objp)$/;"	f
+xdr_WRITE3resfail	./nfs_xdr.c	/^xdr_WRITE3resfail (XDR *xdrs, WRITE3resfail *objp)$/;"	f
+xdr_WRITE3resok	./nfs_xdr.c	/^xdr_WRITE3resok (XDR *xdrs, WRITE3resok *objp)$/;"	f
+xdr_cookie3	./nfs_xdr.c	/^xdr_cookie3 (XDR *xdrs, cookie3 *objp)$/;"	f
+xdr_cookieverf3	./nfs_xdr.c	/^xdr_cookieverf3 (XDR *xdrs, cookieverf3 objp)$/;"	f
+xdr_count3	./nfs_xdr.c	/^xdr_count3 (XDR *xdrs, count3 *objp)$/;"	f
+xdr_createhow3	./nfs_xdr.c	/^xdr_createhow3 (XDR *xdrs, createhow3 *objp)$/;"	f
+xdr_createmode3	./nfs_xdr.c	/^xdr_createmode3 (XDR *xdrs, createmode3 *objp)$/;"	f
+xdr_createverf3	./nfs_xdr.c	/^xdr_createverf3 (XDR *xdrs, createverf3 objp)$/;"	f
+xdr_devicedata3	./nfs_xdr.c	/^xdr_devicedata3 (XDR *xdrs, devicedata3 *objp)$/;"	f
+xdr_dirlist3	./nfs_xdr.c	/^xdr_dirlist3 (XDR *xdrs, dirlist3 *objp)$/;"	f
+xdr_dirlistplus3	./nfs_xdr.c	/^xdr_dirlistplus3 (XDR *xdrs, dirlistplus3 *objp)$/;"	f
+xdr_diropargs3	./nfs_xdr.c	/^xdr_diropargs3 (XDR *xdrs, diropargs3 *objp)$/;"	f
+xdr_dirpath	./mount_xdr.c	/^xdr_dirpath (XDR *xdrs, dirpath *objp)$/;"	f
+xdr_entry3	./nfs_xdr.c	/^xdr_entry3 (XDR *xdrs, entry3 *objp)$/;"	f
+xdr_entryplus3	./nfs_xdr.c	/^xdr_entryplus3 (XDR *xdrs, entryplus3 *objp)$/;"	f
+xdr_exportnode	./mount_xdr.c	/^xdr_exportnode (XDR *xdrs, exportnode *objp)$/;"	f
+xdr_exports	./mount_xdr.c	/^xdr_exports (XDR *xdrs, exports *objp)$/;"	f
+xdr_fattr3	./nfs_xdr.c	/^xdr_fattr3 (XDR *xdrs, fattr3 *objp)$/;"	f
+xdr_fhandle3	./mount_xdr.c	/^xdr_fhandle3 (XDR *xdrs, fhandle3 *objp)$/;"	f
+xdr_fileid3	./nfs_xdr.c	/^xdr_fileid3 (XDR *xdrs, fileid3 *objp)$/;"	f
+xdr_filename3	./nfs_xdr.c	/^xdr_filename3 (XDR *xdrs, filename3 *objp)$/;"	f
+xdr_ftype3	./nfs_xdr.c	/^xdr_ftype3 (XDR *xdrs, ftype3 *objp)$/;"	f
+xdr_gid3	./nfs_xdr.c	/^xdr_gid3 (XDR *xdrs, gid3 *objp)$/;"	f
+xdr_groupnode	./mount_xdr.c	/^xdr_groupnode (XDR *xdrs, groupnode *objp)$/;"	f
+xdr_groups	./mount_xdr.c	/^xdr_groups (XDR *xdrs, groups *objp)$/;"	f
+xdr_int32	./nfs_xdr.c	/^xdr_int32 (XDR *xdrs, int32 *objp)$/;"	f
+xdr_mknoddata3	./nfs_xdr.c	/^xdr_mknoddata3 (XDR *xdrs, mknoddata3 *objp)$/;"	f
+xdr_mode3	./nfs_xdr.c	/^xdr_mode3 (XDR *xdrs, mode3 *objp)$/;"	f
+xdr_mountbody	./mount_xdr.c	/^xdr_mountbody (XDR *xdrs, mountbody *objp)$/;"	f
+xdr_mountlist	./mount_xdr.c	/^xdr_mountlist (XDR *xdrs, mountlist *objp)$/;"	f
+xdr_mountres3	./mount_xdr.c	/^xdr_mountres3 (XDR *xdrs, mountres3 *objp)$/;"	f
+xdr_mountres3_ok	./mount_xdr.c	/^xdr_mountres3_ok (XDR *xdrs, mountres3_ok *objp)$/;"	f
+xdr_mountstat3	./mount_xdr.c	/^xdr_mountstat3 (XDR *xdrs, mountstat3 *objp)$/;"	f
+xdr_name	./mount_xdr.c	/^xdr_name (XDR *xdrs, name *objp)$/;"	f
+xdr_nfs_fh3	./nfs_xdr.c	/^xdr_nfs_fh3 (XDR *xdrs, nfs_fh3 *objp)$/;"	f
+xdr_nfspath3	./nfs_xdr.c	/^xdr_nfspath3 (XDR *xdrs, nfspath3 *objp)$/;"	f
+xdr_nfsstat3	./nfs_xdr.c	/^xdr_nfsstat3 (XDR *xdrs, nfsstat3 *objp)$/;"	f
+xdr_nfstime3	./nfs_xdr.c	/^xdr_nfstime3 (XDR *xdrs, nfstime3 *objp)$/;"	f
+xdr_offset3	./nfs_xdr.c	/^xdr_offset3 (XDR *xdrs, offset3 *objp)$/;"	f
+xdr_post_op_attr	./nfs_xdr.c	/^xdr_post_op_attr (XDR *xdrs, post_op_attr *objp)$/;"	f
+xdr_post_op_fh3	./nfs_xdr.c	/^xdr_post_op_fh3 (XDR *xdrs, post_op_fh3 *objp)$/;"	f
+xdr_pre_op_attr	./nfs_xdr.c	/^xdr_pre_op_attr (XDR *xdrs, pre_op_attr *objp)$/;"	f
+xdr_sattr3	./nfs_xdr.c	/^xdr_sattr3 (XDR *xdrs, sattr3 *objp)$/;"	f
+xdr_set_atime	./nfs_xdr.c	/^xdr_set_atime (XDR *xdrs, set_atime *objp)$/;"	f
+xdr_set_gid3	./nfs_xdr.c	/^xdr_set_gid3 (XDR *xdrs, set_gid3 *objp)$/;"	f
+xdr_set_mode3	./nfs_xdr.c	/^xdr_set_mode3 (XDR *xdrs, set_mode3 *objp)$/;"	f
+xdr_set_mtime	./nfs_xdr.c	/^xdr_set_mtime (XDR *xdrs, set_mtime *objp)$/;"	f
+xdr_set_size3	./nfs_xdr.c	/^xdr_set_size3 (XDR *xdrs, set_size3 *objp)$/;"	f
+xdr_set_uid3	./nfs_xdr.c	/^xdr_set_uid3 (XDR *xdrs, set_uid3 *objp)$/;"	f
+xdr_size3	./nfs_xdr.c	/^xdr_size3 (XDR *xdrs, size3 *objp)$/;"	f
+xdr_specdata3	./nfs_xdr.c	/^xdr_specdata3 (XDR *xdrs, specdata3 *objp)$/;"	f
+xdr_stable_how	./nfs_xdr.c	/^xdr_stable_how (XDR *xdrs, stable_how *objp)$/;"	f
+xdr_symlinkdata3	./nfs_xdr.c	/^xdr_symlinkdata3 (XDR *xdrs, symlinkdata3 *objp)$/;"	f
+xdr_time_how	./nfs_xdr.c	/^xdr_time_how (XDR *xdrs, time_how *objp)$/;"	f
+xdr_uid3	./nfs_xdr.c	/^xdr_uid3 (XDR *xdrs, uid3 *objp)$/;"	f
+xdr_uint32	./nfs_xdr.c	/^xdr_uint32 (XDR *xdrs, uint32 *objp)$/;"	f
+xdr_uint64	./nfs_xdr.c	/^xdr_uint64 (XDR *xdrs, uint64 *objp)$/;"	f
+xdr_wcc_attr	./nfs_xdr.c	/^xdr_wcc_attr (XDR *xdrs, wcc_attr *objp)$/;"	f
+xdr_wcc_data	./nfs_xdr.c	/^xdr_wcc_data (XDR *xdrs, wcc_data *objp)$/;"	f
+xdr_writeverf3	./nfs_xdr.c	/^xdr_writeverf3 (XDR *xdrs, writeverf3 objp)$/;"	f
+xid	./libnfs.c	/^	unsigned long xid;$/;"	m	struct:nfsio	file:
+xid_stride	./libnfs.c	/^	int xid_stride;$/;"	m	struct:nfsio	file:
