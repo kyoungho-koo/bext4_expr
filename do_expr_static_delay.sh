@@ -7,20 +7,49 @@ storage_info()
 	OUTPUTDIR_DEV=""
 	# Identify storage name and set a device result name
 	case $1 in
-		"/dev/sdd") #840PRO
+		"/dev/sda") #840PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/840pro
+			;;
+		"/dev/sdd") #850PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/s870p
+			;;
+		"/dev/sde") #850PRO
 			OUTPUTDIR_DEV=${OUTPUTDIR}/s860p
 			;;
-		"/dev/sda") #850PRO
-			OUTPUTDIR_DEV=${OUTPUTDIR}/s870q
+		"/dev/sdk") #860PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/860pro
+			;;
+		"/dev/sde") #860PRO
+			OUTPUTDIR_DEV=${OUTPUTDIR}/850pro
 			;;
 		"/dev/nvme0n1") #970EVO
-			OUTPUTDIR_DEV=${OUTPUTDIR}/s970e
+			OUTPUTDIR_DEV=${OUTPUTDIR}/970evo
 			;;
 		"/dev/nvme1n1") #970PRO
-			OUTPUTDIR_DEV=${OUTPUTDIR}/s970p
+			OUTPUTDIR_DEV=${OUTPUTDIR}/970pro
 			;;
 		"/dev/nvme2n1") #Optane
-			OUTPUTDIR_DEV=${OUTPUTDIR}/i905p
+			OUTPUTDIR_DEV=${OUTPUTDIR}/Intel-900P
+			;;
+		"/dev/md5") #Software RAID 5
+			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid5
+			;;
+		"/dev/md0") #Software RAID 0
+			OUTPUTDIR_DEV=${OUTPUTDIR}/soft-raid0
+			;;
+		"/dev/sdj") #Single SSD
+			OUTPUTDIR_DEV=${OUTPUTDIR}/sm883
+			;;
+		"/dev/sdm") #Hardware RAID 5
+			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid5
+			;;
+		"/dev/sdn") #Hardware RAID 0
+			OUTPUTDIR_DEV=${OUTPUTDIR}/hard-raid0
+			;;
+		"ramdisk") #Hardware RAID 0
+			mkdir -p ./ramdisk
+			mount -t ramfs ramfs ./ramdisk
+			OUTPUTDIR_DEV=${OUTPUTDIR}/ramdisk
 			;;
 	esac
 
@@ -31,22 +60,9 @@ set_schema() {
 	OUTPUTDIR_DEV_PSP=""
 
 	# Identify storage name and set a device result name
-	case $2 in
-		"0") #default
-			OUTPUTDIR_DEV_PSP=${1}/def
-			;;
-		"1") #default
-			OUTPUTDIR_DEV_PSP=${1}/debug-def
-			;;
-		"2") #psp
-			OUTPUTDIR_DEV_PSP=${1}/c2j
-			;;
-		"3") #psp-ifs
-			OUTPUTDIR_DEV_PSP=${1}/debug-c2j
-			;;
-	esac
-	./sys_psp $2
-	echo $OUTPUTDIR_DEV_PSP
+	OUTPUTDIR_DEV_PSP=${1}/def-${2};
+	./change_static_delay $2;
+	echo $OUTPUTDIR_DEV_PSP;
 }
 
 

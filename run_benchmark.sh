@@ -4,11 +4,14 @@ source parameter.sh
 
 FILEBENCH_DIR=benchmark/filebench
 FILEBENCH_PERTHREADDIR_DIR=benchmark/filebench-perthreaddir
+FILEBENCH_LATENCY_DIR=benchmark/filebench-latency
 FILEBENCH=${FILEBENCH_DIR}/filebench
 FILEBENCH_PERTHREADDIR=${FILEBENCH_PERTHREADDIR_DIR}/filebench
+FILEBENCH_LATENCY=benchmark/filebench-latency/filebench
 SYSBENCH=sysbench
 DBENCH=dbench
 MDTEST=benchmark/ior/src/mdtest
+YCSB=/opt/hse-ycsb
 
 
 BENCHMARK=$1
@@ -137,6 +140,17 @@ select_workload()
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
 
 			;;
+		"filebench-varmail-latency")
+			echo  "${FILEBENCH_LATENCY} -f \
+				${FILEBENCH_LATENCY_DIR}/workloads/varmail_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;"
+			${FILEBENCH_LATENCY} -f \
+				${FILEBENCH_LATENCY_DIR}/workloads/varmail_${num_threads}.f \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_threads}.dat;
+
+			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
+
+			;;
 		"filebench-fileserver")
 			;;
 		"sysbench")
@@ -168,6 +182,28 @@ select_workload()
 			;;
 		"rocksdb")
 			;;
+		"ycsb-a")
+	    		MONGODWTPATH=$HOME/hse_experiment/mongo_no_hse/bin
+
+		       # start mongo daemon
+		       sudo $MONGODWTPATH/mongod --storageEngine wiredTiger --dbpath ${MNT} &
+		       
+		       # load data
+		       $YCSB/bin/ycsb load mongodb -threads ${num_threads} -P $YCSB/workloads/workloada \
+			-p recordcount=64000 \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_load_${num_threads}.dat;
+		       
+		       # run exp and put output to file
+		       $YCSB/bin/ycsb run mongodb -threads ${num_threads} -P $YCSB/workloads/workloada \
+			-p recordcount=64000 \
+			-p operationcount=64000 \
+				> ${OUTPUTDIR_DEV_PSP_ITER}/result_run_${num_threads}.dat;
+		       
+		       # drop the loaded db
+		       sudo $MONGODWTPATH/mongo ycsb --eval "db.dropDatabase()"
+		       sudo $MONGODWTPATH/mongod --dbpath $DBPATH --shutdown;
+			sudo rm -rf ${MNT}/*
+			;;
 		"exim")
 			;;
 		"dd")
@@ -183,7 +219,7 @@ select_workload()
 			num_branch=5
 			write_bytes=4096
 
-			/home/oslab/mpich-install/bin/mpirun -np ${num_process} ${MDTEST} -z ${num_depth} -b ${num_branch} \
+			mpirun -np ${num_process} ${MDTEST} -z ${num_depth} -b ${num_branch} \
 				-I ${num_make} -i ${num_iteration} -y -w ${write_bytes} -d ${MNT} -F -C \
 				> ${OUTPUTDIR_DEV_PSP_ITER}/result_${num_process}.dat
 			debug ${OUTPUTDIR_DEV_PSP_ITER} ${num_threads} ${dev}
@@ -201,6 +237,7 @@ run_bench()
 
 		# Create Directory for Iteration
 		mkdir -p ${OUTPUTDIR_DEV_PSP_ITER}
+		echo "directory: ${OUTPUTDIR_DEV_PSP_ITER}"
 		
 		echo "# thr tx h/tx blk/tx" >> ${OUTPUTDIR_DEV_PSP_ITER}/summary;
 

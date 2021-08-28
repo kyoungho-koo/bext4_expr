@@ -4,9 +4,8 @@
 
 
 int main(int argc, char* argv[]){
-        unsigned int mode = atoi(argv[1]);
-        syscall(436, mode);
+        unsigned int time = atoi(argv[1]);
+        syscall(440, time);
         return 0;
 }
-
 
